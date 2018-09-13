@@ -1,0 +1,46 @@
+% units and symbols
+% most of them are defined in ptdr-definitions.tex, the ones that are missing there are defined here
+\newcommand{\pb}{\ensuremath{\,\text{pb}}\xspace}
+\newcommand{\MV}{\ensuremath{\,\text{MV}}\xspace}
+\newcommand{\MVm}{\ensuremath{\,\text{MV\hspace{-0.16em}/\hspace{-0.08em}m}}\xspace}
+\newcommand{\MHz}{\ensuremath{\,\text{MHz}}\xspace}
+\newcommand{\T}{\ensuremath{\,\text{T}}\xspace}
+\newcommand{\mrad}{\ensuremath{\,\text{mrad}}\xspace}
+\newcommand{\mt}{\ensuremath{m_{\mathrm{T}}}\xspace}
+\newcommand{\metSlash}{\ensuremath{{\not\mathrel{E}}_\mathrm{T}}} % alternative version to \ETslash, w/o spacing problem
+
+% period and comma after formulas with some extra spacing
+\newcommand{\paf}{\ .}
+\newcommand{\caf}{\ ,}
+\newcommand{\waf}[1]{\ \text{#1}}
+
+% references
+\AtBeginDocument{ % hyperref redefines \ref at beginning of the document
+	\let\oldref\ref
+	%%% PubCom recommendations are given as comments
+	%%% Currently, I do not follow PubCom recommendations
+	\newcommand{\refChap}[1]{\hyperref[#1]{Chapter~\oldref*{#1}}}		% 'Chapter 3'
+	\newcommand{\refSec} [1]{\hyperref[#1]{Section~\oldref*{#1}}}		% 'Section 3'
+	\newcommand{\refApp} [1]{\hyperref[#1]{Appendix~\oldref*{#1}}}		% 'Appendix B'
+	\newcommand{\refFig} [1]{\hyperref[#1]{Figure~\oldref*{#1}}}		% 'Fig. 3'; at beginning of sentence 'Figure 3'
+	\newcommand{\refTab} [1]{\hyperref[#1]{Table~\oldref*{#1}}}			% 'Table 3'
+	\newcommand{\refEq}  [1]{\hyperref[#1]{Equation~(\oldref*{#1})}}% 'Eq. (3)'; at beginning of sentence 'Equation (3)'
+}
+
+%% singlets and doublets (for SM table)
+\newcommand{\doublet}[2]{$\begin{pmatrix} #1 \\ #2 \end{pmatrix}_{\mathrm{L}}$}
+\newcommand{\lsinglet}[1]{$\begin{array}{c} #1_\mathrm{R}^\mathrm{-}\end{array}$}
+\newcommand{\qsinglet}[2]{$\begin{array}{c} #1_\mathrm{R} \\ #2_\mathrm{R}\end{array}$}
+\newcommand{\doubarrc}[2]{$\begin{array}{c} #1 \\ #2  \end{array}$}
+\newcommand{\doubarrl}[2]{$\hspace{-2ex}\begin{array}{l} #1 \\ #2  \end{array}$}
+\newcommand{\doubarrr}[2]{$\begin{array}{r} #1 \\ #2  \end{array}\hspace{-2ex}$}
+\newcommand{\singarrl}[1]{$\hspace{-2ex}\begin{array}{l} #1  \end{array}$}
+\newcommand{\singarrr}[1]{$\begin{array}{r} #1  \end{array}\hspace{-2ex}$}
+
+% defined to be equal symbol :=
+\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+                     \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+                     =}
+										
+% ########## Hyphenations ##########
+% \hyphenation{ex-am-ple}

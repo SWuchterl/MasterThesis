@@ -1,0 +1,55 @@
+@techreport{CMSLumiMeasurement2013,
+abstract = {The measurement of the LHC luminosity delivered to CMS in the 2012 proton-proton physics run is presented. Results are based on cluster counting from the silicon pixel detector. The luminosity calibration is updated using the Van der Meer scans per- formed in November 2012. The overall uncertainty on the integrated luminosity is estimated to be 2.5{\%} (syst.)+0.5{\%} (stat.).},
+address = {Geneva},
+author = {{CMS Collaboration}},
+file = {:C$\backslash$:/Users/Bastian/Uni/Paper/CMS Collaboration/CMS Collaboration{\_}CMS Luminosity Based on Pixel Cluster Counting - Summer 2013 Update.pdf:pdf},
+institution = {CERN},
+number = {CMS-PAS-LUM-13-001},
+title = {{CMS Luminosity Based on Pixel Cluster Counting - Summer 2013 Update}},
+type = {CMS Physics Analysis Summary},
+url = {http://cdsweb.cern.ch/record/1598864},
+year = {2013}
+}
+@article{Geant4,
+author = {Agostinelli, S and Others},
+doi = {10.1016/S0168-9002(03)01368-8},
+journal = {Nucl. Instrum. Meth. A},
+pages = {250},
+title = {{{\{}GEANT4{\}} --- a simulation toolkit}},
+volume = {506},
+year = {2003}
+}
+@article{CMSHtautauEvidence2014,
+abstract = {A search for a standard model Higgs boson decaying into a pair of tau leptons is performed using events recorded by the CMS experiment at the LHC in 2011 and 2012. The dataset corresponds to an integrated luminosity of 4.9 inverse femtobarns at a centre-of-mass energy of 7 TeV and 19.7 inverse femtobarns at 8 TeV. Each tau lepton decays hadronically or leptonically to an electron or a muon, leading to six different final states for the tau-lepton pair, all considered in this analysis. An excess of events is observed over the expected background contributions, with a local significance larger than 3 standard deviations for m[H] values between 115 and 130 GeV. The best fit of the observed H to tau tau signal cross section for m[H] = 125 GeV is 0.78 +- 0.27 times the standard model expectation. These observations constitute evidence for the 125 GeV Higgs boson decaying to a pair of tau leptons.},
+archivePrefix = {arXiv},
+arxivId = {1401.5041},
+author = {{CMS Collaboration}},
+doi = {10.1007/JHEP05(2014)104},
+eprint = {1401.5041},
+file = {:C$\backslash$:/Users/Bastian/Uni/Paper/CMS Collaboration/CMS Collaboration{\_}Evidence for the 125 GeV Higgs boson decaying to a pair of $\tau$ leptons.pdf:pdf},
+issn = {1029-8479},
+journal = {Journal of High Energy Physics},
+keywords = {CMS,Evidence,Higgs},
+mendeley-tags = {CMS,Evidence,Higgs},
+month = {may},
+number = {5},
+pages = {104},
+title = {{Evidence for the 125 GeV Higgs boson decaying to a pair of $\tau$ leptons}},
+url = {http://link.springer.com/10.1007/JHEP05(2014)104 http://arxiv.org/abs/1401.5041 http://cds.cern.ch/record/1643937},
+volume = {2014},
+year = {2014}
+}
+@misc{schematicCMS,
+author  = {David Barney},
+title   = {large transverse view},
+year    = {2011},
+howpublished = {\url{https://cms-docdb.cern.ch/cgi-bin/PublicDocDB/ShowDocument?docid=5697}},
+note	= {modified by Bastian Kargoll; last checked 17.6.2016}
+}
+@misc{bachelorCMSartur,
+author = {Artur Akhmetshin},
+title = {Studien zur Bestimmung der CP-Symmetrie der Kopplung des Higgs-Bosons an tau-Leptonen},
+month = {9},
+year = {2014},
+notw = {page: 3}
+}

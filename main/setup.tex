@@ -1,0 +1,193 @@
+%%% General settings
+
+\input{general/ptdr-definitions} 	% official CMS definitions
+\input{general/my-definitions}		% personal definitions
+
+%%%%%%%%%%%%%%%  Title page %%%%%%%%%%%%%%%%%%%%%%%%
+%\documentclass[11pt,twoside, openright, a4paper, pdftex, tdr]{new-cms-tdr}
+\documentclass[12pt,twoside, openright, a4paper, pdftex, tdr,chapterprefix=false]{new-cms-tdr}
+%\usepackage[left=29mm,right=25mm,top=25mm,bottom=14mm,includeheadfoot]{geometry}%includehead
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm,includeheadfoot]{geometry}%includehead
+
+%\usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+%\geometry{a4paper} % or letter or a5paper or ... etc
+% \geometry{landscape} % rotated page geometry
+
+\usepackage[latin1]{inputenc}
+
+%%MEINE INCLUDES
+\usepackage{subfigure}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{graphicx}
+%\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage{lmodern}
+% \usepackage[ngerman]{babel}
+\usepackage[english]{babel}
+\usepackage{amssymb}
+%\usepackage{hyperref}
+%\usepackage{amssymb,amsmath,hyperref}
+%\usepackage{svg}
+
+\usepackage{siunitx}
+%\newcommand{\pT}{\ensuremath{p_\perp}}
+%\newcommand{\pT}{\ensuremath{p_T}}
+%\newcommand{\Et}{\ensuremath{E_\perp}}
+%\newcommand{\dpt}{\ensuremath{\delta \pT/\pT}}
+%\newcommand{\dE}{\ensuremath{\delta E/E}}
+%\newcommand{\nm}{\nano\meter}
+%\newcommand{\kg}{\kilo\gram}
+%\newcommand{\fb}{\femto\barn}
+%\newcommand{\fbi}{\ensuremath{\fb^{-1}}}
+%
+%\newcommand{\pbi}{\ensuremath{\pb^{-1}}}
+%\newcommand{\nb}{\nano\barn}
+%\newcommand{\nbi}{\ensuremath{\nb^{-1}}}
+%\include{General/ptdr-definitions}
+
+
+
+
+
+
+%% add line numbers
+%\usepackage[mathlines]{lineno} % add option pagewise for new line number per page
+%\linenumbers
+
+\usepackage{ifthen}
+\newboolean{bdraft}
+\setboolean{bdraft}{true} %%set comments and lipsums on and off
+
+% define some colors
+\usepackage[dvipsnames]{xcolor}
+\definecolor{lightblue}{rgb}{0.85,0.85,0.92}
+\definecolor{gray}{gray}{0.6}
+\usepackage{color}
+\definecolor{RWTHblue}{RGB}{0,84,159}%RWTH blau
+\definecolor{RWTHlightblue}{RGB}{142,186,229}%RWTH hellblau
+\definecolor{darkblue}{rgb}{0,0,0.5}
+
+% lorem ipsum blind text
+%\usepackage{lipsum}
+%\newcommand{\lorem}{ \ifthenelse{\boolean{bdraft}} {\textcolor{lightblue}{\lipsum}} {} }
+%\setlipsumdefault{1}
+
+% wider lines in tables and arrays
+\renewcommand{\arraystretch}{1.1}
+
+% manage "ToDo"s in text
+% \usepackage{todo}
+\newcommand{\todo}[1]{{\textcolor{red}{TODO \today: #1}}} 
+
+% define comments
+\newcommand{\comment}[1]{ \ifthenelse{\boolean{bdraft}} {\textcolor{RedOrange}{\{#1\}}} {} }
+
+% Give numbers to deeper levels, and show them in the TOC
+%\ifthenelse{\boolean{bdraft}} {\setcounter{tocdepth}{4}} {}
+%\ifthenelse{\boolean{bdraft}} {\setcounter{secnumdepth}{4}} {}
+
+
+% width of pictures (if 2 pictures next to each other)
+\newcommand{\pairwidth}{.481\textwidth}
+
+% format captions
+\usepackage[margin=10pt,skip=8pt, format=plain]{caption}
+\KOMAoption{captions}{tableheading, bottombeside}
+
+% configure default position of figures and tables
+%\makeatletter
+%\renewcommand{\fps@figure}{htbp}
+%\renewcommand{\fps@table}{htbp}
+%\makeatother
+
+% make tables look nicer
+\usepackage{booktabs}
+
+% definition of particle names
+\usepackage{general/pennames-pazo}
+%\usepackage{hepnames}  % nice particle names, incompatible with mathpazo math fonts
+
+% bibliography support
+\usepackage[numbers,sort&compress]{natbib}
+
+ %%Feynman graphs
+%\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{feynman}
+
+%\usepackage{feynmp}
+%% Automize calls to mpost in TeXnicCenter
+%% see http://latex-community.org/forum/viewtopic.php?f=31&t=16193
+%\DeclareGraphicsRule{*}{mps}{*}{}
+%\makeatletter
+%\def\endfmffile{%
+%\fmfcmd{\p@rcent\space the end.^^J%
+%end.^^J%
+%endinput;}%
+%\if@fmfio
+%\immediate\closeout\@outfmf
+%\fi
+%\ifnum\pdfshellescape=\@ne
+%\immediate\write18{mpost \thefmffile}%
+%\fi}
+%\makeatother
+
+%links within document
+\usepackage[%
+colorlinks, % verwende farbige Links
+linkcolor=black, % Linkfarbe ist RWTH blau
+citecolor=RWTHlightblue, % Zitatfarbe ist RWTH blau
+bookmarks, % erstelle Bookmarks der Links
+bookmarksopen, % Bookmarks werden beim Öffnen des Dokumentes ebenfalls geöffnet
+bookmarksopenlevel=2,
+urlcolor=RWTHblue, % Hyperlinks sind RWTH blau
+bookmarksnumbered, % Bookmarks sind nummeriert
+pdfborder={0 0 0},
+plainpages=false,
+pdfpagelabels,
+% draft  % Draft-Version
+final  % Endversion
+]{hyperref}
+
+%\usepackage[
+%bookmarksnumbered,
+%pdftitle={\titleDocument}%,
+%%hyperfootenotes=false
+%]{hyperref}
+
+%\hypersetup{%
+	%%plainpages=false,
+	%%pdfpagemode=Normal,%Keine Navigatorspalte
+	%%pdfview=FitH,%Standard-View f�r Link
+	%%pdfstartview=FitH,%Start-Ansicht FitH,FitV,...
+	%%pdfpagelayout=TwoColumnRight,%OneColumn,TwoColumnLeft,TwoColumnRight,SinglePage
+	%%colorlinks=true, % false: boxed links; true: colored links
+	%%bookmarksopen=true,
+	%%bookmarksnumbered=true,
+	%%bookmarksopenlevel=2,
+	%%pdfmenubar=true,
+	%%pdfwindowui=true,
+	%%pdffitwindow=true,
+	%linkcolor=darkblue,
+	%%linkcolor=black,
+	%%linkbordercolor=false,%Rahmenfarbe um Links (1 0 0)Leerzeichen wichtig(R G B)
+	%citecolor=darkblue,
+%%	citecolor=black,
+	%urlcolor=darkblue,
+	%filecolor=darkblue
+%}
+
+% create glossary
+% http://ftp.uni-erlangen.de/ctan/macros/latex/contrib/glossaries/glossaries-user.pdf
+% first try of options which are not necessarily optimal
+% 'acronym' to obtain list of acronyms independent from glossary
+% 'acronym' and 'nomain' to obtain only list of acronyms, without glossary
+% 'xindy' uses a perl script to properly sort entries, including e.g. greek letters
+%\usepackage[xindy,nomain,acronym,toc]{glossaries}
+% set style of glossary
+% here: use 2 columns, as we expect short entries (mainly acronyms)
+%\usepackage{glossary-mcols}
+%\setglossarystyle{mcolindex}
+% set style of acronyms
+%\setacronymstyle{long-short}
+%\makeglossaries  % ensure glossary files are created
