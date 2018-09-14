@@ -1,6 +1,6 @@
 %%% General settings
 
-\input{general/ptdr-definitions} 	% official CMS definitions
+% \input{general/ptdr-definitions} 	% official CMS definitions
 \input{general/my-definitions}		% personal definitions
 
 %%%%%%%%%%%%%%%  Title page %%%%%%%%%%%%%%%%%%%%%%%%
@@ -14,6 +14,9 @@
 % \geometry{landscape} % rotated page geometry
 
 \usepackage[latin1]{inputenc}
+
+\usepackage{general/ptdr-definitions} 	% official CMS definitions
+
 
 %%MEINE INCLUDES
 \usepackage{subfigure}
@@ -78,7 +81,7 @@
 
 % manage "ToDo"s in text
 % \usepackage{todo}
-\newcommand{\todo}[1]{{\textcolor{red}{TODO \today: #1}}} 
+\newcommand{\todo}[1]{{\textcolor{red}{TODO \today: #1}}}
 
 % define comments
 \newcommand{\comment}[1]{ \ifthenelse{\boolean{bdraft}} {\textcolor{RedOrange}{\{#1\}}} {} }

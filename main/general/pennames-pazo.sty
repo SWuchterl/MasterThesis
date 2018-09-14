@@ -1,102 +1,42 @@
-%%% modified version from pennames-pazo.sty from CMS repository %%%
-% to be used with mathpazo package, which does not allow \mathrm{greek letter}
-
-%%% naming conventions:
-% \P at beginning of every macro
-% \Pa for anti-particles
-% "g" means greek, e.g. "ge" is epsilon, "gm" is muon
-% "z" means zero, "i" means 1, "ii" means 2, etc.
-% "pm" is plus-minus
-% in own additions: "M" prints mass at the end
-
-
-%%%% most useful ones and own additions
-% Higgs
-\newcommand{\PH}{\ensuremath{\mathrm{H}}}
-\newcommand{\PHpm}{\ensuremath{\mathrm{H^{\pm}}}}
-\newcommand{\PHz}{\ensuremath{\mathrm{H^0}}}
-\newcommand{\PHM}{\ensuremath{\mathrm{H(125)}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                    %
+%  This is pennames.sty                                              %
+%                                                                    %
+%  It contains the definition of the short names for the PEN         %
+%  Elementary Particle Naming Scheme, described in CNL 203, pp 8-11  %
+%                                                                    %
+%  Version 1.0: Original version -  4 Oct 1991 (evh)                 %
+%          1.1: \def,\relax\ifmmode instead of \mbox                 %
+%               16 Oct 1991 (mg)                                     %
+%          1.2: Corrections for upsilon and psi - 21 Oct 1991 (evh)  %
+%          1.3: Line lenghts < 80 charcaters - 22 Oct 1991 (mg)      %
+%          1.4: Add definitions for NFSS (\mathrm instead of \rm)    %
+%               27 May 1993 (mg)                                     %
+%          1.5: Add definitions \PaD, \PaDz, \PaB, \PaBz             %
+%               \Pq, \Paq, \Pqd, \Paqd, \Pqu, \Paqu, \Pqs, \Paqs     %
+%               \Pqc, \Paqc, \Pqb, \Paqb, \Pqt, \Paqt, PaP, PagL     %
+%               \PagSm, \PagSp, \PagSz, \PagXz, \PagXp, \PagOp, \PaSq%
+%               12 Jul 1993 (mg)                                     %
+%          1.6: Include \relax to force expansion of \if (DCa)       %
+%               Add % at end of every command to eliminate possible  %
+%               parasitic white space.                               %
+%                6 Feb 1994 (mg)                                     %
+%          2.0: Adapt to LaTeX2e with \ensuremath command            %
+%                30 Jan 1995 (mg)                                    %
+%          3.0: Make latex2e reference and define                    %
+%               \newcommand and/or \ensuremath is undefined.         %
+%                 3 Apr 1996 (mg)                                    %
+%                                                                    %
+%  Authors: Michel Goossens and Eric van Herwijnen                   %
+%           CERN, Geneva, Switzerland                                %
+%                                                                    %
+%  Last Mod.  3 Apr 1996 (mg)                                        %
+%                                                                    %
+%  Adapted for use with Palatino/mathpazo (no roman for greek)       %
+%  20 Jan 2010 (goa)                                                 %
+%                                                                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\PAz}{\ensuremath{\mathrm{A^0}}}
-\newcommand{\Phz}{\ensuremath{\mathrm{h^0}}}
-% gauge bosons
-\newcommand{\PWm}{\ensuremath{\mathrm{W^-}}}
-\newcommand{\PWp}{\ensuremath{\mathrm{W^+}}}
-\newcommand{\PWpm}{\ensuremath{\mathrm{W^\pm}}}
-\newcommand{\PW}{\ensuremath{\mathrm{W}}}
-\newcommand{\PZz}{\ensuremath{\mathrm{Z^0}}}
-\newcommand{\PZ}{\ensuremath{\mathrm{Z}}}
-\newcommand{\Pgg}{\ensuremath{\gamma}}
-\newcommand{\Pg}{\ensuremath{\mathrm{g}}}
-% charged leptons
-\newcommand{\Pem}{\ensuremath{\mathrm{e}^-}}
-\newcommand{\Pep}{\ensuremath{\mathrm{e}^+}}
-\newcommand{\Pe}{\ensuremath{\mathrm{e}}}
-\newcommand{\Pgmm}{\ensuremath{{\mu^-}}}
-\newcommand{\Pgmp}{\ensuremath{{\mu^+}}}
-\newcommand{\Pgm}{\ensuremath{{\mu}}}
-\newcommand{\Pgtm}{\ensuremath{{\tau^-}}}
-\newcommand{\Pgtp}{\ensuremath{{\tau^+}}}
-\newcommand{\Pgt}{\ensuremath{\tau}}
-\newcommand{\Pgth}{\ensuremath{\tau_\mathrm{h}}}
-\newcommand{\Pgtoneprong}{\ensuremath{\tau_{\mathrm{1}\pi}}}
-\newcommand{\Pgtthreeprong}{\ensuremath{\tau_{\mathrm{3}\pi}}}
-\newcommand{\Pgte}{\ensuremath{\tau_\mathrm{e}}}
-\newcommand{\Pgtmu}{\ensuremath{\tau_\mu}}
-\newcommand{\Pgtgm}{\Pgtmu}
-% neutrinos
-\newcommand{\Pgne}{\ensuremath{\nu_\mathrm{{e}}}}
-\newcommand{\Pgngm}{\ensuremath{\nu_{\mu}}}
-\newcommand{\Pgngt}{\ensuremath{\nu_{\tau}}}
-\newcommand{\Pagne}{\ensuremath{{\overline{\nu}_\mathrm{e}}}}
-\newcommand{\Pagngm}{\ensuremath{{\overline{\nu}_{\mu}}}}
-\newcommand{\Pagngt}{\ensuremath{{\overline{\nu}_{\tau}}}}
-% mesons
-\newcommand{\Pgpm}{\ensuremath{\pi^-}}
-\newcommand{\Pgppm}{\ensuremath{\pi^\mathrm{{\pm }}}}
-\newcommand{\Pgpp}{\ensuremath{\pi^+}}
-\newcommand{\Pgpz}{\ensuremath{\pi^0}}
-\newcommand{\Pgp}{\ensuremath{\pi}}
-\newcommand{\Pai}{\ensuremath{\mathrm{a_1}}}
-\newcommand{\PaiM}{\ensuremath{\mathrm{a_1(1260)}}}
-\newcommand{\Pgo}{\ensuremath{\omega}}
-\newcommand{\PgoM}{\ensuremath{\omega\mathrm{(783)}}}
-\newcommand{\Pgr}{\ensuremath{\rho\mathrm}}
-\newcommand{\PgrM}{\ensuremath{\rho\mathrm{(770)}}}
-% bosons
-\newcommand{\Pn}{\ensuremath{\mathrm{n}}}
-\newcommand{\Pp}{\ensuremath{\mathrm{p}}}
-\newcommand{\Pap}{\ensuremath{\mathrm{\overline{p}}}}
-% quarks
-\newcommand{\Pq}{\ensuremath{\mathrm{q}}}
-\newcommand{\Paq}{\ensuremath{\mathrm{\overline{q}}}}
-\newcommand{\Pu}{\ensuremath{\mathrm{u}}}
-\newcommand{\Pau}{\ensuremath{\mathrm{\overline{u}}}}
-\newcommand{\Pd}{\ensuremath{\mathrm{d}}}
-\newcommand{\Pad}{\ensuremath{\mathrm{\overline{d}}}}
-\newcommand{\Ps}{\ensuremath{\mathrm{s}}}
-\newcommand{\Pas}{\ensuremath{\mathrm{\overline{s}}}}
-\newcommand{\Pc}{\ensuremath{\mathrm{c}}}
-\newcommand{\Pac}{\ensuremath{\mathrm{\overline{c}}}}
-\newcommand{\Pt}{\ensuremath{\mathrm{t}}}
-\newcommand{\Pat}{\ensuremath{\mathrm{\overline{t}}}}
-\newcommand{\Pb}{\ensuremath{\mathrm{b}}}
-\newcommand{\Pab}{\ensuremath{\mathrm{\overline{b}}}}
-
-%%% groups of particles
-% use italic instead of roman font for symbols denoting group of paricles
-\newcommand{\GPl}{\ensuremath{\mathnormal{\ell}}}	% leptons
-\newcommand{\GPal}{\ensuremath{\mathnormal{\overline{\ell}}}}	% anti leptons
-\newcommand{\GPgn}{\ensuremath{\nu_\mathrm{{\ell}}}} % neutrinos
-\newcommand{\GPagn}{\ensuremath{{\overline{\nu}_\mathrm{\ell}}}}	% anti neutrinos
-\newcommand{\GPf}{\ensuremath{\mathnormal{f}}}		% fermions
-\newcommand{\GPaf}{\ensuremath{\mathnormal{\overline{f}}}}		% anti fermions
-\newcommand{\GPq}{\ensuremath{\mathnormal{q}}}		% quarks
-\newcommand{\GPaq}{\ensuremath{\mathnormal{\overline{q}}}}		% antiquarks
-\newcommand{\GPV}{\ensuremath{\mathnormal{V}}}		% vector bosons
-\newcommand{\GPh}{\ensuremath{\mathnormal{h}}}		% hadron
-\newcommand{\GPhpm}{\ensuremath{\mathnormal{h}^\pm}}		% charged hadron
-
-%%% all the rest
 \newcommand{\PBm}{\ensuremath{{\mathrm{B}^{-}}}}
 \newcommand{\PBpm}{\ensuremath{{\mathrm{B}^{\pm}}}}
 \newcommand{\PBp}{\ensuremath{{\mathrm{B}^{+}}}}
@@ -112,7 +52,8 @@
 \newcommand{\PDz}{\ensuremath{\mathrm{D^0}}}
 \newcommand{\PD}{\ensuremath{\mathrm{D}}}
 \newcommand{\PEz}{\ensuremath{\mathrm{E^0}}}
-
+\newcommand{\PHpm}{\ensuremath{\mathrm{H^{\pm}}}}
+\newcommand{\PHz}{\ensuremath{\mathrm{H^0}}}
 \newcommand{\PJgy}{\ensuremath{\mathrm{J}\hspace{-.08em}/\hspace{-.14em}\psi\mathrm{(1S)}}}
 \newcommand{\PKeiii}{\ensuremath{\mathrm{K}_\mathrm{e3}}}
 \newcommand{\PKgmiii}{\ensuremath{\mathrm{K}_{\mu \mathrm{3}}}}
@@ -165,15 +106,16 @@
 \newcommand{\PSg}{\ensuremath{\mathrm{\widetilde{g}}}}
 \newcommand{\PSq}{\ensuremath{\mathrm{\widetilde{q}}}}
 \newcommand{\PWR}{\ensuremath{\mathrm{W_R}}}
-
+\newcommand{\PWm}{\ensuremath{\mathrm{W^-}}}
 \newcommand{\PWpr}{\ensuremath{\mathrm{W^{'}}}}%\prime
-
+\newcommand{\PWp}{\ensuremath{\mathrm{W^+}}}
+\newcommand{\PW}{\ensuremath{\mathrm{W}}}
 \newcommand{\PZLR}{\ensuremath{\mathrm{Z_{LR}}}}
 \newcommand{\PZgc}{\ensuremath{\mathrm{Z}_{\chi}}}
 \newcommand{\PZge}{\ensuremath{\mathrm{Z}_{\eta}}}
 \newcommand{\PZgy}{\ensuremath{\mathrm{Z}_{\psi}}}
 \newcommand{\PZi}{\ensuremath{\mathrm{Z_1}}}
-
+\newcommand{\PZz}{\ensuremath{\mathrm{Z^0}}}
 \newcommand{\PaBz}{\ensuremath{\mathrm{\overline{B}}^0}}
 \newcommand{\PaB}{\ensuremath{\mathrm{\overline{B}}}}
 \newcommand{\PaDz}{\ensuremath{\mathrm{\overline{D}^0}}}
@@ -187,18 +129,20 @@
 \newcommand{\PagSz}{\ensuremath{{\overline{\Sigma}^0}}}
 \newcommand{\PagXp}{\ensuremath{{\overline{\Xi}^+}}}
 \newcommand{\PagXz}{\ensuremath{{\Xi^0}}}
-
+\newcommand{\Pagne}{\ensuremath{{\overline{\nu}_\mathrm{e}}}}
+\newcommand{\Pagngm}{\ensuremath{{\overline{\nu}_{\mu}}}}
+\newcommand{\Pagngt}{\ensuremath{{\overline{\nu}_{\tau}}}}
 \newcommand{\Paii}{\ensuremath{\mathrm{a_2(1320)}}}
-
+\newcommand{\Pai}{\ensuremath{\mathrm{a_1(1260)}}}
+\newcommand{\Pap}{\ensuremath{\mathrm{\overline{p}}}}
 \newcommand{\Paqb}{\ensuremath{\mathrm{\overline{q}_b}}}
 \newcommand{\Paqc}{\ensuremath{\mathrm{\overline{q}_c}}}
 \newcommand{\Paqd}{\ensuremath{\mathrm{\overline{q}_d}}}
 \newcommand{\Paqs}{\ensuremath{\mathrm{\overline{q}_s}}}
 \newcommand{\Paqt}{\ensuremath{\mathrm{\overline{q}_t}}}
 \newcommand{\Paqu}{\ensuremath{\mathrm{\overline{q}_u}}}
-
+\newcommand{\Paq}{\ensuremath{\mathrm{\overline{q}}}}
 \newcommand{\Paz}{\ensuremath{\mathrm{a_0(980)}}}
-
 \newcommand{\Pbgcia}{\ensuremath{\chi_\mathrm{b1}\mathrm{(2P)}}}
 \newcommand{\Pbgciia}{\ensuremath{\chi_\mathrm{b2}\mathrm{(2P)}}}
 \newcommand{\Pbgcii}{\ensuremath{\chi_\mathrm{b2}\mathrm{(1P)}}}
@@ -214,7 +158,9 @@
 \newcommand{\Pcgci}{\ensuremath{\chi_\mathrm{c1}\mathrm{(1P)}}}
 \newcommand{\Pcgcz}{\ensuremath{\chi_\mathrm{c0}\mathrm{(1P)}}}
 \newcommand{\Pcgh}{\ensuremath{\eta_\mathrm{c}\mathrm{(1S)}}}
-
+\newcommand{\Pem}{\ensuremath{\mathrm{e}^-}}
+\newcommand{\Pep}{\ensuremath{\mathrm{e}^+}}
+\newcommand{\Pe}{\ensuremath{\mathrm{e}}}
 \newcommand{\Pfia}{\ensuremath{\mathrm{f}_1(1390)}}
 \newcommand{\Pfib}{\ensuremath{\mathrm{f}_1(1510)}}
 \newcommand{\Pfiia}{\ensuremath{\mathrm{f}_2(1720)}}
@@ -287,39 +233,48 @@
 \newcommand{\Pgfa}{\ensuremath{\phi\mathrm{(1680)}}}
 \newcommand{\Pgfiii}{\ensuremath{\phi_\mathrm{3}\mathrm{(1850)}}}
 \newcommand{\Pgf}{\ensuremath{\phi\mathrm{(1020)}}}
-
+\newcommand{\Pgg}{\ensuremath{\gamma}}
 \newcommand{\Pgha}{\ensuremath{\eta\mathrm{(1295)}}}
 \newcommand{\Pghb}{\ensuremath{\eta\mathrm{(1440)}}}
 \newcommand{\Pghpr}{\ensuremath{\eta^{'}\mathrm{(958)}}}%\prime
 \newcommand{\Pgh}{\ensuremath{\eta}}
-
-
+\newcommand{\Pgmm}{\ensuremath{{\mu^-}}}
+\newcommand{\Pgmp}{\ensuremath{{\mu^+}}}
+\newcommand{\Pgm}{\ensuremath{{\mu}}}
+\newcommand{\Pgne}{\ensuremath{\nu_\mathrm{{e}}}}
+\newcommand{\Pgngm}{\ensuremath{\nu_{\mu}}}
+\newcommand{\Pgngt}{\ensuremath{\nu_{\tau}}}
 \newcommand{\Pgoa}{\ensuremath{\omega\mathrm{(1390)}}}
 \newcommand{\Pgob}{\ensuremath{\omega\mathrm{(1600)}}}
 \newcommand{\Pgoiii}{\ensuremath{\omega_\mathrm{3}\mathrm{(1670)}}}
-
+\newcommand{\Pgo}{\ensuremath{\omega\mathrm{(783)}}}
 \newcommand{\Pgpa}{\ensuremath{\pi\mathrm{(1300)}}}
 \newcommand{\Pgpii}{\ensuremath{\pi_\mathrm{2}\mathrm{(1670)}}}
-
+\newcommand{\Pgpm}{\ensuremath{\pi^-}}
+\newcommand{\Pgppm}{\ensuremath{\pi^\mathrm{{\pm }}}}
+\newcommand{\Pgpp}{\ensuremath{\pi^+}}
+\newcommand{\Pgpz}{\ensuremath{\pi^0}}
+\newcommand{\Pgp}{\ensuremath{\pi}}
 \newcommand{\Pgra}{\ensuremath{\rho\mathrm{(1450)}}}
 \newcommand{\Pgrb}{\ensuremath{\rho\mathrm{(1700)}}}
 \newcommand{\Pgriii}{\ensuremath{\rho_\mathrm{3}\mathrm{(1690)}}}
-
-
+\newcommand{\Pgr}{\ensuremath{\rho\mathrm{(770)}}}
+\newcommand{\Pgt}{\ensuremath{\tau}}
 \newcommand{\Pgya}{\ensuremath{\psi\mathrm{(3770)}}}
 \newcommand{\Pgyb}{\ensuremath{\psi\mathrm{(4040)}}}
 \newcommand{\Pgyc}{\ensuremath{\psi\mathrm{(4160)}}}
 \newcommand{\Pgyd}{\ensuremath{\psi\mathrm{(4415)}}}
 \newcommand{\Pgy}{\ensuremath{\psi\mathrm{(2S)}}}
 \newcommand{\Phia}{\ensuremath{\mathrm{h_1(1170)}}}
-
+\newcommand{\Pn}{\ensuremath{\mathrm{n}}}
+\newcommand{\Pp}{\ensuremath{\mathrm{p}}}
 \newcommand{\Pqb}{\ensuremath{\mathrm{q_b}}}
 \newcommand{\Pqc}{\ensuremath{\mathrm{q_c}}}
 \newcommand{\Pqd}{\ensuremath{\mathrm{q_d}}}
 \newcommand{\Pqs}{\ensuremath{\mathrm{q_s}}}
 \newcommand{\Pqt}{\ensuremath{\mathrm{q_t}}}
 \newcommand{\Pqu}{\ensuremath{\mathrm{q_u}}}
-
+\newcommand{\Pq}{\ensuremath{\mathrm{q}}}
 \newcommand{\PsDipm}{\ensuremath{\mathrm{D_{s1}(2536)^{\pm}}}}
 \newcommand{\PsDm}{\ensuremath{\mathrm{D_{s}^-}}}
 \newcommand{\PsDp}{\ensuremath{\mathrm{D_{s}^+}}}
