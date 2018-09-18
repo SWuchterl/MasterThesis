@@ -61,7 +61,7 @@
 \usepackage{ifthen}
 \newboolean{bdraft}
 \setboolean{bdraft}{true} %%set comments and lipsums on and off
-
+\usepackage{mathtools}
 % define some colors
 \usepackage[dvipsnames]{xcolor}
 \definecolor{lightblue}{rgb}{0.85,0.85,0.92}
@@ -93,6 +93,10 @@
 
 % width of pictures (if 2 pictures next to each other)
 \newcommand{\pairwidth}{.481\textwidth}
+
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
 
 % format captions
 \usepackage[margin=10pt,skip=8pt, format=plain]{caption}
