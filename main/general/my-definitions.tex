@@ -22,7 +22,7 @@
 \providecommand{\neutralinoFour}{\ensuremath{\widetilde{\chi}^{0}_{4}}\xspace} % neutralino
 % \providecommand{\PSGcpm}{\ensuremath{\widetilde{\chi}^\pm}\xspace} % neutralino
 \providecommand{\charginoOne}{\ensuremath{\widetilde{\chi}^\pm_{1}}\xspace} % neutralino
-\providecommand{\charginoTwo}{\ensuremath{\widetilde{\chi}^{+}_{1}}\xspace} % neutralino
+\providecommand{\charginoTwo}{\ensuremath{\widetilde{\chi}^{+}_{2}}\xspace} % neutralino
 \providecommand{\gravitino}{\ensuremath{\widetilde{G}\xspace}} % neutralino
 
 
@@ -32,15 +32,15 @@
 
 % references
 \AtBeginDocument{ % hyperref redefines \ref at beginning of the document
-	\let\oldref\ref
-	%%% PubCom recommendations are given as comments
-	%%% Currently, I do not follow PubCom recommendations
-	\newcommand{\refChap}[1]{\hyperref[#1]{Chapter~\oldref*{#1}}}		% 'Chapter 3'
-	\newcommand{\refSec} [1]{\hyperref[#1]{Section~\oldref*{#1}}}		% 'Section 3'
-	\newcommand{\refApp} [1]{\hyperref[#1]{Appendix~\oldref*{#1}}}		% 'Appendix B'
-	\newcommand{\refFig} [1]{\hyperref[#1]{Figure~\oldref*{#1}}}		% 'Fig. 3'; at beginning of sentence 'Figure 3'
-	\newcommand{\refTab} [1]{\hyperref[#1]{Table~\oldref*{#1}}}			% 'Table 3'
-	\newcommand{\refEq}  [1]{\hyperref[#1]{Equation~(\oldref*{#1})}}% 'Eq. (3)'; at beginning of sentence 'Equation (3)'
+ \let\oldref\ref
+ %%% PubCom recommendations are given as comments
+ %%% Currently, I do not follow PubCom recommendations
+ \newcommand{\refChap}[1]{\hyperref[#1]{Chapter~\oldref*{#1}}}		% 'Chapter 3'
+ \newcommand{\refSec} [1]{\hyperref[#1]{Section~\oldref*{#1}}}		% 'Section 3'
+ \newcommand{\refApp} [1]{\hyperref[#1]{Appendix~\oldref*{#1}}}		% 'Appendix B'
+ \newcommand{\refFig} [1]{\hyperref[#1]{Figure~\oldref*{#1}}}		% 'Fig. 3'; at beginning of sentence 'Figure 3'
+ \newcommand{\refTab} [1]{\hyperref[#1]{Table~\oldref*{#1}}}			% 'Table 3'
+ \newcommand{\refEq}  [1]{\hyperref[#1]{Equation~(\oldref*{#1})}}% 'Eq. (3)'; at beginning of sentence 'Equation (3)'
 }
 
 %% singlets and doublets (for SM table)
@@ -55,8 +55,8 @@
 
 % defined to be equal symbol :=
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
-                     \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
-                     =}
+   \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+ =}
 
 % ########## Hyphenations ##########
 % \hyphenation{ex-am-ple}
