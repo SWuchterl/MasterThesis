@@ -96,6 +96,7 @@
 \newcommand{\cm}{\ensuremath{\,\text{cm}}\xspace}
 \newcommand{\m}{\ensuremath{\,\text{m}}\xspace}
 \newcommand{\mm}{\ensuremath{\,\text{mm}}\xspace}
+\newcommand{\km}{\ensuremath{\,\text{km}}\xspace}
 \newcommand{\mus}{\ensuremath{\,\mu\text{s}}\xspace}
 \newcommand{\keV}{\ensuremath{\,\text{ke\hspace{-.08em}V}}\xspace}
 \newcommand{\MeV}{\ensuremath{\,\text{Me\hspace{-.08em}V}}\xspace}
@@ -320,9 +321,9 @@
 \providecommand{\PGmmp}{\ensuremath{\mu^\mp}\xspace} % not available in pennames2, AFAIK
 % for APS style tables
 \ifthenelse{\boolean{cms@external}}{%
-\newenvironment{scotch}[1]{\protect\centering\ruledtabular\tabular{#1}}{\endtabular\endruledtabular}
+ \newenvironment{scotch}[1]{\protect\centering\ruledtabular\tabular{#1}}{\endtabular\endruledtabular}
 }{
-\newenvironment{scotch}[1]{\protect\centering\tabular{#1}\hline\hline}{\hline\endtabular}
+ \newenvironment{scotch}[1]{\protect\centering\tabular{#1}\hline\hline}{\hline\endtabular}
 }
 % Other
 \newcommand{\MD}{\ensuremath{{M_\mathrm{D}}}\xspace}% ED mass
