@@ -10,12 +10,12 @@ The LHC is a synchroton collider built in a tunnel with a circumference of $27\k
  \caption{A sketch of the total LHC accelerator complex~\cite{LHCPicture}. The four main experiments are marked as yellow dots, and the preacceleators are also shown.}
  \label{fig:LHC}
 \end{figure}
-As the protons are accelerated to an energy of $450\GeV$, they are injected as bunches of approximately $N=1.1\cdot10^{10}$ partiles into the two beam pipes counter rotating in intervals of $25\ns$. To achieve a center-of-masse enegry of $13\TeV$, each beam has to reach an energy of $6.5\TeV$. Therefore, superconducting cavities oprating at $400\MHz$ accelerate the protons, and dipole magnets force the beams on their orbital path. Higher order mutliples are needed to focus the beam and correct for different beam and magnetic effects.\\
-One important quantity to charecterize a collider is the instantanious luminosity $L$, because the rate of a distinct scattering process is proportional to $L$. It can be defined as
+As the protons are accelerated to an energy of $450\GeV$, they are injected as bunches of approximately $N=1.1\cdot10^{10}$ particles into the two beam pipes counter rotating in intervals of $25\ns$. To achieve a center-of-mass energy of $13\TeV$, each beam has to reach an energy of $6.5\TeV$. Therefore, superconducting cavities operating at $400\MHz$ accelerate the protons, and dipole magnets force the beams on their orbital path. Higher order multipoles are needed to focus the beam and correct for different beam and magnetic effects.\\
+One important quantity to characterize a collider is the instantaneous luminosity $L$, because the rate of a distinct scattering process is proportional to $L$. It can be defined as
 \begin{equation}
  L = \frac{N_{b}^2 n_{b} f_{rev} \gamma} {4\pi \epsilon \beta^{*}}F,
 \end{equation}
-where $N_b$ is the number of particles per bunch, $n_b$ the number of bunches, $f_{rev}$ the revolution frequency, $\gamma$ the relativistic Lorentz factor, $\epsilon$ the normalized transverse emmitance of the beam, $\beta^{*}$ the beta function at the interaction point, and $F$ a geometrical factor accounting for the cross section angles of the beams. The instantanious Luminosity $Lumi$ is related to $L$ via
+where $N_b$ is the number of particles per bunch, $n_b$ the number of bunches, $f_{rev}$ the revolution frequency, $\gamma$ the relativistic Lorentz factor, $\epsilon$ the normalized transverse emmitance of the beam, $\beta^{*}$ the beta function at the interaction point, and $F$ a geometrical factor accounting for the cross section angles of the beams. The instantaneous Luminosity $Lumi$ is related to $L$ via
 \begin{equation}
  \Lumi= \int L dt.
 \end{equation}
@@ -32,13 +32,6 @@ In 2016 the LHC provided a total integrated luminosity of $40.82\pbinv$, while t
 
 \section{The compact muon solenoid detector}\label{sec:CMS}
 The data used in this thesis was recorded by the CMS detector~\cite{CMS,CMSTDR} in 2016. The CMS detector is a multi-purpose detector housing different subdetector components, namely being from inside to outside the tracker system including a pixel and the silicon strip detector, the electromagnetic calorimeter, the hadronic calorimeter, followed by the solenoid and the muon system. A cross section picture of the open CMS detector is shown in~\refFig{fig:CMS}. In the following each subdetector and the trigger system will be briefly explained.\\
-The coordinate system used to describe the detector is originated at the interaction point, and the z-axis points in the direction of the beam axis. The y-axis point upwards, while the x-axis points to center of the LHC ring. To exploit the underlying symmetry of the detector, a transformation to an angular coordinate system is chosen. The azimuthal angle $\phi$ is measued in the x-y plane, while $\phi=0$ equals the direction of the x-axis, and $\phi$ ranges from $-\pi$ to $\pi$. The polar angle $\theta$ is measured from the positive z-axis, and the pseudorapidity $\eta$ can be introduced
-\begin{equation}
- \eta=-\ln\left(\tan\left(\frac{\theta}{2}\right)\right).
-\end{equation}
-The advantage in using $\eta$ instead of $\theta$ is, that differences in $\theta$ are invariant under Lorentz-boosts along the beam axis.\\
-Most of the subdetectors are divided in a low $\eta$ part (barrel), and two high $\eta$ parts (endcaps). Each of the subdetectors is designed to measure special properties of different particle types, to ensure both a good particle distinguishment and identification, and precise measurements of energy, momenta, and trajectories.
-
 \begin{figure}[hbtp]
  \centering
  \includegraphics[width=0.99\textwidth]{figures/general/CMS}
@@ -46,21 +39,64 @@ Most of the subdetectors are divided in a low $\eta$ part (barrel), and two high
  \caption{A cross section picture of the open CMS detector~\cite{CMSPicture}. The important parts are labeled.}
  \label{fig:CMS}
 \end{figure}
+\todo{RICHTIG machen oder anders BILD}
+The coordinate system used to describe the detector is originated at the interaction point, and the z-axis points in the direction of the beam axis. The y-axis point upwards, while the x-axis points to center of the LHC ring. To exploit the underlying symmetry of the detector, a transformation to an angular coordinate system is chosen. The azimuthal angle $\phi$ is measured in the x-y plane, while $\phi=0$ equals the direction of the x-axis, and $\phi$ ranges from $-\pi$ to $\pi$. The polar angle $\theta$ is measured from the positive z-axis, and the pseudorapidity $\eta$ can be introduced
+\begin{equation}
+ \eta=-\ln\left(\tan\left(\frac{\theta}{2}\right)\right).
+\end{equation}
+The advantage in using $\eta$ instead of $\theta$ is, that differences in $\theta$ are invariant under Lorentz-boosts along the beam axis.\\
+Most of the subdetectors are divided in a low $\eta$ part (barrel), and two high $\eta$ parts (endcaps). Each of the subdetectors is designed to measure special properties of different particle types, to ensure both a good particle distinction and identification, and precise measurements of energy, momenta, and trajectories.
+
+
 
 \subsection{Tracker system}
-The most inner part of the CMS detector is the inner tracker and it consists of two main components, a silicon pixel and a silicon strip detector\footnote{The silicon pixel detector was replaced at the end of the 2016 run. Since in this thesis only 2016 data is used, only the former detector is described.}. Both components enclose parts parallel to the beam pipe in the barrel, and parts orthogonal to the beam axis in the edncaps. A sketch of the total inner track is shown in \refFig{fig:tracker}. The tracker is designed to allow a precise measurement of particle trajectories and identifiaction of primary and secondary vertices. Therefore, a high granularity and fast response is needed. The silicon pixel subcomponent is built of three barrel layers and two endcap disks, covering a total area size of around $1\m^2$. Each of the $\approx66$ million silicon pixel cells has a size of $100x150\micron^2$. This enables good resolution in all orientations independent of the track direction.\\
+The most inner part of the CMS detector is the inner tracker and it consists of two main components, a silicon pixel and a silicon strip detector\footnote{The silicon pixel detector was replaced at the end of the 2016 run. Since in this thesis only 2016 data is used, only the former detector is described.}. Both components enclose parts parallel to the beam pipe in the barrel, and parts orthogonal to the beam axis in the endcaps. They cover a length of $5.8\m$ and a diameter of $2.5\m$. A sketch of the total inner track is shown in \refFig{fig:tracker}. The tracker is designed to perform a precise measurement of particle trajectories and identification of primary and secondary vertices. Therefore, a high granularity and fast response is needed. The silicon pixel subcomponent is built of three barrel layers (the closest at a radial distance of $4.4\cm$ to the beam pipe) and two endcap disks, covering a total area size of around $1\m^2$. Each of the $\approx66$ million silicon pixel cells has a size of $100x150\micron^2$. This enables good resolution in all orientations independent of the track direction.\\
 The silicon strip detector consists of four strip layers in the inner (TIB), and six layers in the outer part (TOB). In the direction of the endcaps, it is built of three inner disk layers (TID), and nine layer in the outer part (TEC).\\
-The inner trackker in total covers a range of $|\eta|<2.5$ and has a size of around $200\m^2$. The performance of the tracker yields a momentum resolution for muons of a transverse momentum of $\approx100\GeV$ of $1-2\%$ in $|\eta|<1.6$. At higher pseudorapidities the momentum resolution decreases due to a lower granularity.
+The inner tracker in total covers a range of $|\eta|<2.5$ and has a size of around $200\m^2$. The performance of the tracker yields a momentum resolution for muons of a transverse momentum of $\approx100\GeV$ of $1-2\%$ in $|\eta|<1.6$. At higher pseudorapidities the momentum resolution decreases due to a lower granularity.
 
 \begin{figure}[hbtp]
  \centering
  \includegraphics[width=0.69\textwidth]{figures/general/tracker.png}
- \caption{A sketch of one qudrant of the CMS inner tracker~\cite{TrackerPicture}.}
+ \caption{A sketch of one quadrant of the CMS inner tracker~\cite{TrackerPicture}.}
  \label{fig:tracker}
 \end{figure}
 
 \subsection{Electromagnetic calorimeter}
+Around the tracker, the second subdetector of CMS is the electromagnetic calorimeter (ECAL). Its main purpose is to measure the energy of electrons and photons, which behave very similar in the detector. Together with the measurements of the tracker, a differentiation between electrons and photons can be performed. It is made homogeneously of lead-tungstate ($PbWO_4$) crystals, that emit light proportional to the deposited energy of trespassing particles in an electromagnetic shower. The emitted light, which is located in the visible spectrum, is measured by avalanche photomultipliers. The material of lead-tungstate was chosen due to its high density, short Moli\`{e}re radius of $2.2\cm$ characterizing the shower width, and short radiation length of $0.89\cm$. Another big advantage of $PbWO_4$ is she short scintillation time. In a time window of $25\ns$ most of the visible light ($\approx80\%$) is emitted, thus suiting very well the bunch spacing of $25\ns$. The crystals have a length of $23\cm$, matching $25.8$ radiation lengths. So in total both a compact format and a high granularity could be maintained.\\
+The ECAl is divided into a barrel (EB: $|\eta|<1.479$) and an endcap part (EE: $1.479<|\eta|<3.0$), as can be seen in \refFig{fig:etaPlaneCMS}.
+\begin{figure}[hbtp]
+ \centering
+ \includegraphics[width=0.49\textwidth]{figures/general/ecal}
+ \includegraphics[width=0.49\textwidth]{figures/general/hcal}
+ \caption{A sketch of one quadrant of the CMS detector for the ECAL (left)~\cite{ECALPicture}, and HCAL (right)~\cite{CMS}.}
+ \label{fig:etaPlaneCMS}
+\end{figure}
+The total energy resolution of the ECAL is determined to be
+\begin{equation}
+ \left(\frac{\sigma_E}{E}\right)^2=\left(\frac{2.8\%}{\sqrt{E[\GeV]}}\right)^2 + \left(\frac{0.12}{E[GeV]}\right)^2 + (0.30\%)^2,
+\end{equation}
+where the first term covers stochastic effects due to the Poissionian distributed number of created scintillation photons, and the second term combines noise effects both from the electronics and the multiple collisions per bunch-crossing (pile-up). The third term covers constant effects, such as intercalibration effects between the crystals and energy leakage~\cite{ECALRes}.\\
+An additional preshower detector is installed in front of the ECAL endcap, to identify photons coming from meson decays.
+
 \subsection{Hadronic calorimeter}
+The hadronic calorimeter (HCAL), which is designed for the energy measurement of hadrons, consists also of a barrel (HB) and endcap parts (HE). It is placed between the ECAL at a radius of $1.77\m$, and the coil at a radius of $2.95\m$. An additional outer barrel part with lower granularity (HO) extends the HCAL outside of the solenoid making use of its stopping power, while the hadron forward (HF) is installed to cover high pseudorapidity ranges. The barrel part covers pseudorapidities in the range of $|\eta|<1.4$, while the HCAL endcap together with the outer HCAL covers the range of $1.3<|\eta|<3$.\\
+In contrast to the homogeneous ECAL, the HCAL barrel consists of alternating layers of brass and plastic scintillating material. The front and backplates are made of steel. Hence, the brass plates stop the incoming particles, and the energy deposit is measured in the form of hadronic showers creating scintillation light in the plastic layers. The outer HCAL makes use of the same principle, but uses in addition the stopping power of the solenoid. The hadron forward, covering pseudorapidity ranges of $3|\eta|<5.2$, needs to be more radiation hard in comparison to the rest of the HCAL, since the energy deposit in the forward region is much higher, is therefore a Cherenkov detector made of quartz fibres. A total sketch of the HCAL can be seen in \refFig{fig:etaPlaneCMS}.
+
 \subsection{The solenoid}
+To measure the momentum of the  charged particles properly, it is crucial to have bended trajectories. The resolution of the momentum measurement at very high energies is directly proportional measurement of the curvature of the trajectory, a strong magnetic field is needed. Hence, this is provided by a superconducting NbTi magnet, cooled down to $4.8\K$, inducing a magnetic field of $3.8\T$.
+
+\begin{figure}[hbtp]
+ \centering
+ \includegraphics[width=0.65\textwidth]{figures/general/CMS_eta.png}
+ \caption{A sketch of one quadrant of the CMS detector is shown with the main detector components~\cite{CMSEta}.}
+ \label{fig:etaPlaneCMSTotal}
+\end{figure}
+
 \subsection{Muon system}
+The most outside part of the CMS detector is the muon system. Because all other particles besides muons should be stopped in the inner layers, muons are the only particles trespassing and leaving the muon system. Three different types of detectors are used to measure and identify muons. The barrel part ($|\eta|<1.2$) is covered by four stations of drift tubes (DT). Cathode strip chambers (CSC) are covering the endcap at pseudorapidity $0.9<|\eta|<2.4$, because in this region a higher muon rate is expected, and CSCs in contrast to DTs have a faster response time and are more radiation hard. In ost of the parts the muon efficiency is above $95\%$, with the misidentification is below $1\%$. The muon momentum resolution, dependent on the $\eta$ region, varies between $1\%$ to $6\%$ for muons with a transverse momentum below $100\GeV$, and is in the order of $10\%$ for $\TeV$ muons~\cite{MuonPerformance}.\\
+A third type of detector components, namely six layers of resistive plate chambers (RPC), are installed in the pseudorapidity range of $<\eta|<1.6$. Because they show both good time resolution and fast response time, they are mainly used for triggering purposes. The structure of the muon system can be seen in \refFig{fig:etaPlaneCMSTotal}.
+
 \subsection{Trigger system}
+Because collisions take place every $25\ns$, and therefore at a rate of $40\MHz$, it is not achievable to read out and store all event details. To keep only physically interesting events and reduce the rate of events to be saved, a trigger system consisting of two stages is implemented~\cite{TriggerSystem}. It is composed of the hardware based level 1 triggers (L1), and the software based high level triggers (HLT). Since the L1 trigger needs to deliver decisions in a very short time window, it uses only information provided by the calorimeters and the muon chambers. Usually first requirements on the event, such as a minimal deposited transverse energy, and first estimates for electron and muon candidates are imposed. The L1 trigger reduces the event to a rate of $\approx100\kHz$.\\
+A more complex decision taking is performed by the HLT trigger. It has full access to the total readout of all subdetectors, and therefore performs selections close to the offline analysis. It reduces the event rate to $\mathcal{O}(400\Hz)$.\\
+Using the decisions of the HLT, events are categorized into different subsets, based on event kinematics and the trigger objects.
