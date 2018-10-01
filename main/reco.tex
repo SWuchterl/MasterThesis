@@ -1,12 +1,18 @@
-\chapter{Simulation, data processing, and event filtering}\label{chap:reco}
-\todo{Text}
+\chapter{Simulation, data processing, and event reconstruction}\label{chap:reco}
+The data sets, based on the proton-proton (pp) collisions and recorded with the CMS detector, are centrally provided in the \texttt{MINIAOD} format~\cite{MiniAOD}. This format contains only parts of the original event and detector information relevant for most of the physics analyzes. An analysis looking for deviations from expectations from the SM is supposed not to be biased while development. Thus, SM and signal Monte-Carlo (MC) simulations are performed and centrally provided by the CMS collaboration. These are also provided in the \texttt{MINIAOD} format with extended generator informations.\\
+All available data sets, including measured data and simulation, are further processed with the help of the CMS software framework (CMSSW\footnote{Version 8.0.26})~\cite{CMSSW}, the CMS Remote Analysis Builder (CRAB3)~\cite{CRAB}, and the ressources of the Worldwide LHC Computing Grid (WLCG)~\cite{Grid}, to obtain files with significantly reduced size. The obtained reduced information is stored in the \texttt{ROOT}~\cite{ROOT} file format, and can be used by analysists with self-developed software~\footnote{Usually composed of parts developed in \texttt{C/C++} and \textt{Python}}.\\
+\\
+In this chapter, at first the used data samples are introduced. Thereafter, an overview on MC simulation is given, while the simulated samples used in this analysis are reviewed. After that, the event reconstruction performed on all data sets is explained. A more detailed view is given on the reconstruction and identification of physics objects.\\
+Protons are very complicated objects composed of many different quarks and gluons. The probability to find a distinct parton of a proton in a deep-inelastic-scattering is given by Parton distribution functions (PDFs) and the underlying parton density functions~\cite{PDF}. Hence, an event measured with the CMS detector is not clean, but shows different effects. The interaction between the colliding two partons is described as the hard interaction. The products and quantities of these interactions contain the most interesting physical information. But, due to the structure of the proton, many different lower energetic particles can be produced in interactions between additional partons (multi-parton-interactions). These remnants of the scattering process, together with reconstructed remnants of the protons, are denoted as the underlying event. Interactions between protons in the same bunch crossing are referred to as pileup.
 
 \section{Data sets}
+This analysis uses different data sets based on the pp-collisions of the LHC with a center-of-mass energy of $13\TeV$ in 2016 and recorded with the CMS detector, corresponding to an integrated luminosity of $35.9\fbinv$. Each primary data set (PD), is a composition of events recorded with similar HLT trigger paths. The \texttt{DoubleMuon} and \texttt{DoubleEG} PDs are used in the central part of the analysis for the signal selection, since they contain events with two muons or electrons respectively. \texttt{MET} and \texttt{HT} PDs are used for trigger efficiency measurements, and the \texttt{MuonEG} PD is used to extract a selection relevant for the background prediction.\\
+The different PDs are separated into several single samples for different run eras troughout 2016. The paths of the used samples with the \texttt{03Feb2017} version of reconstruction available via the CMS data set bookkeeping service~\cite{DASBookkeeping} are listed in \refTab{tab:datasets}.
 
+\todo{Tabelle aus Note}
 
-
-\section{Simulation and Software}
-\section{Event Reconstruction}
+\section{Simulation}
+\section{Event and particle reconstruction}
 \subsection{Muons}
 \subsection{Electrons}
 \subsection{Photons}
