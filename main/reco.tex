@@ -29,7 +29,7 @@ In case of the \texttt{TChiZG} SMS, points are generated with NLSP masses in the
 \\
 As mentioned above, the true number of generated MC events $N_{Gen}$ is very high. Thus, together with the measured integrated luminosity $\Lumi$, and a given cross section $\sigma$, a global event weight of
 \begin{equation}
-  w = \frac{\Lumi \cdot \sigma}{N_{Gen}}
+ w = \frac{\Lumi \cdot \sigma}{N_{Gen}}
 \end{equation}
 is obtained.\\
 Additional event weights are applied on the simulation to account for differences in the pileuip distribution. To improve on the \MadGraph modeling of the multiplicity of additonal jets arising from initial state radiation, SUSY SMS MC events are reweighted as a function of $N^{ISR}_{Jet}$ or the transverse momentum of the ISR system, to improve the agreement with observations in data.
@@ -41,12 +41,39 @@ The \POWHEG \ttbar simulation is also reweighted as a function of the transverse
 \todo{write}
 Eigene section? oder nur erwaehnen?
 
-\section{Event and particle reconstruction}
+\section{Event and particle reconstruction and identification}
+To maintain both, a precise and robust particle reconstruction, and flexibility in the physical object identification, particle reconstruction and identification is divided in two major parts. At first, particles and their properties, such as momentum, energy, and trajectory, are reconstructed with the Particle Flow (PF) algorithm~\cite{ParticleFlow} by combining informations from all CMS subdetectors. After that, identification criteria determined by specialized CMS physics objects groups (POGs) are applied, dependent on the choice of the analyst regarding efficiency and misidentification rates.\\
+In the following the PF algorithm is briefly introduced by explaining its main features, and more detailed definitions of the physical objects are given.
+
+\subsection{Particle Flow}
+Particles are reconstructed and categorized by PF in five classes, namely muons, electrons, photons, and both neutral and charged hadrons. The decisions are made based on two major reconstruction steps, finding and reconstructing tracks of charged particles, and separate clustering of ECAL and HCAL entries, to reconstruct the energy deposit of the particles' showers.\\
+The track finding algorithm based on Kalman filtering~\cite{Kalman} iteratively generates seeds for the tracks, builds trajectories, and performs a final fit to determine the particle properties, such as direction and momentum based on information of the inner tracker.
+For particles, such as muons and electrons, additional tracking algorithms are used, to determine a more accurate description of the particle's properties. For muons, additional information of the muon system is used to directly classify three types of non exclusive muon tracks. Standalone muon tracks are reconstructed using only informations of the muon system. If inner tracker tracks can be matched to entries in the muon system, they are called tracker muon track. And in cases where muon system tracks are matched to inner tracks, these are called global muon tracks.
+For electrons additional fitting procedures combining tracker and ECAL informations are used to cope the characteristics of the electromagnetic showers~\cite{GSFTrack}. Therefore, superclusters are built within the ECAL by combining nearby clusters, and the seeds determined with the tracker based pproach described above, together with this ECAL based reconstructed seeds, are used in a common track fit.\\
+The clustering algorithm for the ECAL and HCAL also at first determines cluster seeds based on local energy maxima, and afterwards adds cluster entries fulfilling certain energy criteria to obtain topological clusters.\\
+The following combination and linking of the determined information is motivated by the main characteristics of the particle interactions:\\
+Photons are neutral particles, and therefore they leave no track in the detector, but only interact electromagnetic. Thus, they are stopped in the ECAL by generating electromagnetic showers. They can also undergo electron-positron pair production, resulting also in an electromagnetic shower in the ECAL.\\
+Electrons are charged particles. Hence, their tracks are reconstructable in the tracker, and the energy deposit happens also via electromagnetic shower generation due to Bremsstrahlung in the ECAL. Accordingly, electrons and photons are very similar objects in the reconstruction procedure.\\
+Muons are mainly identified by the informations of the muon system, since no other particles except for very high energetic jets punching through the solenoid and outer HCAL, are capable of reaching the muon chambers. By combining the inner tracks with the entries of the muon chambers, a clear and precise muon identification is maintained.\\
+Charged and neutral hadrons are reconstructed by clusters in the HCAL, and can be differitiated by corresponding matching tracks in the tracker. Part of non-promt photons, \eg coming from meson decays, are also reconstructed as neutral hadrons.\\
+The order of particle reconstruction is based on the accuarcy and precision of the available information. Thus, muons are identified first, followed by electrons and prompt photons. After that, neutral and charged hadrons, and non-prompt photons are identified.\\
+All these informations obtained by the PF algorithm, provide the basis for the final physical object identification applied by the analysts.
+
 \subsection{Muons}
+Muons are required to have a transverse momentum larger than $15\GeV$. And since the muon chambers extend only to a pseudorapidity range of $|\eta|<2.4$, reconstructed muons need to be reconstructed within this region. In addition,
+
+
 \subsection{Electrons}
 \subsection{Photons}
 \subsection{Jets}
 \subsection{Missing transverse momentum}
+
 \section{Definition of observables}
+
+
+\section{Lepton pair selection and quality requirements}
+
+\section{Measurement of the trigger efficiency}
+
 
 \section{Event Selection?}
