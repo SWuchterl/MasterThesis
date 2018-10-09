@@ -1,6 +1,6 @@
 \chapter{Simulation, data processing, and event reconstruction}\label{chap:reco}
 The data sets, based on the proton-proton (pp) collisions and recorded with the CMS detector, are centrally provided in the \texttt{MINIAOD} format~\cite{MiniAOD}. This format contains only parts of the original event and detector information relevant for most of the physics analyzes. An analysis looking for deviations from expectations from the SM is supposed not to be biased while development. Thus, SM and signal Monte-Carlo (MC) simulations are performed and are centrally provided by the CMS collaboration. These are also provided in the \texttt{MINIAOD} format with extended generator informations.\\
-All available data sets, including measured data and simulation, are further processed with the help of the CMS software framework (CMSSW\footnote{Version 8.0.26})~\cite{CMSSW}, the CMS Remote Analysis Builder (CRAB3)~\cite{CRAB}, and the ressources of the Worldwide LHC Computing Grid (WLCG)~\cite{Grid}, to obtain files with significantly reduced size. The obtained reduced information is stored in the \texttt{ROOT}~\cite{ROOT} file format, and can be used by analysists with self-developed software~\footnote{Usually composed of parts developed in \texttt{C/C++} and \textt{Python}}.\\
+All available data sets, including measured data and simulation, are further processed with the help of the CMS software framework (CMSSW\footnote{Version 8.0.26})~\cite{CMSSW}, the CMS Remote Analysis Builder (CRAB3)~\cite{CRAB}, and the ressources of the Worldwide LHC Computing Grid (WLCG)~\cite{Grid}, to obtain files with significantly reduced size. The obtained reduced information is stored in the \texttt{ROOT}~\cite{ROOT} file format, and can be used by analysists with self-developed software~\footnote{Usually composed of parts developed in \texttt{C/C++} and \texttt{Python}}.\\
 \\
 In this chapter, at first the used data samples are introduced. Thereafter, an overview on MC simulation is given, while the simulated samples used in this analysis are reviewed. After that, the event reconstruction performed on all data sets is explained. A more detailed view is given on the reconstruction and identification of physics objects.\\
 Protons are very complicated objects composed of many different quarks and gluons. The probability to find a distinct parton of a proton in a deep-inelastic-scattering is given by Parton distribution functions (PDFs) and the underlying parton density functions~\cite{PDF}. Hence, an event measured with the CMS detector is not clean, but shows different effects. The interaction between the colliding two partons is described as the hard interaction. The products and quantities of these interactions contain the most interesting physical information. But, due to the structure of the proton, many different lower energetic particles can be produced in interactions between additional partons (multi-parton-interactions). These remnants of the scattering process, together with reconstructed remnants of the protons, are denoted as the underlying event. Interactions between protons in the same bunch crossing are referred to as pileup.
@@ -32,7 +32,7 @@ As mentioned above, the true number of generated MC events $N_{Gen}$ is very hig
  w = \frac{\Lumi \cdot \sigma}{N_{Gen}}
 \end{equation}
 is obtained.\\
-Additional event weights are applied on the simulation to account for differences in the pileuip distribution. To improve on the \MadGraph modeling of the multiplicity of additonal jets arising from initial state radiation, SUSY SMS MC events are reweighted as a function of $N^{ISR}_{Jet}$ or the transverse momentum of the ISR system, to improve the agreement with observations in data.
+Additional event weights are applied on the simulation to account for differences in the pileuip distribution. To improve on the \MADGRAPH modeling of the multiplicity of additonal jets arising from initial state radiation, SUSY SMS MC events are reweighted as a function of $N^{ISR}_{Jet}$ or the transverse momentum of the ISR system, to improve the agreement with observations in data.
 The latter is based on studies of the transverse momentum of $\PZ$ events.~\cite{NISRweight}.
 The differences to 1 for the reweighting factor is considered as a systematic uncertainty later on.
 The \POWHEG \ttbar simulation is also reweighted as a function of the transverse momentum of the top system, based on studies in top pair production cross section measurements~\cite{topWeight1,topWeight2,topWeight3,topWeight4} to improve the agreement of the transverse momentum of the top quark with data.
@@ -59,17 +59,109 @@ Charged and neutral hadrons are reconstructed by clusters in the HCAL, and can b
 The order of particle reconstruction is based on the accuarcy and precision of the available information. Thus, muons are identified first, followed by electrons and prompt photons. After that, neutral and charged hadrons, and non-prompt photons are identified.\\
 All these informations obtained by the PF algorithm, provide the basis for the final physical object identification applied by the analysts.
 
+\subsection{Primary vertex}
+The primary vertex is defined by the vertex with the largest sum of transverse momenta determined by vertex reconstruction algorithms~\cite{vertex}, and needs to be reconstructed within a distance of $24\cm$ in z direction, and $2\cm$ in the x-y-plane.
+
+
 \subsection{Muons}
-Muons are required to have a transverse momentum larger than $15\GeV$. And since the muon chambers extend only to a pseudorapidity range of $|\eta|<2.4$, reconstructed muons need to be reconstructed within this region. In addition,
+Muons are required to have a transverse momentum larger than $15\GeV$. And because the muon chambers extend only to a pseudorapidity range of $|\eta|<2.4$, muons need to be reconstructed within this region. In addition, muons have to pass a some quality requirements obtained by the muon POG, yielding a $\approx 98\%$ efficiency~\cite{MuonIDPerf}.\\
+The muon needs to be reconstructed as a PF muon, and either as a global muon or a tracker muon. If it is reconstructed as a global and a tracker muon, the segment compability, which is a measure for the compability between the tracker tracks and an extrapolation to the muon system, has to be larger than $0.303$. In addition, more than $80\%$ of the inner track layers need to be used within the track fit, the normalized goodness of fit ($\chi^2/ndof$) needs to be less than $3$, the match between the standalone muon position and the tracker muon must have $\chi^2<12$, and the maximum $\chi^2$ found by a kink finding algorithm, which tries to seperate the track into two independent tracks, needs to be smaller than $20$. If the muon is reconstructed exclusivley as a tracker muon, only the segment compability needs to be greater than $0.451$, and the other requirements on the track quality are removed.\\
+Besides the identification requirements, conditions on the position of the track relative to the reconstructed primary vertex are imposed. In the transversal direction ($d_{xy}$), muon tracks need to be closer than $0.05\cm$ to the vertex, and in the longitudinal direction ($d_z$), the distance needs to be smaller than $0.1\cm$. A cone dependent isolation is introduced, called "mini isolation", where the cone size in the $\phi-\eta$ plane is calculated relative to the transverse momentum of the particle as follows:
+\begin{equation}
+ R = max\left(0.05,min\left(0.2,\frac{10\GeV}{\pt}\right)\right).
+\end{equation}
+Pile up corrections are also taken into account in the mini isolation calculation.
+The determined energy deposit in the cone around the muon must not exceed $10\%$ of the transverse momentum of the particle.
+
+
+% \begin{table}[h!]
+%  \caption{\todo{caption}}
+%  \label{tab:muonID}
+%  \centering
+%  \begin{tabular}{ll}
+%   variable                                            & requirement \\\hline
+%   global muon                                         & true        \\
+%   fraction of valid inner tracker hits                & $>0.8$      \\
+%   normalized $\chi^2$ of global track                 & $<3$        \\
+%   chi2localposition (track standalone position match) & $<12$       \\
+%   kink finder                                         & $<20$       \\
+%   segment compability                                 & $>0.451$
+%  \end{tabular}
+% \end{table}
+
 
 
 \subsection{Electrons}
+The list of requirements imposed on the electron selection is driven by a symmetric approach between the two lepton selections. The same conditions on the distance to the primary vertex, ($d_{xy}<0.05$, $d_z<0.1$), the maximum pseudorapidity ($|\eta|<2.4$), and transverse momentum ($\pt>15\GeV$) need to be fulfilled. The mini isolation criterion is relaxed to $20\%$.\\
+The identification requirements determined by the EGamma POG~\cite{ElectronID} seperately for electrons reconstructed in the ECAL barrel (EB: $|\eta_{Supercluster}|<1.479$) and endcap (EE: $|\eta_{Supercluster}|>1.479$) region are listed in \refTab{tab:eleID}.
+\begin{table}[h!]
+ \centering
+ \caption{\todo{cap}}
+ \label{tab:eleID}
+ \begin{tabular}{lcc}
+  Variable                       & \multicolumn{2}{c}{Value}              \\\hline
+                                 & EB                        & EE         \\\hline
+  $\sigma_{i\eta i\eta}$         & $<0.00988$                & $<0.0298$  \\
+  $\Delta\eta_{Seed}$            & $<0.00311$                & $<0.00609$ \\
+  $\Delta\phi_{In}$              & $<0.00311$                & $<0.00609$ \\
+  $H/E$                          & $<0.253$                  & $0.0878$   \\
+  relative combined PF isolation & $<0.0695$                 & $<0.0821$  \\
+  $|\frac{1}{E}-\frac{1}{p}|$    & $<0.134$                  & $<0.13$    \\
+  \# missing inner hits          & $\leq1$                   & $\leq1$    \\
+  Photon conversion veto         & true                      & true       \\\hline
+ \end{tabular}
+\end{table}
+Here, $\sigma_{i\eta i\eta}$ is a quantity characterizing the width of the electromagnetic shower shape in the ECAL in the $\eta$ direction. It is calculated as a weighted variance of energy deposits in the full 5x5 pixel ECAL supercluster. Since jets emerging from hadrons have a wider shower in the ECAL than electrons, a differentiation can be achieved. Consistency between the informations of the reconstructed track at the vertex, and the supercluster is required, by setting conditions on $\Delta\eta$, $\Delta\phi$, and the supercluster energy $E$, and track momentum $p$. To further separate electrons from hadrons, more energy should be deposited in the ECAL, rather than in the HCAL ($H/E$). An isolation requirement based on the PF determined isolation, assures that prompt electrons are seperated from electrons coming from \eg jets. Contributions from photons faking electron signatures are suppressed, by imposing a requirement on the number of missing inner hits in the tracker, and an additonal veto for photon conversions to electron-positron pairs determined in an $\chi^2$ fit.
+
 \subsection{Photons}
+Photons need to have a transverse momentum larger than $20\GeV$. Because photons are produced more centrally due to the high masses and short lifetimes in the considered SUSY signal scenarios, only photons reconstructed in the ECAL barrel are considered ($|\eta<1.4442|$). Additional identification criteria determined by the EGamma POG~\cite{photonID} are listed in \refTab{tab:photonID}.
+\begin{table}[h!]
+ \centering
+ \caption{\todo{cap}}
+ \label{tab:photonID}
+ \begin{tabular}{lc}
+  Variable                    & Value                                                \\\hline
+  $\sigma_{i\eta i\eta}$      & $<0.01031$                                           \\
+  $H/E$                       & $<0.0597$                                            \\
+  PF charged hadron isolation & $<1.295$                                             \\
+  PF neutral hadron isolation & $<10.910 + 0.0148 \cdot \pt + 0.000017\cdot (\pt)^2$ \\
+  PF photon isolation         & $<3.630+0.0047\cdot \pt$                             \\\hline
+ \end{tabular}
+\end{table}
+Similar to the requirements on $\sigma_{i\eta i\eta}$ and $H/E$ for the electron selection, these conditions in the photon identification ensure the suppression of selecting hadrons faking the photon signature. Additional different isolation criteria lower the amount of selected photons originating from neutral and charged hadrons, and photons coming from light meson decays.\\
+Requirements on the distance in the $\eta-\phi$ plane between the photon and selected lepton candidates ($\Delta R(\PGg,\ell)>0.3$) significantly reduce contributions from final state radiation (FSR) photons. By requiring that no pixel seed can be assigned to a trajectory between ECAL supercluster and interaction point, a clear differentiation between electrons and photons is achieved.
+
 \subsection{Jets}
+Jets, see \refSec{sec:SM}, are very complicated objects due to the complexity of the hadronization and fragmentation processes. Therefore, a a sophisticated clustering algorithm is needed to measure the energy of jets properly. Jets are clustered with the anti-$k_T$ algorithm~\cite{AntiKT} included in the \FASTJET package~\cite{FastJet1,FastJet2} with a distance paramater of $R=0.4$. The jet momentum is defined as the total sum of the momenta of the constituents of the jet. CHarged hadrons not emerging from the primar vertex are not considered in the clustering. The jet energy is corrected for effects originating from pile up and the detector response, tuned with the help of different data control selections and simulation~\cite{JEC}. Reconstructed jets need to pass a loose ID proposed by the Jet-Missing Transverse Energy POG~\cite{JetID}, need to have a transverse momentum larger than $30\GeV$, and the pseudorapidity must not exceed $|\eta=3|$. In addition, jets overlapping with photon and lepton candidates in a cone with radius $R=0.4$ in the $\eta-\phi$-plane, are removed from the selection to forbid double counting of objects.
+
 \subsection{Missing transverse momentum}
+The missing transverse momentum $\ptmiss$ is one of the most important observables in searches for BSM physics. In typical SUSY models, see \refSec{sec:SUSY}, a significant amount of $\ptmiss$ is expected in the events due to the LSP. In SM processes only neutrinos and mismeasurements of \eg the jet energies lead to missing transverse momentum, because before a collision the transverse momentum of the colliding protons is nearly negligible. Hence, the missing transverse momentum quantifies the imbalance of all reconstructed particles in an event and is defined as
+\begin{equation}
+ \ptmiss= |\ptvecmiss| = |-\sum_{PF objects}\pt_i|.
+\end{equation}
+Jet energy corrections are propagated to the missing transverse momentum vector to reduce a strong bias in events with large hadronic activity.
 
 \section{Definition of observables}
+Throughout this thesis different observables are used to define different phasespace regions, in particular the signal region and control and validation regions important for the background prediction. All these high level variables are defined based on low level quantities such as the $\pt$ of different objects, or are calculated by complex algorithms combining them.
 
+\subsection*{Total hadronic activity $\HT$}
+The hadronic activity $\HT$ is defined as the scalar sum of all jets transverse momenta
+\begin{equation}
+ \HT = \sum_{Jets} |\ptvec_i|
+\end{equation}
+
+\subsection*{The transverse mass $m_{T}$}
+The transverse mass of two objects with transverse momentum $\ptvec^A$ and $\ptvec^B$ yields the transverse mass of the mother particle if both particle emerge from the saame decay. In cases of invisible decay products, the transverse mass is an estimate of the mother mass in the transverse plain, and therefore a good estimate for the total mother particle mass, because the missing momentum can only be determined in the transverse plane. It is defined as
+\begin{equation}
+ m_T\left(\ptvec^{A},\ptvec^B\right) = \sqrt{2|\ptvec^A||\ptvec^B|\left(1-\cos(\Delta\phi)\right)},
+\end{equation}
+where $\Delta\phi$ is the angle between $\ptvec^A$ and $\ptvec^B$ in the transverse plain.
+
+\subsection*{The stransverse mass $\mtTwo$}
+In case of two identical particles, decaying both to one invisible and one visible particle, the stransverse mass $\mtTwo$~\cite{Mt2_1,Mt2_2} is a useful generaliziaton of $m_T$. In this analysis it is calculated to estimate the mass of the NLSP, which decays to an invisible object, the gravitino, and one visible particle, a Z boson or a photon. It is defined as
+\begin{equation}
+ \mtTwo = min_{\ptvec^{\Pgn_1}+\ptvec^{\Pgn_2}=\ptvecmiss}\left(max\left[m_T(\ptvec^{\PZ},\ptvec^{\Pgn_1}),m_T(\ptvec^{\PGg},\ptvec^{\PGn_2})\right]\right)
+\end{equation}
 
 \section{Lepton pair selection and quality requirements}
 
