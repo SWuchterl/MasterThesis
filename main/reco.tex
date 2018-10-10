@@ -5,12 +5,30 @@ All available data sets, including measured data and simulation, are further pro
 In this chapter, at first the used data samples are introduced. Thereafter, an overview on MC simulation is given, while the simulated samples used in this analysis are reviewed. After that, the event reconstruction performed on all data sets is explained. A more detailed view is given on the reconstruction and identification of physics objects.\\
 Protons are very complicated objects composed of many different quarks and gluons. The probability to find a distinct parton of a proton in a deep-inelastic-scattering is given by Parton distribution functions (PDFs) and the underlying parton density functions~\cite{PDF}. Hence, an event measured with the CMS detector is not clean, but shows different effects. The interaction between the colliding two partons is described as the hard interaction. The products and quantities of these interactions contain the most interesting physical information. But, due to the structure of the proton, many different lower energetic particles can be produced in interactions between additional partons (multi-parton-interactions). These remnants of the scattering process, together with reconstructed remnants of the protons, are denoted as the underlying event. Interactions between protons in the same bunch crossing are referred to as pileup.
 
-\section{Data sets}
-This analysis uses different data sets based on the pp-collisions of the LHC with a center-of-mass energy of $13\TeV$ in 2016 and recorded with the CMS detector, corresponding to an integrated luminosity of $35.9\fbinv$. Each primary data set (PD), is a composition of events recorded with similar HLT trigger paths. The \texttt{DoubleMuon} and \texttt{DoubleEG} PDs are used in the central part of the analysis for the signal selection, since they contain events with two muons or electrons respectively. \texttt{MET} and \texttt{HT} PDs are used for trigger efficiency measurements, and the \texttt{MuonEG} PD is used to extract a selection relevant for the background prediction.\\
+\section{Data sets}\label{sec:datasets}
+This analysis uses different data sets based on the pp-collisions of the LHC with a center-of-mass energy of $13\TeV$ in 2016 and recorded with the CMS detector, corresponding to an integrated luminosity of $35.9\fbinv$. Each primary data set (PD), is a composition of events recorded with similar HLT trigger paths. The \texttt{DoubleMuon} and \texttt{DoubleEG} PDs are used in the central part of the analysis for the signal selection, since they contain events with two muons or electrons respectively. \texttt{MET} and \texttt{HT} PDs are used for trigger efficiency measurements, and the \texttt{MuonEG} PD is used to extract a selection relevant for the background prediction. For a list of used triggers see \refSec{sec:triggerEff}.\\
 The different PDs are separated into several single samples for different run eras troughout 2016. The paths of the used samples with the \texttt{03Feb2017} version of reconstruction available via the CMS data set bookkeeping service (DBS)~\cite{DASBookkeeping} are listed in \refTab{tab:datasets}.
 \todo{refs zu chaptern}
 
-\todo{Tabelle aus Note}
+\begin{table}[htb]
+ \centering
+ \caption{Data sets used in the analysis.}
+ \label{tab:datasets}
+ \begin{tabular}{l|l}
+  \hline
+  \multirow{5}{*}{PDs}       & DoubleEG               \\
+                             & DoubleMu               \\
+                             & MuonEG                 \\
+                             & HT                     \\
+                             & MET                    \\\hline\hline
+  \multirow{ 4}{*}{DBS path} & \verb|/PD/Run2016B-03Feb2017_ver2-v2/MINIAOD| \\
+                             & \verb|/PD/Run2016(C-G)-03Feb2017-v1/MINIAOD| \\
+                             & \verb|/PD/Run2016H-03Feb2017_ver2-v1/MINIAOD| \\
+                             & \verb|/PD/Run2016H-03Feb2017_ver3-v1/MINIAOD| \\
+  \hline
+ \end{tabular}
+\end{table}
+
 
 \section{Simulation}
 The simulation process for SM background and SUSY signal samples can be devided in three major steps, which are very similar for both cases. At first, for a specific process events are simulated with an event generator. The event generators used for the generation of the samples considered in this analysis are \MADGRAPH5 in leading order (LO) configuration~\cite{Madgraph1,Madgraph2,Madgraph3}, \MADGRAPH\_\MCATNLO in next-to-leading order (NLO)~\cite{Madgraph1,AMCATNLO}, \PYTHIA~\cite{Pythia} for both cases of accuracy, or \POWHEG~\cite{Powheg1,Powheg2}. Matrix elements for the contributing diagrams are computed, and via convolving with PDFs, cross sections are calculated. These cross sections later can be used to rescale the MC simulation to a given integrated luminosity. Thus, the simulation can be performed with very high statistics and can still be compared to measured data.\\
@@ -18,6 +36,35 @@ Depending on the choice of the chosen generator, a separate generator for the si
 The big next step, which is the most time and ressource consuming part, is the simulation of the detector response. A full model of the CMS detector was contructed with the \GEANTfour~\cite{Geant} package. Hence, it allows a precise simulation of the detector response for the events generated with the procedure described above. In the \GEANTfour package, material and particle properties, detector effects, and decay structures are considered in the simulation process. Since this procedure is very time consuming, but leads to a high accuracy, a different method is chosen for processes, whose description is limited by different aspects. So for the generation of SUSY samples, where theoretical uncertainties dominate, the CMS \textsc{FASTSIM} packages is used~\cite{FastSim}. It is based on a siplified geometry and parametrizations, yielding a reduction in runtime of the factor $\approx100$. If the "FullSim" and "FastSim" performances are compared~\cite{FastSimQuality}, a agreement within $\approx10\%$ is observed.\\
 \\
 All MC simulated processes used in this analysis are listed in \refTab{tab:MCsamples} together with their corresponding cross sections used to rescale the samples later on. The DBS paths are given in the appendix.\todo{ref}\\
+
+\begin{table}[htb]
+ \centering
+ \caption{All SM model simulated samples used in the analysis with their cross sections. For their corresponding accuracy refer to the text. Additional k-factors to obtain NNLO cross sections for the $\PZ\PZ$ samples are applied per event in dependence of the $\pt$ of the diboson system. All samples are of the \texttt{MINIAODSIM} format.}
+ % \scriptsize
+ \label{tab:MCsamples}
+ \begin{tabular}[width=\textwidth]{ll|ll}
+  \hline
+  \normalsize{process}                             & \normalsize{$\sigma\,[\mathrm{pb}]$} & \normalsize{process}                         & \normalsize{$\sigma\,[\mathrm{pb}]$} \\\hline
+  \scriptsize{\textbf{ttbar}}                      &                                      & \scriptsize{\textbf{diboson}}                &                                      \\
+  $\ttbar\to\ell^{+}\PGn\cPqb+\ell^{-}\PAGn\cPaqb$ & $87.31$                              & $\PZ\PGg\to2\ell\PGg$ ($\pt^{\PGg}<130\GeV$) & $124.936$                            \\
+  \scriptsize{\textbf{ttbarGamma}}                 &                                      & $\PZ\PGg\to2\ell\PGg$ ($\pt^{\PGg}>130\GeV$) & $0.1488$                             \\
+  $\ttbar\PGg\to2\ell2\PGn2\cPqb\PGg$              & $1.679$                              & $\PW\PZ$                                     & $4.9125$                             \\
+  $\ttbar\PGg\to4\PQq2\cPqb\PGg$                   & $3.482$                              & $\PZ\PZ\to2\ell2\PGn$                        & $0.5644\cdot k(\pt^{ZZ})$            \\
+  $\ttbar\PGg\to\ell\PGn2\cPqb2\PQq\PGg$           & $2.509$                              & $\PZ\PZ\to2\ell2\PGn$                        & $0.5644\cdot k(\pt^{ZZ})$            \\
+  \scriptsize{\textbf{DrellYan}}                   &                                      & $\PW\PW\to2\ell2\PGn$                        & $12.178$                             \\
+  $\PZ/\PGg^{*}\to2\ell$                           & $5765.4$                             & $\PW\Pg\to\ell\PGn\PGg$                      & $489$                                \\
+  \textbf{single top}                              &                                      & \textbf{W jets}                              &                                      \\
+  $\PWp\to\cPqt\cPaqb$                             & $3.36$                               & $\PW+jets$                                   & $61526.7$                            \\
+  $\cPq\cPaqb\to\cPq^{'}\cPaqt$                    & $80.95$                              & \textbf{triboson}                            &                                      \\
+  $\cPq\cPqb\to\cPq^{'}\cPqt$                      & $136.02$                             & $\PW\PW\PGg$                                 & $0.2147$                             \\
+  $\cPaqb\to\PWp\cPaqt$                            & $11.7$                               & $\PW\PZ\PGg$                                 & $0.04123$                            \\
+  $\cPqb\to\PWm\cPqt$                              & $11.7$                               &                                              &                                      \\
+  \hline
+ \end{tabular}
+\end{table}
+
+
+
 The Drell-Yan (DY) $\PZ/\PGg$ process, as well as the diboson $\PZ\PGg$ and $\PW\PGg$ processes, and triboson production of $\PW\PW\PGg$ and $\PW\PZ\PGg$ are generated with \MADGRAPH\_\MCATNLO in NLO. Top pair production in association with a photon ($\ttbar\PGg$) and the production of a $\PW$ boson in association with jets are also simulated using the \MADGRAPH\_\MCATNLO generator in NLO. Top pair production with leptonic decays ($\ttbar\to 2\ell 2\PGn 2\cPqb$), diboson production of $\PW\PZ$, $\PZ\PZ$, $\PW\PW$, and all singletop production processes are generated using \POWHEG.
 The diboson $\PW\PW$ and $\PW\PGg$ production, the production of $\PW+jets$, triboson $\PW\PW\PGg$ and $\PW\PZ\PGg$ production, and all singletop production channels are grouped together and denoted as "other" in the following.
 Next-to-leading order and next-to-next-to-leading order (NNLO) cross sections~\cite{xsec1,xsec2,xsec3,xsec4,xsec5,xsec6,xsec7,xsec8,xsec9} are used for the normaliziation of the samples.\\
@@ -151,21 +198,44 @@ The hadronic activity $\HT$ is defined as the scalar sum of all jets transverse 
 \end{equation}
 
 \subsection*{The transverse mass $m_{T}$}
-The transverse mass of two objects with transverse momentum $\ptvec^A$ and $\ptvec^B$ yields the transverse mass of the mother particle if both particle emerge from the saame decay. In cases of invisible decay products, the transverse mass is an estimate of the mother mass in the transverse plain, and therefore a good estimate for the total mother particle mass, because the missing momentum can only be determined in the transverse plane. It is defined as
+The transverse mass of two objects with transverse momentum $\ptvec^A$ and $\ptvec^B$ yields the transverse mass of the mother particle if both particle emerge from the saame decay. In cases of invisible decay products, the transverse mass is an estimate of the mother mass in the transverse plane, and therefore a good estimate for the total mother particle mass, because the missing momentum can only be determined in the transverse plane. It is defined as
 \begin{equation}
  m_T\left(\ptvec^{A},\ptvec^B\right) = \sqrt{2|\ptvec^A||\ptvec^B|\left(1-\cos(\Delta\phi)\right)},
 \end{equation}
-where $\Delta\phi$ is the angle between $\ptvec^A$ and $\ptvec^B$ in the transverse plain.
+where $\Delta\phi$ is the angle between $\ptvec^A$ and $\ptvec^B$ in the transverse plane.
 
 \subsection*{The stransverse mass $\mtTwo$}
 In case of two identical particles, decaying both to one invisible and one visible particle, the stransverse mass $\mtTwo$~\cite{Mt2_1,Mt2_2} is a useful generaliziaton of $m_T$. In this analysis it is calculated to estimate the mass of the NLSP, which decays to an invisible object, the gravitino, and one visible particle, a Z boson or a photon. It is defined as
 \begin{equation}
- \mtTwo = min_{\ptvec^{\Pgn_1}+\ptvec^{\Pgn_2}=\ptvecmiss}\left(max\left[m_T(\ptvec^{\PZ},\ptvec^{\Pgn_1}),m_T(\ptvec^{\PGg},\ptvec^{\PGn_2})\right]\right)
+ \mtTwo = min_{\ptvec^{\Pgn_1}+\ptvec^{\Pgn_2}=\ptvecmiss}\left(max\left[m_T(\ptvec^{\PZ},\ptvec^{\Pgn_1}),m_T(\ptvec^{\PGg},\ptvec^{\PGn_2})\right]\right),
 \end{equation}
-
+where the final value is determined via minimization as indicated by $min$ in the equation. Descriptively, the algorithm tries to estimate the transverse mass of the mother particle under the assumption, that the $\ptmiss$ is composited of exactly two identical particles each from one decay branch.\\
+For decays of the NLSP in all signal models, the $\mtTwo$ distribution has a cut-off at the mass of the lightest neutralino, while for all SM backgrounds $\mtTwo$ yields much lower values in comparison to the high SUSY massses.
+\todo{Plot einfuegen zur verdeutlichung}
 \section{Lepton pair selection and quality requirements}
+In the analysis different datasets triggered with different dilepton triggers are combined, see \refSec{sec:datasets}. Therefore it is possible, that an event is contained in more than one dataset. Hence, it is assured with the following procedure, that no event is doublecounted. At first, all leptons per event are sorted by their transverse momenta. Thus, the leading and subleading lepton\footnote{called trailing from now on}, are identified. Their flavor combination then determines the classification of the event as "dielectron", "dimuon", or "electron-muon". For instance, an dielectron event is classified as such, if there a at least two electrons in the event, the event originates from the \texttt{DoubleEG} sample, both the leading and the trailing lepton are electrons, and it is triggered by at least one of the dielectron triggers. This set of conditions ensures the exclusivity of the three selections.\\
+In addition, there are some requirements imposed on the dilepton system. The trailing and leading lepton need to be seperated at least by a distance of $\Delta R=0.1$ in the transvse plane, and the invariant dilepton mass $m_{\ell\ell}$ should be larger than $50\GeV$. The first requirement provides a cleaning between the lepton collections, and ensures, that no lepton is counted twice, while the latter threshold is introduced, because the simulation of the Drell-Yan simulation does not include events with lower dilepton masses~\footnote{Events with lower invariant dilepton masses are not of interest for this analysis, since in the following only leptons originating from a Z boson decay are selected, resulting in an invariant dilepton mass around the Z boson mass of $\approx91\GeV$.}.\\
+Hereafter, the dielectron and dimuon seelctions are combined to a dilepton selection to increase the statistics in the validation, and especially in the signal region.\\
+\\
+Also, several event quality filters are applied to reject contaminated events. The list of applied filters is recommended by the POGs~\cite{MetFilter}. It reads:
+\begin{itemize}
+ \item \texttt{HBHE noise filter}
+ \item \texttt{HBHE noise iso filter}
+ \item \texttt{ECAL TP filter}
+ \item \texttt{eeBadSCFilter}
+ \item \texttt{bad PF muon filter}
+ \item \texttt{bad charged hadron filter}
+ \item \texttt{bad muon filter}
+ \item \texttt{beam halo filter}
+\end{itemize}
+The rejected events consist mainly of events with faulty detector signals, cosmic muons, or muons produced in scattering processes with the beam halo.
 
-\section{Measurement of the trigger efficiency}
+
+\section{Measurement of the trigger efficiency}\label{sec:triggerEff}
 
 
-\section{Event Selection?}
+\section{Event Selection}
+\subsection{Preselection}
+\subsection{Control regions}
+\subsection{Validation region}
+\subsection{Signal region}
