@@ -36,16 +36,19 @@ The data used in this thesis was recorded by the CMS detector~\cite{CMS,CMSTDR} 
  \centering
  \includegraphics[width=0.99\textwidth]{figures/general/CMS}
  % \includegraphics[width=0.49\textwidth]{figures/general/CMS_eta.png}
- \caption{A cross section picture of the open CMS detector~\cite{CMSPicture}. The important parts are labeled.}
+ \caption{A cross section picture of the open CMS detector~\cite{CMSPicture}. The important parts are labeled.\todo{Fixen oder Bild ersetzen!}}
  \label{fig:CMS}
 \end{figure}
-\todo{RICHTIG machen oder anders BILD}
 The coordinate system used to describe the detector is originated at the interaction point, and the z-axis points in the direction of the beam axis. The y-axis point upwards, while the x-axis points to center of the LHC ring. To exploit the underlying symmetry of the detector, a transformation to an angular coordinate system is chosen. The azimuthal angle $\phi$ is measured in the x-y plane, while $\phi=0$ equals the direction of the x-axis, and $\phi$ ranges from $-\pi$ to $\pi$. The polar angle $\theta$ is measured from the positive z-axis, and the pseudorapidity $\eta$ can be introduced
 \begin{equation}
  \eta=-\ln\left(\tan\left(\frac{\theta}{2}\right)\right).
 \end{equation}
 The advantage in using $\eta$ instead of $\theta$ is, that differences in $\theta$ are invariant under Lorentz-boosts along the beam axis.\\
-\todo{PT einfuehren}
+In proton proton collisions the initial total momentum of the colliding partons is unknown since they carry only a fraction of the proton energy, but the transverse momentum in the initial state is negligible. Therefore, the transve momentum
+\begin{equation}
+  \pt=|\ptvec|=|\vec{p}\cdot\sin(\theta)|
+\end{equation}
+is a widely used quantity.
 Most of the subdetectors are divided in a low $\eta$ part (barrel), and two high $\eta$ parts (endcaps). Each of the subdetectors is designed to measure special properties of different particle types, to ensure both a good particle distinction and identification, and precise measurements of energy, momenta, and trajectories.
 
 

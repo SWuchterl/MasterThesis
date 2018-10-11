@@ -85,8 +85,7 @@ The differences to 1 for the reweighting factor is considered as a systematic un
 The \POWHEG \ttbar simulation is also reweighted as a function of the transverse momentum of the top system, based on studies in top pair production cross section measurements~\cite{topWeight1,topWeight2,topWeight3,topWeight4} to improve the agreement of the transverse momentum of the top quark with data.
 
 \subsection{Overlap Removal}
-\todo{write}
-Eigene section? oder nur erwaehnen?
+Because samples are used for processes, such as top pair production and Drell-Yan, for the nominal process and additional photon production in the hard interaction, there exists an overlap between those simulated samples. This is the case, since the photon production in the hard interaction is physically the same, as \eg photon radiation in the initial state. Hence, this overlap needs to be removed. Therefore, events that show a signature like the one simulated in the exclusive hard photon interaction samples, are removed on generator level from the nominal MC samples. So after the apllying of the removal procedure both samples can be added, and double counting of diagram contributions is rejected.
 
 \section{Event and particle reconstruction and identification}
 To maintain both, a precise and robust particle reconstruction, and flexibility in the physical object identification, particle reconstruction and identification is divided in two major parts. At first, particles and their properties, such as momentum, energy, and trajectory, are reconstructed with the Particle Flow (PF) algorithm~\cite{ParticleFlow} by combining informations from all CMS subdetectors. After that, identification criteria determined by specialized CMS physics objects groups (POGs) are applied, dependent on the choice of the analyst regarding efficiency and misidentification rates.\\
@@ -212,7 +211,7 @@ In case of two identical particles, decaying both to one invisible and one visib
 where the final value is determined via minimization as indicated by $min$ in the equation. Descriptively, the algorithm tries to estimate the transverse mass of the mother particle under the assumption, that the $\ptmiss$ is composited of exactly two identical particles each from one decay branch.\\
 For decays of the NLSP in all signal models, the $\mtTwo$ distribution has a cut-off at the mass of the lightest neutralino, while for all SM backgrounds $\mtTwo$ yields much lower values in comparison to the high SUSY massses.
 \todo{Plot einfuegen zur verdeutlichung}
-\section{Lepton pair selection and quality requirements}
+\section{Lepton pair selection and quality requirements}{sec:lepPair}
 In the analysis different datasets triggered with different dilepton triggers are combined, see \refSec{sec:datasets}. Therefore it is possible, that an event is contained in more than one dataset. Hence, it is assured with the following procedure, that no event is doublecounted. At first, all leptons per event are sorted by their transverse momenta. Thus, the leading and subleading lepton\footnote{called trailing from now on}, are identified. Their flavor combination then determines the classification of the event as "dielectron", "dimuon", or "electron-muon". For instance, an dielectron event is classified as such, if there a at least two electrons in the event, the event originates from the \texttt{DoubleEG} sample, both the leading and the trailing lepton are electrons, and it is triggered by at least one of the dielectron triggers. This set of conditions ensures the exclusivity of the three selections.\\
 In addition, there are some requirements imposed on the dilepton system. The trailing and leading lepton need to be seperated at least by a distance of $\Delta R=0.1$ in the transvse plane, and the invariant dilepton mass $m_{\ell\ell}$ should be larger than $50\GeV$. The first requirement provides a cleaning between the lepton collections, and ensures, that no lepton is counted twice, while the latter threshold is introduced, because the simulation of the Drell-Yan simulation does not include events with lower dilepton masses~\footnote{Events with lower invariant dilepton masses are not of interest for this analysis, since in the following only leptons originating from a Z boson decay are selected, resulting in an invariant dilepton mass around the Z boson mass of $\approx91\GeV$.}.\\
 Hereafter, the dielectron and dimuon seelctions are combined to a dilepton selection to increase the statistics in the validation, and especially in the signal region.\\
@@ -232,66 +231,38 @@ The rejected events consist mainly of events with faulty detector signals, cosmi
 
 
 \section{Used triggers and trigger efficiency measurement}\label{sec:triggerEff}
-As already pointed out in \refSec{sec:datasets}, the events are recorded with three lepton combinations of various dilepton triggers. A list of all HLT trigger paths is given in \refTab{}
-
-\begin{table}[H]
- % \begin{table*}[htb]
+As already pointed out in \refSec{sec:datasets}, the events are recorded with various dilepton triggers. For each dilepton combination ($\Pe\Pe,\Pgm\Pgm,\Pe\Pgm$) multiple triggers are used because of the changing instantaneous luminosity over the 2016 run period different triggers were active at different times. The main trigger pathts are isolated dilepton triggers, while non isolated trigger paths are added to increase the efficiency at boosted topologies of the dilepton system. A list of all used HLT trigger paths is given in the appendix in \refTab{tab:}. While the same flavor dilepton triggers ($\Pe\Pe,\Pgm\Pgm$) are used as signal triggers, the different flavor triggers ($\Pe\Pgm$) are used to select events needed for the background prediction of the top pair production ($\ttbar(\PGg)$) background. This will be explained more in detail in \refSec{sec:ttbar}. The dilepton triggers alltogether have transverse momentum thresholds for the dileptons of around $17-33\GeV$ for the leading lepton, and $8-33\GeV$ for the trailing one. Additional triggers with hadronic activity ($\HT$) or $\ptmiss$ thresholds are relevant for the trigger effiency measurement, which will be presented in the following.
+\subsection{Trigger efficiency measurement}
+A trigger efficiency curve is characterized by a inefficient part, a more or less sharp transition ("Turn On") to the efficient part ideally located at the nominal threshold of the trigger path, and a flat efficient part called plateau.\\
+Hence, measuring the trigger efficiency is essential to obtain appropriate transverse momentum requirements for the dilepton system. Furthermore, in the signal MC simulation ussing the \FASTSIM package no trigger simulation is performed like for the SM background samples. Therefore, the efficiency needs to be measured also on simulation, such that the signal simulation can be scaled accordingly. In addition, the SM simulation samples will be weighted with a further event factor, correcting differences in the effiency between data and simulation.\\
+As indicated, not a single signal trigger or a single trigger for the control region selection is used, but a logical \texttt{OR} combination of all dilepton triggers with same flavor requirements is used. Thus, for an event only one of the used triggers has to be fired to be selected for the key analysis. Because the total number of produced events, including triggered and non triggered events, in CMS is not available apparantly, for data\footnote{For simulation these informations are available. This is used for further checks to validate the procedure of effiency measurement.}, the combined trigger effiency $\varepsilon$ is measured using a baseline trigger. Thus, it is defined as the number of events passing baseline and signal trigger, divided be the number of events passing only the baseline trigger:
+\begin{equation}
+ \varepsilon=\frac{\#(baseline \wedge signal)}{baseline}
+\end{equation}
+As a consequence, the contribution of the baseline trigger cancels, and the pure signal trigger effiency is maintained. As baseline triggers, as mentioned above, a combination of various triggers with $\HT$ thresholds is used. These thresholds range from $200-800\GeV$. Therefore, the measurement is not performed on the dilepton data streams, but on the $\HT$ datasets. The event selection consists basically of the lepton pair selection introduced in \refSec{sec:lepPair} with an additional $\HT>200\GeV$ requirement to ensure, that the baseline triggers are fully efficient. An additional matching between the selected leptons and the trigger objects responsible for the firing of the trigger is performed. Resulting efficiency curves for all three dilepton combinations measured both on data and simulation are shown in \refFig{fig:triggEff} against the $\pt$ of the trailing lepton. The statistical uncertainties of the individual bins are calculated using $95\%$ confidence level (CL) Clopper-Peason intervals~\cite{ClopperPearson}. The measurements suffer mainly from statistics on data, while the statistics of the simulation is very high as expected. The electron-muon channel is affected the most by this effect. However, the efficiency curves show the structure of multiple Turn Ons, as it is expected from a combination of triggers with very different ranges of thresholds. As indicated by the dotted lines in the plots, the lepton $\pt$ cut was determined to be $20\GeV$ for the trailing lepton, and $25\GeV$ for the leading one. Although the dielectron and electron-muon triggers are not yet fully efficient at this threshold as it is the case for the dimuon trigger, this requirement is imposed also on the other to selections in order to obtain a symmetric lepton selection. The mean plateau efficiencies are shown as a gray band with its statistical uncertainty in the plots. The mean efficiency is also measured on simulation, and all values are given in \refTab{tab:triggEff}.
+\begin{figure}[htb]
  \centering
- \caption{\todo{cap}Trigger paths used in the analysis.}
- \normalsize
- \label{tab:trigger}
- \begin{tabular}[width=\textwidth]{l}
-  \hline
-  \normalsize{trigger path}                   \\\hline
-  \normalsize{\textbf{dielectron trigger}}    \\
-  \verb|HLT_Ele17_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|                      \\
-  \verb|HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|                      \\
-  \verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL_v*|                      \\
-  \verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL_MW_v*|                      \\
-  \normalsize{\textbf{dimuon trigger}}        \\
-  \verb|HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_v*|                      \\
-  \verb|HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_v*|                     \\
-  \verb|HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v*|                     \\
-  \verb|HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*|                     \\
-  \verb|HLT_TkMu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*|                     \\
-  \verb|HLT_Mu27_TkMu8_v*|                     \\
-  \verb|HLT_Mu30_TkMu11_v*|                     \\
-  \normalsize{\textbf{electron-muon trigger}} \\
-  \verb|HLT_Mu17_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_v*|                     \\
-  \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_v*|                     \\
-  \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_DZ_v*|                     \\
-  \verb|HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_v*|                     \\
-  \verb|HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|                     \\
-  \verb|HLT_Mu8_TrkIsoVVL_Ele17_CaloIdL_TrackIdL_IsoVL_v*|                     \\
-  \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*|                     \\
-  \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v*|                     \\
-  \verb|HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*|                     \\
-  \verb|HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v*|                     \\
-  \verb|HLT_Mu30_Ele30_CaloIdL_GsfTrkIdVL_v*|                     \\
-  \verb|HLT_Mu33_Ele33_CaloIdL_GsfTrkIdVL_v*|                     \\
-  \normalsize{\textbf{HT trigger}}            \\
-  \verb|HLT_PFHT200_v*|                     \\
-  \verb|HLT_PFHT250_v*|                     \\
-  \verb|HLT_PFHT300_v*|                     \\
-  \verb|HLT_PFHT350_v*|                     \\
-  \verb|HLT_PFHT400_v*|                     \\
-  \verb|HLT_PFHT475_v*|                     \\
-  \verb|HLT_PFHT600_v*|                     \\
-  \verb|HLT_PFHT650_v*|                     \\
-  \verb|HLT_PFHT800_v*|                     \\
-  \normalsize{\textbf{MET trigger}}           \\
-  \verb|HLT_PFMET110_PFMHT110_IDTight_v*|                     \\
-  \verb|HLT_PFMET120_PFMHT120_IDTight_v*|                     \\
-  \verb|HLT_PFMET170_NoiseCleaned_v   *|                     \\
-  \verb|HLT_PFMET170_HBHECleaned_v*|                     \\
-  \verb|HLT_PFMET170_JetIdCleaned_v*|                     \\
-  \verb|HLT_PFMET170_NotCleaned_v*|                     \\
-  \verb|HLT_PFMET300_v*|                     \\
-  \verb|HLT_PFMET400_v*|                     \\
-  \verb|HLT_PFMET500_v*|                     \\
-  \verb|HLT_PFMET600_v*|                     \\
-  \hline
+ \includegraphics[width=\pairwidth]{figures/triggerStudies/efficiency_dataHT_trigDilep_EE_pt2}
+ \includegraphics[width=\pairwidth]{figures/triggerStudies/efficiency_dataHT_trigDilep_EM_pt2}
+ \includegraphics[width=\pairwidth]{figures/triggerStudies/efficiency_dataHT_trigDilep_MM_pt2}
+ \caption{\todo{cap}cap}
+ \label{fig:triggEff}
+\end{figure}
+
+
+\begin{table}[htb]
+ \centering
+ \caption{My caption}
+ \label{tab:triggEff}
+ \begin{tabular}{lllll}
+                   & \multicolumn{2}{c}{Data} & \multicolumn{2}{c}{Simulation}                                   \\\hline
+  baseline trigger & $\HT$                       & $\ptmiss$                            & $\HT$                        & $\ptmiss$ \\\hline
+  $\Pe\Pe$         & $96.0^{+0.2}_{-0.2}\%$   & $93.7^{+0.3}_{-0.3}\%$         & $96.60^{+0.01}_{-0.01}\%$ & $96.79^{+0.02}_{-0.02}\%$   \\
+  $\Pe\Pgm$        & $86.6^{+0.5}_{-0.5}\%$   & $86.7^{+0.3}_{-0.3}\%$         & $91.85^{+0.01}_{-0.01}\%$ & $91.34^{+0.05}_{-0.05}\%$   \\
+  $\Pgm\Pgm$       & $92.5^{+0.3}_{-0.3}\%$   & $93.9^{+0.3}_{-0.3}\%$         & $91.85^{+0.01}_{-0.01}\%$ & $97.62^{+0.02}_{-0.02}\%$   \\\hline
  \end{tabular}
 \end{table}
 
-Measuring of the trigger efficiency is essential to obtain appropriate transverse momentum requirements for the dilepton system.
+
+In addition, in the ratio plots beneath the efficiency curves, the agreement between rescaled simulation with the factor $\varepsilon'=\varepsilon_{Data}/\varepsilon_{MC}$ and data is shown. It can be concluded, that the efficiency measurement works fine for both data and simulation, and the efficiencies agree within the systematic uncertainties, which is determined to be $3\%$ to account for the differences between simulation and data. This is also shown as the red uncertainty band in the plots.\\
+As an additional independent check, the whole trigger efficiency measurement was performed on $\ptmiss$ datasets with $\ptmiss$ baseline triggers with thresholds of $110-600\GeV$. This selected phasespace region should be more or less orthogonal the the $\HT$ selection, and is much closer to the final signal region, since the signal regeion selection will contain a $\ptmiss$ threshold, see \refSec{sec:SRSelection}. As can be read from \refTab{tab:triggEff}, the values obtained from this method are also in agreement with the efficiencies measured using the $\HT$ selection.
