@@ -231,4 +231,67 @@ Also, several event quality filters are applied to reject contaminated events. T
 The rejected events consist mainly of events with faulty detector signals, cosmic muons, or muons produced in scattering processes with the beam halo.
 
 
-\section{Measurement of the trigger efficiency}\label{sec:triggerEff}
+\section{Used triggers and trigger efficiency measurement}\label{sec:triggerEff}
+As already pointed out in \refSec{sec:datasets}, the events are recorded with three lepton combinations of various dilepton triggers. A list of all HLT trigger paths is given in \refTab{}
+
+\begin{table}[H]
+ % \begin{table*}[htb]
+ \centering
+ \caption{\todo{cap}Trigger paths used in the analysis.}
+ \normalsize
+ \label{tab:trigger}
+ \begin{tabular}[width=\textwidth]{l}
+  \hline
+  \normalsize{trigger path}                   \\\hline
+  \normalsize{\textbf{dielectron trigger}}    \\
+  \verb|HLT_Ele17_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|                      \\
+  \verb|HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|                      \\
+  \verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL_v*|                      \\
+  \verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL_MW_v*|                      \\
+  \normalsize{\textbf{dimuon trigger}}        \\
+  \verb|HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_v*|                      \\
+  \verb|HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_v*|                     \\
+  \verb|HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v*|                     \\
+  \verb|HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*|                     \\
+  \verb|HLT_TkMu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*|                     \\
+  \verb|HLT_Mu27_TkMu8_v*|                     \\
+  \verb|HLT_Mu30_TkMu11_v*|                     \\
+  \normalsize{\textbf{electron-muon trigger}} \\
+  \verb|HLT_Mu17_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_v*|                     \\
+  \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_v*|                     \\
+  \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_DZ_v*|                     \\
+  \verb|HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_v*|                     \\
+  \verb|HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|                     \\
+  \verb|HLT_Mu8_TrkIsoVVL_Ele17_CaloIdL_TrackIdL_IsoVL_v*|                     \\
+  \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*|                     \\
+  \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v*|                     \\
+  \verb|HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*|                     \\
+  \verb|HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v*|                     \\
+  \verb|HLT_Mu30_Ele30_CaloIdL_GsfTrkIdVL_v*|                     \\
+  \verb|HLT_Mu33_Ele33_CaloIdL_GsfTrkIdVL_v*|                     \\
+  \normalsize{\textbf{HT trigger}}            \\
+  \verb|HLT_PFHT200_v*|                     \\
+  \verb|HLT_PFHT250_v*|                     \\
+  \verb|HLT_PFHT300_v*|                     \\
+  \verb|HLT_PFHT350_v*|                     \\
+  \verb|HLT_PFHT400_v*|                     \\
+  \verb|HLT_PFHT475_v*|                     \\
+  \verb|HLT_PFHT600_v*|                     \\
+  \verb|HLT_PFHT650_v*|                     \\
+  \verb|HLT_PFHT800_v*|                     \\
+  \normalsize{\textbf{MET trigger}}           \\
+  \verb|HLT_PFMET110_PFMHT110_IDTight_v*|                     \\
+  \verb|HLT_PFMET120_PFMHT120_IDTight_v*|                     \\
+  \verb|HLT_PFMET170_NoiseCleaned_v   *|                     \\
+  \verb|HLT_PFMET170_HBHECleaned_v*|                     \\
+  \verb|HLT_PFMET170_JetIdCleaned_v*|                     \\
+  \verb|HLT_PFMET170_NotCleaned_v*|                     \\
+  \verb|HLT_PFMET300_v*|                     \\
+  \verb|HLT_PFMET400_v*|                     \\
+  \verb|HLT_PFMET500_v*|                     \\
+  \verb|HLT_PFMET600_v*|                     \\
+  \hline
+ \end{tabular}
+\end{table}
+
+Measuring of the trigger efficiency is essential to obtain appropriate transverse momentum requirements for the dilepton system.

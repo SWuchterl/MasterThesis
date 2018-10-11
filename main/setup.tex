@@ -5,7 +5,7 @@
 
 %%%%%%%%%%%%%%%  Title page %%%%%%%%%%%%%%%%%%%%%%%%
 %\documentclass[11pt,twoside, openright, a4paper, pdftex, tdr]{new-cms-tdr}
-\documentclass[12pt,twoside, openright, a4paper, pdftex, tdr,chapterprefix=false]{new-cms-tdr}
+\documentclass[11pt,twoside, openright, a4paper, pdftex, tdr,chapterprefix=false]{new-cms-tdr}
 %\usepackage[left=29mm,right=25mm,top=25mm,bottom=14mm,includeheadfoot]{geometry}%includehead
 % \usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm,includeheadfoot]{geometry}%includehead
 \usepackage[left=3cm,right=2cm,top=3cm,bottom=3cm,includeheadfoot]{geometry}%includehead
@@ -73,6 +73,13 @@
 \definecolor{darkblue}{rgb}{0,0,0.5}
 
 \usepackage{multirow}
+
+\usepackage{minitoc}
+\dominitoc[n]
+\setcounter{minitocdepth}{1}
+
+% \usepackage[Glenn]{fncychap}
+\usepackage[Lenny]{fncychap}
 
 % lorem ipsum blind text
 %\usepackage{lipsum}
