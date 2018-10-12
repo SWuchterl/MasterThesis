@@ -1,0 +1,126 @@
+\chapter{Appendix}
+
+\begin{table}[htb]
+ \centering
+ \caption{All SM MC samples used in the analysis with their cross section. In the case k-factors are applied, they are given separately. \texttt{\{..\}} stands for \texttt{RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6} in abbreviation. All samples are of the \texttt{MINIAODSIM} format.}
+ \scriptsize
+ \label{tab:app_MCsets}
+ \begin{tabular}[width=\textwidth]{lll}
+  \hline
+  \normalsize{process}                             & \normalsize{data set}   & \normalsize{$\sigma\cdot k[\mathrm{pb}]$} \\\hline
+  \scriptsize{\textbf{ttbar}}                      &                         &                                           \\
+  $\ttbar\to\ell^{+}\PGn\cPqb+\ell^{-}\PAGn\cPaqb$ & \verb|/TTTo2L2Nu_Tune*_ttHtranche3_13TeV-powheg-pythia8/{..}-v1|  & $87.31$                                   \\
+  \scriptsize{\textbf{ttbarGamma}}                 &                         &                                           \\
+  $\ttbar\PGg$                                     & \verb|/TTGamma_Dilept_Tune*_13TeV-amcatnlo-pythia8/{..}-v2|  & \textcolor{red}{$1.679$}                  \\
+                                                   & \verb|/TTGamma_Hadronic_Tune*_13TeV-amcatnlo-pythia8/{..}-v2|  & $3.482$                                   \\
+                                                   & \verb|/TTGamma_SingleLeptFromT_Tune*_13TeV-amcatnlo-pythia8/{..}-v2|  & $2.509$                                   \\
+                                                   & \verb|/TTGamma_SingleLeptFromTbar_Tune*_13TeV-amcatnlo-pythia8/{..}-v2|  & $2.509$                                   \\
+  \scriptsize{\textbf{DrellYan}}                   &                         &                                           \\
+  $\PZ/\PGg^{*}\to2\ell$                           & \verb|/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/{..}_ext2-v1|  & $5765.4$                                  \\
+  \scriptsize{\textbf{diboson}}                    &                         &                                           \\
+  $\PZ\PGg\to2\ell\PGg$                            & \verb|/ZGTo2LG_Tune*_13TeV-amcatnloFXFX-pythia8/{..}_ext1-v1|  & $117.864\cdot1.06$                        \\
+                                                   & \verb|/ZGTo2LG_Tune*_13TeV-amcatnloFXFX-pythia8/{..}-v1|  & $117.864\cdot1.06$                        \\
+                                                   & \verb|/ZGTo2LG_PtG-130_Tune*_13TeV-amcatnloFXFX-pythia8/{..}-v1|  & $0.1404\cdot1.06$                         \\
+  $\PW\PZ$                                         & \verb|/WZTo3LNu_Tune*_13TeV-powheg-pythia8/{..}-v1| & $4.42965\cdot1.109$                       \\
+                                                   & \verb|/WZTo3LNu_Tune*_13TeV-powheg-pythia8/{..}_ext1-v3| & $4.42965\cdot1.109$                       \\
+  $\PZ\PZ\to2\ell2\PGn$                            & \verb|/ZZTo2L2Nu_13TeV_powheg_pythia8_ext1/{..}-v1| & $0.5644\cdot k$                           \\
+                                                   & \verb|/ZZTo2L2Nu_13TeV_powheg_pythia8/{..}-v1| & $0.5644\cdot k$                           \\
+  $\PZ\PZ\to4\ell$                                 & \verb|/ZZTo4L_13TeV_powheg_pythia8/{..}-v1| & $1.212\cdot k$                            \\
+                                                   & \verb|/ZZTo4L_13TeV_powheg_pythia8_ext1/{..}-v1| & $1.212\cdot k$                            \\
+  $\PW\PW\to2\ell2\PGn$                            & \verb|/WWTo2L2Nu_13TeV-powheg/{..}-v1| & $12.178$                                  \\
+  $\PW\Pg\to\ell\PGn\Pg$                           & \verb|/WGToLNuG_Tune*_13TeV-amcatnloFXFX-pythia8/{..}_ext3-v1| & $489$                                     \\
+  \textbf{W jets}                                  &                         &                                           \\
+  $\PW+jets$                                       & \verb|/WJetsToLNu_Tune*_13TeV-amcatnloFXFX-pythia8/{..}_ext2-v2| & $61526.7$                                 \\
+                                                   & \verb|/WJetsToLNu_Tune*_13TeV-amcatnloFXFX-pythia8/{..}-v1| & $61526.7$                                 \\
+  \textbf{triboson}                                &                         &                                           \\
+  $\PW\PW\Pg$                                      & \verb|/WWG_Tune*_13TeV-amcatnlo-pythia8/{..}_ext1-v1| & $0.2147$                                  \\
+  $\PW\PZ\Pg$                                      & \verb|/WZG_Tune*_13TeV-amcatnlo-pythia8/{..}-v1| & $0.04123$                                 \\
+  \textbf{single top}                              &                         &                                           \\
+  $\PWp\to\cPqt\cPaqb$                             & \verb|/ST_s-channel_4f_leptonDecays_13TeV-amcatnlo-pythia8_*/{..}-v1| & $3.36$                                    \\
+  $\cPq\cPaqb\to\cPq^{'}\cPaqt$                    & \verb|/ST_t-channel_antitop_4f_incl*Decays_13TeV-powhegV2-*-pythia8_*/{..}-v1| & $80.95$                                   \\
+  $\cPq\cPqb\to\cPq^{'}\cPqt$                      & \verb|/ST_t-channel_top_4f_incl*Decays_13TeV-powhegV2-*-pythia8_*/{..}-v1| & $136.02$                                  \\
+  $\cPaqb\to\PWp\cPaqt$                            & \verb|/ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV-powheg_*/{..}_ext1-v1| & $11.7$                                    \\
+  $\cPqb\to\PWm\cPqt$                              & \verb|/ST_tW_top_5f_NoFullyHadronicDecays_13TeV-powheg_*/{..}_ext1-v1| & $11.7$                                    \\
+  \hline
+ \end{tabular}
+\end{table}
+
+
+\begin{table}[htb]
+ \centering
+ \caption{All SUSY MC samples used in the analysis. \texttt{\{..\}} stands for \texttt{80X\_mcRun2\_asymptotic\_2016} in abbreviation. All samples are of the \texttt{MINIAODSIM} format.}
+ \scriptsize
+ \label{tab:app_signalsets}
+ \begin{tabular}[width=\textwidth]{ll}
+  \hline
+  \normalsize{signal}                     & \normalsize{data set}   \\\hline
+  \scriptsize{\textbf{electroweak}}       &                         \\
+  TChiNG                                  & \verb|/SMS-TChiNG_BF50N50G_*/RunIISpring16MiniAODv2-PUSpring16Fast_{..}_miniAODv2_v0-v1| \\
+  GMSB model                              & \verb|/GMSB_GravitinoLSP_N1decays_*/RunIISummer16MiniAODv2-PUSummer16Fast_{..}_TrancheIV_v6-v1| \\
+  \scriptsize{\textbf{strong production}} &                         \\
+  T5bbbbZG                                & \verb|/SMS-T5bbbbZg_*/RunIISummer16MiniAODv2-PUSummer16Fast_{..}_TrancheIV_v6-v2| \\
+  \hline
+ \end{tabular}
+\end{table}
+
+
+
+\begin{table}[htb]
+ % \begin{table*}[htb]
+ \centering
+ \caption{Trigger paths used in the analysis.}
+ \normalsize
+ \label{tab:app_trigger}
+ \begin{tabular}[width=\textwidth]{l}
+  \hline
+  \normalsize{trigger path}                   \\\hline
+  \normalsize{\textbf{dielectron trigger}}    \\
+  \verb|HLT_Ele17_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|                     \\
+  \verb|HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|                     \\
+  \verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL_v*|                     \\
+  \verb|HLT_DoubleEle33_CaloIdL_GsfTrkIdVL_MW_v*|                     \\
+  \normalsize{\textbf{dimuon trigger}}        \\
+  \verb|HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_v*|                     \\
+  \verb|HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_v*|                     \\
+  \verb|HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v*|                     \\
+  \verb|HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*|                     \\
+  \verb|HLT_TkMu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*|                     \\
+  \verb|HLT_Mu27_TkMu8_v*|                     \\
+  \verb|HLT_Mu30_TkMu11_v*|                     \\
+  \normalsize{\textbf{electron-muon trigger}} \\
+  \verb|HLT_Mu17_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_v*|                     \\
+  \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_v*|                     \\
+  \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_DZ_v*|                     \\
+  \verb|HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_v*|                     \\
+  \verb|HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|                     \\
+  \verb|HLT_Mu8_TrkIsoVVL_Ele17_CaloIdL_TrackIdL_IsoVL_v*|                     \\
+  \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*|                     \\
+  \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v*|                     \\
+  \verb|HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*|                     \\
+  \verb|HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v*|                     \\
+  \verb|HLT_Mu30_Ele30_CaloIdL_GsfTrkIdVL_v*|                     \\
+  \verb|HLT_Mu33_Ele33_CaloIdL_GsfTrkIdVL_v*|                     \\
+  \normalsize{\textbf{HT trigger}}            \\
+  \verb|HLT_PFHT200_v*|                     \\
+  \verb|HLT_PFHT250_v*|                     \\
+  \verb|HLT_PFHT300_v*|                     \\
+  \verb|HLT_PFHT350_v*|                     \\
+  \verb|HLT_PFHT400_v*|                     \\
+  \verb|HLT_PFHT475_v*|                     \\
+  \verb|HLT_PFHT600_v*|                     \\
+  \verb|HLT_PFHT650_v*|                     \\
+  \verb|HLT_PFHT800_v*|                     \\
+  \normalsize{\textbf{MET trigger}}           \\
+  \verb|HLT_PFMET110_PFMHT110_IDTight_v*|                     \\
+  \verb|HLT_PFMET120_PFMHT120_IDTight_v*|                     \\
+  \verb|HLT_PFMET170_NoiseCleaned_v   *|                     \\
+  \verb|HLT_PFMET170_HBHECleaned_v*|                     \\
+  \verb|HLT_PFMET170_JetIdCleaned_v*|                     \\
+  \verb|HLT_PFMET170_NotCleaned_v*|                     \\
+  \verb|HLT_PFMET300_v*|                     \\
+  \verb|HLT_PFMET400_v*|                     \\
+  \verb|HLT_PFMET500_v*|                     \\
+  \verb|HLT_PFMET600_v*|                     \\
+  \hline
+ \end{tabular}
+\end{table}

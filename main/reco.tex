@@ -12,7 +12,7 @@ The different PDs are separated into several single samples for different run er
 
 \begin{table}[htb]
  \centering
- \caption{Data sets used in the analysis.}
+ \caption{DBS paths for the datasets used in the analysis. Their path is similar, only the \verb|PD| name varies. The dilepton data sets are used for the key analysis. whereas the $\HT$ and $\ptmiss$ datasets are used for the trigger efficiency measurement, see \refSec{sec:triggEff}.}
  \label{tab:datasets}
  \begin{tabular}{l|l}
   \hline
@@ -35,7 +35,7 @@ The simulation process for SM background and SUSY signal samples can be devided 
 Depending on the choice of the chosen generator, a separate generator for the simulation of hadronic showers must be used. This is done with \PYTHIA. Therewith partons generated in matrtix element corresponding to the hard interaction, and partons generated with \PYTHIA in the showering for \eg initial state radiation (ISR), are not double counted, a matching with the \textsc{MLM}~\cite{Madgraph2} (LO) or \textsc{FXFX}~\cite{AMCATNLO} (NLO) matching schemes is performed. The hadronization of the partons (quarks and gluons) is simulated also with \PYTHIA, based on the confinement of color charged particles.  This, together with the underlying event and pileup, is all covered by the \textsc{CUETP8M1} generator tune~\cite{Tune}. It is based on $7\TeV$ proton-proton CMS and proton-antiproton CDF measurements. The PDFs used for the generation of the MC samples are provided by the \textsc{NNPDF} 3.0 sets~\cite{NNPDF}.\\
 The big next step, which is the most time and ressource consuming part, is the simulation of the detector response. A full model of the CMS detector was contructed with the \GEANTfour~\cite{Geant} package. Hence, it allows a precise simulation of the detector response for the events generated with the procedure described above. In the \GEANTfour package, material and particle properties, detector effects, and decay structures are considered in the simulation process. Since this procedure is very time consuming, but leads to a high accuracy, a different method is chosen for processes, whose description is limited by different aspects. So for the generation of SUSY samples, where theoretical uncertainties dominate, the CMS \textsc{FASTSIM} packages is used~\cite{FastSim}. It is based on a siplified geometry and parametrizations, yielding a reduction in runtime of the factor $\approx100$. If the "FullSim" and "FastSim" performances are compared~\cite{FastSimQuality}, a agreement within $\approx10\%$ is observed.\\
 \\
-All MC simulated processes used in this analysis are listed in \refTab{tab:MCsamples} together with their corresponding cross sections used to rescale the samples later on. The DBS paths are given in the appendix.\todo{ref}\\
+All MC simulated processes used in this analysis are listed in \refTab{tab:MCsamples} together with their corresponding cross sections used to rescale the samples later on. The DBS paths are given in the appendix in \refTab{tab:app_MCsets}.\\
 
 \begin{table}[htb]
  \centering
@@ -68,7 +68,7 @@ All MC simulated processes used in this analysis are listed in \refTab{tab:MCsam
 The Drell-Yan (DY) $\PZ/\PGg$ process, as well as the diboson $\PZ\PGg$ and $\PW\PGg$ processes, and triboson production of $\PW\PW\PGg$ and $\PW\PZ\PGg$ are generated with \MADGRAPH\_\MCATNLO in NLO. Top pair production in association with a photon ($\ttbar\PGg$) and the production of a $\PW$ boson in association with jets are also simulated using the \MADGRAPH\_\MCATNLO generator in NLO. Top pair production with leptonic decays ($\ttbar\to 2\ell 2\PGn 2\cPqb$), diboson production of $\PW\PZ$, $\PZ\PZ$, $\PW\PW$, and all singletop production processes are generated using \POWHEG.
 The diboson $\PW\PW$ and $\PW\PGg$ production, the production of $\PW+jets$, triboson $\PW\PW\PGg$ and $\PW\PZ\PGg$ production, and all singletop production channels are grouped together and denoted as "other" in the following.
 Next-to-leading order and next-to-next-to-leading order (NNLO) cross sections~\cite{xsec1,xsec2,xsec3,xsec4,xsec5,xsec6,xsec7,xsec8,xsec9} are used for the normaliziation of the samples.\\
-The generator used for the signal simulation production is \MADGRAPH\_\MCATNLO for the simplified models, and \PYTHIA8 for the full GGM model. The corresponding DBS paths are also listed in the appendix\todo{ref}.
+The generator used for the signal simulation production is \MADGRAPH\_\MCATNLO for the simplified models, and \PYTHIA8 for the full GGM model. The corresponding DBS paths are also listed in the appendix in \refTab{tab:app_signalsets}.
 The cross sections used in the signal normalization are calculated at NLO accuracy for the full GGM scenario, and at NLO+next-to-leading logarithmic (NLL) accuracy for the two simplified models~\cite{sxsec1,sxsec2,sxsec3,sxsec4,sxsec5,sxsec6,sxsec7,sxsec8,sxsec9}.
 For the electroweak SMS the applied cross section is calculcated for $\charginoOne\neutralinoOne$ and $\charginoOne\charginoOneBar$ production with squarks and gluinos decoupled, and the sum of both is used. In the cross section calculation of gluino pair production for the other SMS squark decoupling is assumed. The applied cross sections for the GGM scenario are obtained using a full model, thus beeing different from the ones used for the electroweak SMS.\\
 For the GGM model signal points are generated with wino masses ranging from $215\GeV$ to $1015\GeV$, and bino masses from $205\GeV$ to $m(\widetilde{W})-10\GeV$ in intervals of $25\GeV$.
@@ -121,7 +121,6 @@ The determined energy deposit in the cone around the muon must not exceed $10\%$
 
 
 % \begin{table}[h!]
-%  \caption{\todo{caption}}
 %  \label{tab:muonID}
 %  \centering
 %  \begin{tabular}{ll}
@@ -142,7 +141,7 @@ The list of requirements imposed on the electron selection is driven by a symmet
 The identification requirements determined by the EGamma POG~\cite{ElectronID} seperately for electrons reconstructed in the ECAL barrel (EB: $|\eta_{Supercluster}|<1.479$) and endcap (EE: $|\eta_{Supercluster}|>1.479$) region are listed in \refTab{tab:eleID}.
 \begin{table}[h!]
  \centering
- \caption{\todo{cap}}
+ \caption{Identification criteria for electrons given seperately for reconstructed electrons in the barrel and endcap.}
  \label{tab:eleID}
  \begin{tabular}{lcc}
   Variable                       & \multicolumn{2}{c}{Value}              \\\hline
@@ -163,7 +162,7 @@ Here, $\sigma_{i\eta i\eta}$ is a quantity characterizing the width of the elect
 Photons need to have a transverse momentum larger than $20\GeV$. Because photons are produced more centrally due to the high masses and short lifetimes in the considered SUSY signal scenarios, only photons reconstructed in the ECAL barrel are considered ($|\eta<1.4442|$). Additional identification criteria determined by the EGamma POG~\cite{photonID} are listed in \refTab{tab:photonID}.
 \begin{table}[h!]
  \centering
- \caption{\todo{cap}}
+ \caption{Identification criteria for photons reconstructed in the ECAL barrel.}
  \label{tab:photonID}
  \begin{tabular}{lc}
   Variable                    & Value                                                \\\hline
@@ -209,9 +208,17 @@ In case of two identical particles, decaying both to one invisible and one visib
  \mtTwo = min_{\ptvec^{\Pgn_1}+\ptvec^{\Pgn_2}=\ptvecmiss}\left(max\left[m_T(\ptvec^{\PZ},\ptvec^{\Pgn_1}),m_T(\ptvec^{\PGg},\ptvec^{\PGn_2})\right]\right),
 \end{equation}
 where the final value is determined via minimization as indicated by $min$ in the equation. Descriptively, the algorithm tries to estimate the transverse mass of the mother particle under the assumption, that the $\ptmiss$ is composited of exactly two identical particles each from one decay branch.\\
-For decays of the NLSP in all signal models, the $\mtTwo$ distribution has a cut-off at the mass of the lightest neutralino, while for all SM backgrounds $\mtTwo$ yields much lower values in comparison to the high SUSY massses.
-\todo{Plot einfuegen zur verdeutlichung}
-\section{Lepton pair selection and quality requirements}{sec:lepPair}
+For decays of the NLSP in all signal models, the $\mtTwo$ distribution has a cut-off at the mass of the lightest neutralino, while for all SM backgrounds $\mtTwo$ yields much lower values in comparison to the high SUSY massses, see \refFig{fig:mt2} for a visualization.
+
+\begin{figure}
+ \centering
+ \includegraphics[width=\pairwidth]{figures/mt2/onZ_LL_mt2_log}
+ \caption{Stacked background and different signal points against the stransverse mass $\mtTwo$. Both are obtained from simulation. For each signal model two different signal points are shown. For their masses refer to the legend in the plot.}
+ \label{fig:mt2}
+\end{figure}
+
+
+\section{Lepton pair selection and quality requirements}\label{sec:lepPair}
 In the analysis different datasets triggered with different dilepton triggers are combined, see \refSec{sec:datasets}. Therefore it is possible, that an event is contained in more than one dataset. Hence, it is assured with the following procedure, that no event is doublecounted. At first, all leptons per event are sorted by their transverse momenta. Thus, the leading and subleading lepton\footnote{called trailing from now on}, are identified. Their flavor combination then determines the classification of the event as "dielectron", "dimuon", or "electron-muon". For instance, an dielectron event is classified as such, if there a at least two electrons in the event, the event originates from the \texttt{DoubleEG} sample, both the leading and the trailing lepton are electrons, and it is triggered by at least one of the dielectron triggers. This set of conditions ensures the exclusivity of the three selections.\\
 In addition, there are some requirements imposed on the dilepton system. The trailing and leading lepton need to be seperated at least by a distance of $\Delta R=0.1$ in the transvse plane, and the invariant dilepton mass $m_{\ell\ell}$ should be larger than $50\GeV$. The first requirement provides a cleaning between the lepton collections, and ensures, that no lepton is counted twice, while the latter threshold is introduced, because the simulation of the Drell-Yan simulation does not include events with lower dilepton masses~\footnote{Events with lower invariant dilepton masses are not of interest for this analysis, since in the following only leptons originating from a Z boson decay are selected, resulting in an invariant dilepton mass around the Z boson mass of $\approx91\GeV$.}.\\
 Hereafter, the dielectron and dimuon seelctions are combined to a dilepton selection to increase the statistics in the validation, and especially in the signal region.\\
@@ -230,8 +237,8 @@ Also, several event quality filters are applied to reject contaminated events. T
 The rejected events consist mainly of events with faulty detector signals, cosmic muons, or muons produced in scattering processes with the beam halo.
 
 
-\section{Used triggers and trigger efficiency measurement}\label{sec:triggerEff}
-As already pointed out in \refSec{sec:datasets}, the events are recorded with various dilepton triggers. For each dilepton combination ($\Pe\Pe,\Pgm\Pgm,\Pe\Pgm$) multiple triggers are used because of the changing instantaneous luminosity over the 2016 run period different triggers were active at different times. The main trigger pathts are isolated dilepton triggers, while non isolated trigger paths are added to increase the efficiency at boosted topologies of the dilepton system. A list of all used HLT trigger paths is given in the appendix in \refTab{tab:}. While the same flavor dilepton triggers ($\Pe\Pe,\Pgm\Pgm$) are used as signal triggers, the different flavor triggers ($\Pe\Pgm$) are used to select events needed for the background prediction of the top pair production ($\ttbar(\PGg)$) background. This will be explained more in detail in \refSec{sec:ttbar}. The dilepton triggers alltogether have transverse momentum thresholds for the dileptons of around $17-33\GeV$ for the leading lepton, and $8-33\GeV$ for the trailing one. Additional triggers with hadronic activity ($\HT$) or $\ptmiss$ thresholds are relevant for the trigger effiency measurement, which will be presented in the following.
+\section{Used triggers and trigger efficiency measurement}\label{sec:triggEff}
+As already pointed out in \refSec{sec:datasets}, the events are recorded with various dilepton triggers. For each dilepton combination ($\Pe\Pe,\Pgm\Pgm,\Pe\Pgm$) multiple triggers are used because of the changing instantaneous luminosity over the 2016 run period different triggers were active at different times. The main trigger pathts are isolated dilepton triggers, while non isolated trigger paths are added to increase the efficiency at boosted topologies of the dilepton system. A list of all used HLT trigger paths is given in the appendix in \refTab{tab:app_trigger}. While the same flavor dilepton triggers ($\Pe\Pe,\Pgm\Pgm$) are used as signal triggers, the different flavor triggers ($\Pe\Pgm$) are used to select events needed for the background prediction of the top pair production ($\ttbar(\PGg)$) background. This will be explained more in detail in \refSec{sec:ttbar}. The dilepton triggers alltogether have transverse momentum thresholds for the dileptons of around $17-33\GeV$ for the leading lepton, and $8-33\GeV$ for the trailing one. Additional triggers with hadronic activity ($\HT$) or $\ptmiss$ thresholds are relevant for the trigger effiency measurement, which will be presented in the following.
 \subsection{Trigger efficiency measurement}
 A trigger efficiency curve is characterized by a inefficient part, a more or less sharp transition ("Turn On") to the efficient part ideally located at the nominal threshold of the trigger path, and a flat efficient part called plateau.\\
 Hence, measuring the trigger efficiency is essential to obtain appropriate transverse momentum requirements for the dilepton system. Furthermore, in the signal MC simulation ussing the \FASTSIM package no trigger simulation is performed like for the SM background samples. Therefore, the efficiency needs to be measured also on simulation, such that the signal simulation can be scaled accordingly. In addition, the SM simulation samples will be weighted with a further event factor, correcting differences in the effiency between data and simulation.\\
@@ -245,7 +252,7 @@ As a consequence, the contribution of the baseline trigger cancels, and the pure
  \includegraphics[width=\pairwidth]{figures/triggerStudies/efficiency_dataHT_trigDilep_EE_pt2}
  \includegraphics[width=\pairwidth]{figures/triggerStudies/efficiency_dataHT_trigDilep_EM_pt2}
  \includegraphics[width=\pairwidth]{figures/triggerStudies/efficiency_dataHT_trigDilep_MM_pt2}
- \caption{\todo{cap}cap}
+ \caption{Measurement of the combined efficiency for all dilepton trigger combinations on data(black) and simulation(red) for the $\Pe\Pe$ (top left), $\Pe\PGm$ (top right), and $\PGm\PGm$ (bottom) channels. The measurement is performed using various $\HT$ baseline triggers, while the selection consists of the lepton pair preselection, and a $\HT>200\GeV$ requirement. The mean of the data effiency with its statistical uncertainty (gray band), and the $3\%$ systematic uncertainty on the measurement (red band) are also shown.}
  \label{fig:triggEff}
 \end{figure}
 
@@ -255,11 +262,11 @@ As a consequence, the contribution of the baseline trigger cancels, and the pure
  \caption{My caption}
  \label{tab:triggEff}
  \begin{tabular}{lllll}
-                   & \multicolumn{2}{c}{Data} & \multicolumn{2}{c}{Simulation}                                   \\\hline
-  baseline trigger & $\HT$                       & $\ptmiss$                            & $\HT$                        & $\ptmiss$ \\\hline
-  $\Pe\Pe$         & $96.0^{+0.2}_{-0.2}\%$   & $93.7^{+0.3}_{-0.3}\%$         & $96.60^{+0.01}_{-0.01}\%$ & $96.79^{+0.02}_{-0.02}\%$   \\
-  $\Pe\Pgm$        & $86.6^{+0.5}_{-0.5}\%$   & $86.7^{+0.3}_{-0.3}\%$         & $91.85^{+0.01}_{-0.01}\%$ & $91.34^{+0.05}_{-0.05}\%$   \\
-  $\Pgm\Pgm$       & $92.5^{+0.3}_{-0.3}\%$   & $93.9^{+0.3}_{-0.3}\%$         & $91.85^{+0.01}_{-0.01}\%$ & $97.62^{+0.02}_{-0.02}\%$   \\\hline
+                   & \multicolumn{2}{c}{Data} & \multicolumn{2}{c}{Simulation}                                                         \\\hline
+  baseline trigger & $\HT$                    & $\ptmiss$                      & $\HT$                     & $\ptmiss$                 \\\hline
+  $\Pe\Pe$         & $96.0^{+0.2}_{-0.2}\%$   & $93.7^{+0.3}_{-0.3}\%$         & $96.60^{+0.01}_{-0.01}\%$ & $96.79^{+0.02}_{-0.02}\%$ \\
+  $\Pe\Pgm$        & $86.6^{+0.5}_{-0.5}\%$   & $86.7^{+0.3}_{-0.3}\%$         & $91.85^{+0.01}_{-0.01}\%$ & $91.34^{+0.05}_{-0.05}\%$ \\
+  $\Pgm\Pgm$       & $92.5^{+0.3}_{-0.3}\%$   & $93.9^{+0.3}_{-0.3}\%$         & $91.85^{+0.01}_{-0.01}\%$ & $97.62^{+0.02}_{-0.02}\%$ \\\hline
  \end{tabular}
 \end{table}
 
