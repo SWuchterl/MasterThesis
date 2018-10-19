@@ -28,9 +28,13 @@ Hence, the SR is defined trough the following criteria:
 \begin{itemize}
  \item $\ptmiss>150\GeV$,
  \item $\mtTwo>100\GeV$.
+       
 \end{itemize}
+The final SR is binned in two search bin in the $\ptmiss$ distribution, one ranging from $150$ to $200\GeV$, and the second from $200\Gev$ to infinity, see \refSec{sec:Results}
+
+
 \todo{More information to each background, explain here everything.}
-\subsection{Control regions}
+\subsection{Control regions}\label{sec:CR}
 Different control regions (CRs) are defined for the four main background contributions in order to study and develop a background prediction for the associated background. These CRs are built such, that they are fully orthogonal to the signal region and among each other. The main groups of backgrounds are $\ttbar(\PGg)$, DY/$\PZ(\PGg)$, $\PW\PZ$, and $\PZ\PZ$ production.
 
 \subsubsection*{$\ttbar(\PGg)$ - control region}
@@ -79,7 +83,8 @@ A visualization of the signal, validation, and DY/$\PZ(\PGg)$ control region def
  \caption{Visualization of the definition of the signal, validation and DY/$\PZ(\PGg)$ control region in the $\mtTwo$-$\ptmiss$ plane.}
  \label{fig:Regions}
 \end{figure}
-These distributions show 
+These distributions show also specific feautures of the considered signal models regarding the important kinematic observables. Because the \texttt{TChiZG} model is a one parameter scan, and the only free paramater is the NLSP mass, which directly determines the maximum amount of transverse momentum for the decay products, ans thus directly the boson $\pt$ and the $\ptmiss$ due to the gravitinos. Thus, $\ptmiss$ and $\mtTwo$ calculated from the bosons and $\ptmiss$ are strongly correlated per definition. Also, the endpoints of the $\ptmiss$ and $\mtTwo$ distributions are of the same order, and coincide with the NLSP mass. In case of the strong SMS, this is not directly the case. Since this is a two dimensional pramater scan, the event kinematic depends on the mass difference between the gluino and the NLSP mass, as discussed in \refSec{SMS}. In cases where the mass difference is small, the kinemtics evolve similar as for the EWK SMS, while for larger mass differences, as shown in \refFig{fig:Regions2}, the correlation between $\mtTwo$ and $\ptmiss$ is much weaker and the distributions are much broader. The distributions of the GMSB model behave like a mixture of the two SMSs, depending on the wino and bino masses.\\
+And most importantly, the signal events mainly populate the SR, with small contributions in the CRs and the VR, while the majority of the background events contribute to the DY/$\PZ(\PGg)$ CR and a minor part to the VR. Only a minority contributes to the SR, as it is desired. So in total a good separation between background and signal is achieved.
 
 \begin{figure}[htb]
  \centering
@@ -94,10 +99,51 @@ These distributions show
 
 
 \section{Background Estimation}\label{sec:BKG}
-\subsection{Top pair production}\label{sec:ttbar}
+In this section the used background estimation methods are introduced, including the study of systematic effects. The total background is composited of $\ttbar(\PGg)$ production, Drell-Yan and $\PZ(\PGg)$ events, $\PW\PZ$ and $\PZ\PZ$ diboson production, and a remaining group of backgrounds, composited of \eg singletop and triboson production (See \refSec{Simulation} and \refSec{sec:CR}). The relative amount of backgrounds contributing to the two SR bins are depicted in \refFig{fig:PieCharts}. The most dominating background is $\ttbar(\PGg)$, followed by $\PW\PZ$, $\PZ\PZ$, and Drell-Yan/$\PZ(\PGg)$.\\
+The leptonic decays of the top pairs generated in association with a photon significantly contribute to the SR, because the final state signatures appear very similiar to those of the SUSY models and the cross section is very high. If both W bosons decay leptonically, a SFOC lepton pair in connection with neutrinos are produced, that generate a large amount of $\ptmiss$ in the detector. Also real photons can be produced in the hard interaction, or can be radiated off in the initial or the final state by the charged participating particles. Since the total mass of the top pair cannot be reconstruced due to the momentum imbalance, there is a suffienct probability to measure a invariant dilepton mass close to the Z boson mass.\\
+In the Drell-Yan process, in context with FSR or ISR, and in $\PZ\PGg$ production, directly a on-shell Z boson is produced, thus the $\m_{\ell\ell}$ requiremet for the SR is fulfilled. Although a photon is also produced, ths background does not contribute significantly to the SR, because only nongenuine $\ptmiss$ is generated in the process due to mismeasurements and therefore the $\ptmiss$ distribution drops steeply.\\
+$\PW\PZ$ production is also an important background, since the $\PW$ boson can decay leptonically and therefore can generate a sufficient amount of genuie $\ptmiss$ to pass the SR requirements. While a photon can be generated in all possible radiation processes, an additional electron or jet originating from the $\PW$ boson can fake a photon signature in the detector. In cases of real photons, the additional lepton can also be lost in the reconstruction.\\
+Lastly, the $\PZ\PZ$ event signature can be very similar to the one expected from various SUSY signals. One boson can decay to a pair of charged leptons, while the other decays to neutrinos leading to a large amount of $\ptmiss$ in the event. Together with FSR or ISR of a photon, it mimics the signal topology in many ways.\\
+If the different background processes are compared, the diboson processes may have a more similar event kinematic than the $\ttbar(\PGg)$ process, but due to the lower diboson cross sections, and the small branching fraction for a $\PZ$ or $\PW$ boson to decay to charged leptons, the $\ttbar(\PGg)$ background dominates the other contributions.\\
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=\pairwidth]{figures/figures/pie1}
+ \includegraphics[width=\pairwidth]{figures/figures/pie2}
+ \caption{Relative amounts for all group of considered backgrounds for the two search bins in the SR.}
+ \label{fig:PieCharts}
+\end{figure}
+The strategy to perform a sophisticated background prediction is based on the MC simulation for all backgrounds. As mentioned in \refSec{CR}, different CRs are developed, which are enriched with corresponding background events. In those CRs, scale factors (SF) $\alpha_i$ are calculated by scaling the total simulation to the measured data yield. Contributions of other backgrounds in the distinct CR are considered in the calculation by fixing them, thus only one background is scaled. The SFs are calculated via the following formula:
+\begin{align}
+ 1                        & = \frac{\#Data}{#FixedBackground+\alpha_i\cdot\#BackgroundToScale} \\
+ \Longrightarrow \alpha_i & = \frac{\#Data-\#FixedBackground}{\#BackgroundToScale}.            
+\end{align}
+Due to the used method, which is performed similar in every CR, possible uncertainties in the normalization cancel, only uncertainties in the shape need to be considered, see~\refSec{sec:Syst}. The uncertainty arising from the SF calculation is purely of statistical origin, and is calculated via error propagation
+\begin{equation}
+ \sigma_{\alpha_i}^2 = \sigma_{D}^2 \cdot \left(\frac{D}{B}\right)^2 + \sigma_{F}^2 \cdot \left(\frac{F}{B}\right)^2 + \sigma_{B}^2 \cdot \left(\frac{D-F}{B^2}\right)^2,
+\end{equation}
+where $B=\#BackgroundToScale$, $F=\#FixedBackground$, $D=\#Data$, and $\sigma_i$ the corresponding statistical uncertainties. These are assumed to be uncorellated Poissonian uncertainties. Since the event yields are high enough, the uncertainties can be calculated via $\sigma_i=\sqrt{N_i}$, where $N$ is the associated total integral in the selection. In the case of MC simulation, for the calculation of the SF the normalized event yield is used, whereas in the error calculation the pure MC event count is considered to reflect the underlying precision of the simulation. These method is referred to as "integral method" in the following.\\
+After determining all SFs, the background prediction will be tested in the VR. Therefore, the simulated backgrounds in the VR will be scaled accordingly, and the result will be investigated, see \refSec{sec:Validation}.
+\\
+To study a possible bias of not well modeled observables in the simulation, additional cross checks are performed. Similar to the SF calculation in the integral method, SFs are determined via $\Chi^2$ minimization in the same CR. Thus, this method is somewhat correlated to the method explained above, but enables the possibility to study influences of different distributions in different binnings.
+
+
+\subsection{Top pair production in association with a photon}\label{sec:ttbar}
+
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=\pairwidth]{figures/plots_CR_tt/CRTT_EM_nom_met_log}
+ \includegraphics[width=\pairwidth]{figures/plots_CR_tt/CRTT_EM_nom_mt2_log}
+ \caption{ToDo}
+ \label{fig:TTCR}
+\end{figure}
+
+
 \subsection{Drell-Yan and $\PZ\PGg$ diboson production}
 \subsection{$\PZ\PZ$ diboson production}
 \subsection{$\PW\PZ$ diboson production}
 \subsection{Other standard model backgrounds}
-\subsection{Validation of the background estimation}
-\section{Study of systematic Uncertainties}
+\subsection{Validation of the background estimation}\label{sec:Validation}
+\subsection{Signal contamination}
+\section{Study of systematic uncertainties}\label{sec:Syst}
