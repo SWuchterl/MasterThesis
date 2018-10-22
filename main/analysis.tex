@@ -124,13 +124,31 @@ Due to the used method, which is performed similar in every CR, possible uncerta
 \end{equation}
 where $B=\#BackgroundToScale$, $F=\#FixedBackground$, $D=\#Data$, and $\sigma_i$ the corresponding statistical uncertainties. These are assumed to be uncorellated Poissonian uncertainties. Since the event yields are high enough, the uncertainties can be calculated via $\sigma_i=\sqrt{N_i}$, where $N$ is the associated total integral in the selection. In the case of MC simulation, for the calculation of the SF the normalized event yield is used, whereas in the error calculation the pure MC event count is considered to reflect the underlying precision of the simulation. These method is referred to as "integral method" in the following.\\
 After determining all SFs, the background prediction will be tested in the VR. Therefore, the simulated backgrounds in the VR will be scaled accordingly, and the result will be investigated, see \refSec{sec:Validation}.
-\\
-To study a possible bias of not well modeled observables in the simulation, additional cross checks are performed. Similar to the SF calculation in the integral method, SFs are determined via $\Chi^2$ minimization in the same CR. Thus, this method is somewhat correlated to the method explained above, but enables the possibility to study influences of different distributions in different binnings.
+
 
 
 \subsection{Top pair production in association with a photon}\label{sec:ttbar}
-
-
+As shown in ~\refFig{fig:PieCharts}, the main background contribution is $\ttbar(\PGg)$, which is composited of standard top pair production with and without photon radiation, and top-pair production in association with a photon, while the latter dominates. Both compositions will be determined together by rescaling the simulation such, that the integral of events of the MC simulation in the CR matches the integral of events in data as explained in \refSec{sec:BKG}. The raw and rescaled yields of the simulation, together with the observation in the CR are quoted in \refTab{tab:CRTT}. The overall purity of the selection is of the order of $84.62\%$. For the scaled event yields, only weights to account for the trigger efficiency correction and a global weight as mentioned in \refSec{sec:simulation} are applied.
+\begin{table}[htb]
+ \centering
+ \caption{My caption}
+ \label{tab:CRTT}
+ \begin{tabular}{llll}
+  
+  process      & raw simulation & simulation & data                  \\\hline
+  $\ttbar$     & 12077          & 416.93     &                       \\
+  $\ttbar\PGg$ & 128396         & 1420.19    &                       \\\hline\hline
+  sum          & 140473         & 1837.12    & \multirow{2}{*}{1750} \\
+  other        & 14631          & 269.21     &                       
+ \end{tabular}
+\end{table}
+With the integral method applied, the SF given in \refEq{eq:AlphaTT} is obtained.
+\begin{equation}\label{eq:AlphaTT}
+ \alpha_{\ttbar(\PGg)}=0.806 \pm 0.324 (stat.) [\hat{=}4.02\%].
+\end{equation}
+After application of $\alpha_{\ttbar(\PGg)}$, the number of events in data and total simulation match per definition.\\
+Since the analyzed final state in this CR is very sensitive to higher order effects, such as jet and photon radiation, and complex matrix elements to describe the hard interaction, and these are very hard to model in the simulation, a SF away from one is not unexpected. Because the generation of MC simulation in general is time and ressource consuming, simplifcations are made on \eg radiation effects, and not all aspects of a specific procees are calaculated and generated at NLO, altough \AMCATNLO was used for the generation of the $\ttbar\PGg$ sample. NNLO electroweak effects can cause negative corrections for example due to destructive terms in higher order corrections.\\
+The resulting prediction shows a good agreement with data, as can be seen from the $\ptmiss$ and $\mtTwo$ distributions in the CR after rescaling in \refFig{fig:TTCR}. The uncertainty of the fit method is of statistical origin, and is treated as a systematic in the following. The agreement for additional important observables, such as the transverse momentum of the photon and both leptons, is also investigatd, and the plots can be found in the appendix in \refFig{}\todo{ref}. To strenghen the confidence in the outcome, Kolmogorov-Smirnov~\cite{KS} tests are performed to study the shape agreement. No significant disagreement was found, and the KS-values from the tests results are given written on the plot for each individual distribution. KS-values much larger than $<0.1$ indicate agreement between the input distributions.\\
 \begin{figure}[htb]
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_CR_tt/CRTT_EM_nom_met_log}
@@ -138,6 +156,19 @@ To study a possible bias of not well modeled observables in the simulation, addi
  \caption{ToDo}
  \label{fig:TTCR}
 \end{figure}
+Furthermore, in order to study a possible bias of observables not well modeled within the simulation, additional cross checks are performed. Similar to the SF calculation in the integral method, SFs are determined via $\Chi^2$ minimization in the same CRs. Albeit this method is somewhat correlated to the method explained above, it enables the possibility to study influences of different distributions in different binnings. Therefore, $\alpha_{\ttbar(\PGg)}$ was varied in a range in small steps of $0.01$ for each binning and distribution, and for every iteration the simulation was scaled and the $\chi^2$ was calculated, which is defined as:
+\begin{equation}
+ \chi^2=\sum_i^{N_{bins}} \frac{\left(N_{i,bin}^{obs}-N_{i,bin}^{predicted}\right)^2}{N_{i,bin}^{predicted}}.
+\end{equation}
+The best fit value is determined to be at the minimum of the $\chi^2$ distribution, which is obtained by fitting a polynomial of fourth grade to the measured points. The uncertainty of the $\chi^2$-fit method, that is also of statistical origin, is calculated by taking the difference between the best fit value and the values, where $\chi^2=\chi^2_{BestFit}+1$. An example fit in the $\ptmiss$ distribution is shown in \refFig{fig:chiTT} left. The number of degrees of freedom (ndf) is given by the number of bins used to obtain the $\chi^2$ distribution reduced by the number of parameters that are being optimized. The only free parameter is $\alpha_{\ttbar(\PGg)}$, so $ndf$ equals the bin number subracted by one. The resulting curves are smooth, indicating a proper performance of the fit. A comparison of all obtained SFs for the different setups and the SF obtained by the integral method is shown in \refFig{fig:chiTT} right. No significant deviation can be observed, and all SFs are in agreement within each other. Hence, the scaling of the $\ttbar(\PGg)$ background seems stable and well described in the CR.
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=\pairwidth]{figures/plots_CR/chi/TT_met}
+ \includegraphics[width=\pairwidth]{figures/plots_CR/chi/TT_Compare}
+ \caption{ToDo}
+ \label{fig:chiTT}
+\end{figure}
+
 
 
 \subsection{Drell-Yan and $\PZ\PGg$ diboson production}
