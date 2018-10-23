@@ -147,14 +147,14 @@ With the integral method applied, the SF given in \refEq{eq:AlphaTT} is obtained
  \alpha_{\ttbar(\PGg)}=0.806 \pm 0.324 (stat.) [\hat{=}4.02\%].
 \end{equation}
 After application of $\alpha_{\ttbar(\PGg)}$, the number of events in data and total simulation match per definition.\\
-Since the analyzed final state in this CR is very sensitive to higher order effects, such as jet and photon radiation, and complex matrix elements to describe the hard interaction, and these are very hard to model in the simulation, a SF away from one is not unexpected. Because the generation of MC simulation in general is time and ressource consuming, simplifcations are made on \eg radiation effects, and not all aspects of a specific procees are calaculated and generated at NLO, altough \AMCATNLO was used for the generation of the $\ttbar\PGg$ sample. NNLO electroweak effects can cause negative corrections for example due to destructive terms in higher order corrections.\\
-The resulting prediction shows a good agreement with data, as can be seen from the $\ptmiss$ and $\mtTwo$ distributions in the CR after rescaling in \refFig{fig:TTCR}. The uncertainty of the fit method is of statistical origin, and is treated as a systematic in the following. The agreement for additional important observables, such as the transverse momentum of the photon and both leptons, is also investigatd, and the plots can be found in the appendix in \refFig{}\todo{ref}. To strenghen the confidence in the outcome, Kolmogorov-Smirnov~\cite{KS} tests are performed to study the shape agreement. No significant disagreement was found, and the KS-values from the tests results are given written on the plot for each individual distribution. KS-values much larger than $<0.1$ indicate agreement between the input distributions.\\
+Since the analyzed final state in this CR is very sensitive to higher order effects, such as jet and photon radiation, and complex matrix elements to describe the hard interaction, and these are very hard to model in the simulation, a SF away from one is not unexpected. Because the generation of MC simulation in general is time and ressource consuming, simplifcations are made on \eg radiation effects, and not all aspects of a specific procees are calaculated and generated at NLO, altough \AMCATNLO was used for the generation of the $\ttbar\PGg$ sample. NNLO electroweak effects can cause negative corrections for example due to destructive terms in higher order corrections. The uncertainty of the order of $4\%$ indicates a sufficient amount of events in the corresponding CR.\\
+The resulting prediction shows a good agreement with data, as can be seen from the $\ptmiss$ and $\mtTwo$ distributions in the CR after rescaling in \refFig{fig:CRTT}. The uncertainty of the fit method is of statistical origin, and is treated as a systematic in the following. The agreement for additional important observables, such as the transverse momentum of the photon and both leptons, is also investigatd, and the plots can be found in the appendix in \refFig{}\todo{ref}. To strenghen the confidence in the outcome, Kolmogorov-Smirnov~\cite{KS} tests are performed to study the shape agreement. No significant disagreement was found, and the KS-values from the tests results are given written on the plot for each individual distribution. KS-values much larger than $<0.1$ indicate agreement between the input distributions.\\
 \begin{figure}[htb]
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_CR_tt/CRTT_EM_nom_met_log}
  \includegraphics[width=\pairwidth]{figures/plots_CR_tt/CRTT_EM_nom_mt2_log}
  \caption{ToDo}
- \label{fig:TTCR}
+ \label{fig:CRDY}
 \end{figure}
 Furthermore, in order to study a possible bias of observables not well modeled within the simulation, additional cross checks are performed. Similar to the SF calculation in the integral method, SFs are determined via $\Chi^2$ minimization in the same CRs. Albeit this method is somewhat correlated to the method explained above, it enables the possibility to study influences of different distributions in different binnings. Therefore, $\alpha_{\ttbar(\PGg)}$ was varied in a range in small steps of $0.01$ for each binning and distribution, and for every iteration the simulation was scaled and the $\chi^2$ was calculated, which is defined as:
 \begin{equation}
@@ -169,11 +169,122 @@ The best fit value is determined to be at the minimum of the $\chi^2$ distributi
  \label{fig:chiTT}
 \end{figure}
 
+\subsubsection*{Further studies}
+Since the $\ttbar(\PGg)$ background is the most dominating one, further studies are realized, in which the underlying MC simulation samples and their combination are examined. Hence, different overlap removal procedures, see \refSec{sec:overlap}, and different available cross sections are used, while the fit procedure itself is varied. In addition, available corrections to improve the modeling of jet radiation in the initial state, and correctios to enhance the the description of the top quark $\pt$ distribution, that both are used to correct the LO samples and the samples that are generated with \POWHEG (see~\refSec{MC}), are applied in different combinations. The used fit methods include a $\chi^2$-template fit, where the ratio between the fractions of the $\ttbar$ and $\ttbar\PGg$ simulation is left free as an additional paramater, and a fit where only the $\ttbarGamma$ simulation is made used. Eventually, no substantial differences are observed, and the best performance and stability is provided by the inital approach explained above in detail.
+
 
 
 \subsection{Drell-Yan and $\PZ\PGg$ diboson production}
-\subsection{$\PZ\PZ$ diboson production}
+The Drell-Yan and dibosonic $\PZ\PGg$ background is admittedly small in the two SR bins, but its contribution is the fourth largest, and its needs to be assured, that the background is modeled well. As in the case of the $\ttbar(\PGg)$ background, its composited of two major parts, the Drell-Yan process, where quarks annihalte to offshell photons or Z bosons and generate leptons in their decays, and the diboson production of $\PZ\PGg$ pairs. The same integral method explained above, is used to determine the SF $\alpha_{DY/\PZ(\PGg)}$ in the dedicated CR, as introduced in \refSec{sec:CR}. The relevant event yields are quoted in \refTab{tab:CRDY}, and the resulting SF is statated in \refEq{eq:AlphaDY}. With a purity of about $99\%$, and a total statistics that large, a precise SF determination is feasible, as can be concluded also from the small statistical uncertainty of $\approx1\%$.
+
+
+\begin{table}[htb]
+ \centering
+ \caption{My caption}
+ \label{tab:CRDY}
+ \begin{tabular}{llll}
+  
+  process   & raw simulation & simulation & data                   \\\hline
+  Drell-Yan & 11710          & 13008.83   &                        \\
+  $\PZ\PGg$ & 170161         & 22692.88   &                        \\\hline\hline
+  sum       & 181871         & 35701.41   & \multirow{2}{*}{38419} \\
+  other     & 87337          & 374.00     &                        
+ \end{tabular}
+\end{table}
+\begin{equation}\label{eq:AlphaDY}
+ \alpha_{DY/\PZ(\PGg)}=1.066 \pm 0.001 (stat.) [\hat{=}0.87\%].
+\end{equation}
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=\pairwidth]{figures/plots_CR_dy/CRDY_LL_nom_met_log}
+ \includegraphics[width=\pairwidth]{figures/plots_CR_dy/CRDY_LL_nom_mt2_log}
+ \caption{ToDo}
+ \label{fig:CRDY}
+\end{figure}
+
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=\pairwidth]{figures/plots_CR/chi/DY_LL_met}
+ \includegraphics[width=\pairwidth]{figures/plots_CR/chi/DY_CompareLL}
+ \caption{ToDo}
+ \label{fig:chiDY}
+\end{figure}
+
 \subsection{$\PW\PZ$ diboson production}
+
+
+\begin{table}[htb]
+ \centering
+ \caption{My caption}
+ \label{tab:CRWT}
+ \begin{tabular}{llll}
+  
+  process  & raw simulation & simulation & data                  \\\hline
+  $\PW\PZ$ & 113744         & 895.74     &                       \\\hline\hline
+  sum      & 113744         & 895.74     & \multirow{2}{*}{1193} \\
+  other    & 93914          & 186.94     &                       
+ \end{tabular}
+\end{table}
+\begin{equation}\label{eq:AlphaDY}
+ \alpha_{\PW\PZ}=1.123 \pm 0.037 (stat.) [\hat{=}3.29\%].
+\end{equation}
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=\pairwidth]{figures/plots_CR_wz/CRWZ_LL_nom_met_log}
+ \includegraphics[width=\pairwidth]{figures/plots_CR_wz/CRWZ_LL_nom_mt2_log}
+ \caption{ToDo}
+ \label{fig:CRWZ}
+\end{figure}
+
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=\pairwidth]{figures/plots_CR/chi/WZ_met}
+ \includegraphics[width=\pairwidth]{figures/plots_CR/chi/WZ_Compare}
+ \caption{ToDo}
+ \label{fig:chiWZ}
+\end{figure}
+
+
+\subsection{$\PZ\PZ$ diboson production}
+
+\begin{table}[htb]
+ \centering
+ \caption{My caption}
+ \label{tab:CRWT}
+ \begin{tabular}{llll}
+  
+  process                 & raw simulation & simulation & data                 \\\hline
+  $\PZ\PZ(\to2\ell2\Pgn)$ & 5              & 0.0005     &                      \\
+  $\PZ\PZ(\to4\ell)$      & 459221         & 226.94     &                      \\\hline\hline
+  sum                     & 459226         & 226.94     & \multirow{2}{*}{251} \\
+  other                   & 79             & 0.07       &                      
+ \end{tabular}
+\end{table}
+\begin{equation}\label{eq:AlphaDY}
+ \alpha_{\PZ\PZ}=1.109 \pm 0.064 (stat.) [\hat{=}5.74\%].
+\end{equation}
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=\pairwidth]{figures/plots_CR_zz/CRZZ_LL_nom_met_log}
+ \includegraphics[width=\pairwidth]{figures/plots_CR_zz/CRZZ_LL_nom_mt2_log}
+ \caption{ToDo}
+ \label{fig:CRZZ}
+\end{figure}
+
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=\pairwidth]{figures/plots_CR/chi/ZZ_met}
+ \includegraphics[width=\pairwidth]{figures/plots_CR/chi/ZZ_Compare}
+ \caption{ToDo}
+ \label{fig:chiZZ}
+\end{figure}
+
 \subsection{Other standard model backgrounds}
 \subsection{Validation of the background estimation}\label{sec:Validation}
 \subsection{Signal contamination}
