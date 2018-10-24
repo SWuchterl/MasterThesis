@@ -154,7 +154,7 @@ The resulting prediction shows a good agreement with data, as can be seen from t
  \includegraphics[width=\pairwidth]{figures/plots_CR_tt/CRTT_EM_nom_met_log}
  \includegraphics[width=\pairwidth]{figures/plots_CR_tt/CRTT_EM_nom_mt2_log}
  \caption{ToDo}
- \label{fig:CRDY}
+ \label{fig:CRTT}
 \end{figure}
 Furthermore, in order to study a possible bias of observables not well modeled within the simulation, additional cross checks are performed. Similar to the SF calculation in the integral method, SFs are determined via $\Chi^2$ minimization in the same CRs. Albeit this method is somewhat correlated to the method explained above, it enables the possibility to study influences of different distributions in different binnings. Therefore, $\alpha_{\ttbar(\PGg)}$ was varied in a range in small steps of $0.01$ for each binning and distribution, and for every iteration the simulation was scaled and the $\chi^2$ was calculated, which is defined as:
 \begin{equation}
@@ -175,9 +175,8 @@ Since the $\ttbar(\PGg)$ background is the most dominating one, further studies 
 
 
 \subsection{Drell-Yan and $\PZ\PGg$ diboson production}
-The Drell-Yan and dibosonic $\PZ\PGg$ background is admittedly small in the two SR bins, but its contribution is the fourth largest, and its needs to be assured, that the background is modeled well. As in the case of the $\ttbar(\PGg)$ background, its composited of two major parts, the Drell-Yan process, where quarks annihalte to offshell photons or Z bosons and generate leptons in their decays, and the diboson production of $\PZ\PGg$ pairs. The same integral method explained above, is used to determine the SF $\alpha_{DY/\PZ(\PGg)}$ in the dedicated CR, as introduced in \refSec{sec:CR}. The relevant event yields are quoted in \refTab{tab:CRDY}, and the resulting SF is statated in \refEq{eq:AlphaDY}. With a purity of about $99\%$, and a total statistics that large, a precise SF determination is feasible, as can be concluded also from the small statistical uncertainty of $\approx1\%$.
-
-
+The Drell-Yan and dibosonic $\PZ\PGg$ background is admittedly small in the two SR bins, but its contribution is the fourth largest, and its needs to be assured, that the background is modeled well. As in the case of the $\ttbar(\PGg)$ background, its composited of two major parts, the Drell-Yan process, where quarks annihalte to offshell photons or Z bosons and generate leptons in their decays, and the diboson production of $\PZ\PGg$ pairs. The same integral method explained above, is used to determine the SF $\alpha_{DY/\PZ(\PGg)}$ in the dedicated CR, as introduced in \refSec{sec:CR}. The relevant event yields are quoted in \refTab{tab:CRDY}, and the resulting SF is stated in \refEq{eq:AlphaDY}. With a purity of about $99\%$, and a total statistics that large, a precise SF determination is feasible, as can be concluded also from the small statistical uncertainty of $\approx1\%$. The agreement between simulation and data is very good, also before application of $\alpha_{DY/\PZ(\PGg)}$, since it it nearly one. The post-scaling distributions of $\ptmiss$ and $\mtTwo$ are shown in \refFig{fig:CRDY}. They show overall a good agreement, only in the high $\mtTwo$ region there are some fluctuations due to the limited statistics being present both in data and simulation. Further distributions are looked at, and the can be found in the appendix in \refFig{fig_app}. The same cross checks as for the $\ttbar(\PGG)$ background are made, including the Kolmogorov-Smirnov tests, and the additional $\chi^2$-fits with variable bin size in different observables.
+All in all the KS-values indicate a very good matching between predicted and observed shape, albeit the Kolmogorov-Smirnov test provides a very small KS value for the consitency between the $\ptmiss$ distibutions. But, this is mainly due to the high statistics in data and therefore a higher absolute discrepancy, contradicting with the lower statistics in simulation, leading to larger fluctuations. These discrepancy is not visible in the ratio shown under the plot.\\
 \begin{table}[htb]
  \centering
  \caption{My caption}
@@ -202,7 +201,7 @@ The Drell-Yan and dibosonic $\PZ\PGg$ background is admittedly small in the two 
  \caption{ToDo}
  \label{fig:CRDY}
 \end{figure}
-
+The $\chi^2$-fit studies, shown in \refFig{fig:chiDY} together with an example fit in the $\ptmiss$ distribution, show excellent agreement over all variations. Hence, the background prediction seems to work fine also in the DY/$\PZ(\PGg)$ CR.
 
 \begin{figure}[htb]
  \centering
@@ -213,24 +212,23 @@ The Drell-Yan and dibosonic $\PZ\PGg$ background is admittedly small in the two 
 \end{figure}
 
 \subsection{$\PW\PZ$ diboson production}
-
-
+The diboosn production of $\PW\PZ$ pairs is the second important background contribution for this analysis. It is also tuned to agree with the measurement in the $\PW\PZ$ CR, while the SF $\alpha_{\PW\PZ}$ is calculated with the integeal method. The expected purity of selected $\PW\PZ$ events in this CR is about $84\%$, and the number of events given in \refTab{tab:CRWZ} point out, that the number of events is suffienct to determine a SF with adequate precision.
 \begin{table}[htb]
  \centering
  \caption{My caption}
- \label{tab:CRWT}
+ \label{tab:CRWZ}
  \begin{tabular}{llll}
-  
   process  & raw simulation & simulation & data                  \\\hline
   $\PW\PZ$ & 113744         & 895.74     &                       \\\hline\hline
   sum      & 113744         & 895.74     & \multirow{2}{*}{1193} \\
   other    & 93914          & 186.94     &                       
  \end{tabular}
 \end{table}
-\begin{equation}\label{eq:AlphaDY}
- \alpha_{\PW\PZ}=1.123 \pm 0.037 (stat.) [\hat{=}3.29\%].
+The agreement beforehand is also very good, altough this background is a higher order process and is therefore simulated at NLO, see \refSec{sec:MC}, which includes several complicated effects the event generator needs to handle properly. the SF $\alpha_{DY/\PZ(\PGg)}$ is determined to be
+\begin{equation}\label{eq:AlphaWZ}
+ \alpha_{\PW\PZ}=1.123 \pm 0.037 (stat.) [\hat{=}3.29\%],
 \end{equation}
-
+which indicates that usage of NNLO cross sections for the $\PW\PZ$ samples is nearly suffienct enought to describe the background. Of course higher order effects can lead to higher cross sections, thus it is not unexpected to obtain a SF varying $\approx12\%$ from unity. Resulting distributions of the dicription of the $\ptmiss$ and $\mtTwo$ variables are shown in \refFig{fig:CRWZ}. As can be seen, the predicted shape is in consitency over the whole range with the oberserved data, also in the very high $\ptmiss$ and $\mtTwo$ regime. This is further confirmed by the additonal cross checks, that are also realized in the other two CRs described above. The KS-values close to one strenghen the trust in the background estimation method. The comaprison plots for other distributions can be found in the appendix in \refFig{fig:app_}.
 \begin{figure}[htb]
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_CR_wz/CRWZ_LL_nom_met_log}
@@ -238,7 +236,7 @@ The Drell-Yan and dibosonic $\PZ\PGg$ background is admittedly small in the two 
  \caption{ToDo}
  \label{fig:CRWZ}
 \end{figure}
-
+The $\chi^2$-fit studies lead to the same outcome, the uncertainties seem to be well estimated and of statistical origin, since no large shape deviation can be observed in the performed fits, as can be seen in \refFig{fig:chiWZ} right. Each individual $\chi^2$-fit seems to behave properly, see \refFig{fig:chiWZ} left for an example in the $\ptmiss$ distribution.
 
 \begin{figure}[htb]
  \centering
@@ -250,7 +248,7 @@ The Drell-Yan and dibosonic $\PZ\PGg$ background is admittedly small in the two 
 
 
 \subsection{$\PZ\PZ$ diboson production}
-
+The last important and fourth biggest contribution is $\PZ\PZ$ diboson production, where both Z bosons decay leptonically, one to charged leptons such as electrons or muons, and the other one to neutrinos. To simplify the contstruction of a dedicated CR, as explained in \refSec{sec:CR}, the assumption is made, that there should be no difference fo the generator to generate neutral leptons or charged ones. Only the detector response should differ. Therefore, $\PZ\PZ$ can be well estimated in a four lepton CR. So a pure selection of $\PZ\PZ$ can be established, although the statistics in data is quite low due to small cross section and the low branching fraction for the $\Z\to\ell\ell$ decay. Event counts are quoted in \refTab{tab:CRZZ}, with a selection purity of nearly $100\%$.
 \begin{table}[htb]
  \centering
  \caption{My caption}
@@ -264,10 +262,11 @@ The Drell-Yan and dibosonic $\PZ\PGg$ background is admittedly small in the two 
   other                   & 79             & 0.07       &                      
  \end{tabular}
 \end{table}
-\begin{equation}\label{eq:AlphaDY}
+With the integral method applied, a SF $\alpha_{\PZ\PZ}$ stated in \refEq{eq:AlphaZZ} is determined, being relatively close to one.
+\begin{equation}\label{eq:AlphaZZ}
  \alpha_{\PZ\PZ}=1.109 \pm 0.064 (stat.) [\hat{=}5.74\%].
 \end{equation}
-
+Post-fit distibutions to show the good agreement in the $\ptmiss$ and $\mtTwo$ distribution can be found in \refFig{fig:CRZZ}. As mentioned, the precision is limited by the low statistis of the selected sample, but nevertheless is suffienct enough to establish a working background prediction. The shapes agree very well, as it is additionally indicated by the KS-values printed on the plots, also in the high $\mtTwo$ region. The properties of the $\PZ\PZ\to4\ell$ procees does not allow to study the prediction in the high $\ptmiss$ regime, since only nongenuine $\ptmiss$ is produced, but agreement of the $\pt$ distributions of the leptons, that are listed in \refFig{fig:app_} in the appendix, can be translated into the agreement of the $\ptmiss$ in the $\PZ\PZ\to2\ell2\PGn$ background, that is generated with the same event generator.
 \begin{figure}[htb]
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_CR_zz/CRZZ_LL_nom_met_log}
@@ -275,8 +274,7 @@ The Drell-Yan and dibosonic $\PZ\PGg$ background is admittedly small in the two 
  \caption{ToDo}
  \label{fig:CRZZ}
 \end{figure}
-
-
+The same $\chi^2$-fit studies, see \refFig{fig:chiZZ}, are performed as for the other three background estimations shown above, and yield the same conclusion, although showing more fluctuations in the choice of the variable or binning due to the lower total event counts in the observed data. But, all in all also this background estimation method behaves properly.
 \begin{figure}[htb]
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_CR/chi/ZZ_met}
@@ -286,6 +284,37 @@ The Drell-Yan and dibosonic $\PZ\PGg$ background is admittedly small in the two 
 \end{figure}
 
 \subsection{Other standard model backgrounds}
+Additional minor backgrounds, such as triboson processes as $\PW\PZ\PGg$, $\PW\PW\PGg$, diboson $\PW\PW$ and $\PW\PGg$, $\PW+jets$ production, and single top processes as listed in \refTab{tab:MCsamples}, are taken from plain simulation after reweighting them as described in \refSec{MC} to the meaureed luminosty and NLO and NNLO cross sections.
+
+\FloatBarrier
 \subsection{Validation of the background estimation}\label{sec:Validation}
-\subsection{Signal contamination}
+After all main backgrounds are tuned in various corresponding CRs and SFs are determined, and the rest is taken from simulation, the background prediction is validated in the VR defined in \refSec{sec:VR}. It is very close to the SR where the background prediction shall work suffienctly well, and therefore is ideal to study the obtained background prediction. The VR orthogonal VR selection is achievied by requiring nealry the same requirements as for the SR, but only one or both of the $\ptmiss>150\GeV$ and $\mtTwo>100\GeV$ needs to fail.\\
+Resulting comparisons between prediction and oberved data in different distributions are shown in \refFig{fig:VR} for the most important variables, such as $\ptmiss$ and $\mtTwo$, together with $\pt$ distributions of the leading and trailing lepton. Comparisons for the photon $\pt$ and the invariant dilepton mass $m_{\ell\ell}$ are shown in \refFig{fig:VR2}.\\
+Overall the agreement is very good in all distributions, although being limited by the lower statsitics in some kinematic regions. The same Kolmogorov-Smirnov tests as for the different CRs are performed to gain more trust in the working of the background prediction. As can be read from the resulting KS-values, each qouted on the corresponding plot, the shape agreement considering statistical uncertainties and the systsemaic uncertainties originating from the statistical ones from the integral method, is very good. Therefore, the background prediction is assumed to work fine in the SR due to the similar kinematics in the VR based on the design as a kinematic sideband in $\ptmiss$ and $\mtTwo$.
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=\pairwidth]{figures/plots_VR/VR_LL_met_log}
+ \includegraphics[width=\pairwidth]{figures/plots_VR/VR_LL_mt2_log}\\
+ \includegraphics[width=\pairwidth]{figures/plots_VR/VR_LL_pt1_log}
+ \includegraphics[width=\pairwidth]{figures/plots_VR/VR_LL_pt2_log}
+ \caption{ToDo}
+ \label{fig:VR1}
+\end{figure}
+
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=\pairwidth]{figures/plots_VR/VR_LL_pt_g1_log}
+ \includegraphics[width=\pairwidth]{figures/plots_VR/VR_LL_m_ll_log}
+ \caption{ToDo}
+ \label{fig:VR2}
+\end{figure}
+
+
+\subsection{Signal contamination}\label{sec:signalCont}
+If SUSY would exist, it would of course not only produce events being obervable in the SR, but also some of them may appear in the CRs, that are used to determine a proper background prediction, under the asumption that there is no influence of possible BSM signals. So to account for this effect, the so-called signal contamination of the background CRs is not considered in the background estimation itself, but is rather translated into a reduction of the predicted signal yield in the SR. Hence, at first the signal contamination needs to be measured for each signal point of all samples individually in all CRs.
+
+
+
 \section{Study of systematic uncertainties}\label{sec:Syst}
