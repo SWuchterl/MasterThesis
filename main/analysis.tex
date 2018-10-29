@@ -22,7 +22,7 @@ Additional high separation power has the stransverse mass $\mtTwo$. Because it y
  \centering
  \includegraphics[width=\pairwidth]{figures/mt2/onZ_LL_met_log}
  \includegraphics[width=\pairwidth]{figures/mt2/onZ_LL_mt2_log}
- \caption{ToDo}
+ \caption{Stacked background and different signal points against $\ptmiss$ (left) and the stransverse mass $\mtTwo$ (right). Both are obtained from simulation. For each signal model two different signal points are shown. For their masses refer to the legend in the plot.}
  \label{fig:SRvariables}
 \end{figure}
 Hence, the SR is defined trough the following criteria:
@@ -128,7 +128,7 @@ After determining all SFs, the background prediction will be tested in the VR. T
 As shown in \refFig{fig:PieCharts}, the main background contribution is $\ttbar(\PGg)$, which is composited of standard top pair production with and without photon radiation, and top-pair production in association with a photon, while the latter dominates. Both compositions will be determined together by rescaling the simulation, such that the integral of events of the MC simulation in the CR matches the integral of events in data as explaneed in \refSec{sec:BKG}. The raw and rescaled yields of the simulation, together with the observation in the CR are quoted in \refTab{tab:CRTT}. The overall purity of the selection is of the order of $84.62\%$. For the scaled event yields, only weights to account for the trigger efficiency correction and a global weight as mentioned in \refSec{sec:Simulation} for normalization are applied.
 \begin{table}[tbp]
  \centering
- \caption{My caption}
+ \caption{Yields in the $\ttbar(\PGg)$ CR for the pure simulation and measured data.}
  \label{tab:CRTT}
  \begin{tabular}{llll}
   
@@ -150,7 +150,7 @@ The resulting prediction shows a good agreement with data, as can be seen from t
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_CR_tt/CRTT_EM_nom_met_log}
  \includegraphics[width=\pairwidth]{figures/plots_CR_tt/CRTT_EM_nom_mt2_log}
- \caption{ToDo}
+ \caption{Comparisons between data and rescaled simulation in the $\ttbar()\PGg)$ CR in the $\ptmiss$ and $\mtTwo$ distribution. Below each plot, a ratio between data and prediction is shown. The uncertainty bands correspond to the systematic (red) and total uncertainty (gray). In addition, in the ratio plot the relative compostion of the backgrounds is visualized. KS-values for the performed Kolmogorov-Smirvov test alre also quoted.}
  \label{fig:CRTT}
 \end{figure}
 In order to study a possible bias of observables not well modeled within the simulation, additional cross checks are performed. Similar to the SF calculation in the integral method, SFs are determined via $\chi^2$ minimization in the same CRs. Albeit this method is somewhat correlated to the method explaneed above, it enables the possibility to study influences of different distributions in different binnings. Therefore, $\alpha_{\ttbar(\PGg)}$ was varied in a range in small steps of $0.01$ for each binning and distribution, and for every iteration the simulation was scaled and the $\chi^2$ was calculated, which is defined as:
@@ -162,7 +162,7 @@ The best fit value is determined to be at the minimum of the $\chi^2$ distributi
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_CR/chi/TT_met}
  \includegraphics[width=\pairwidth]{figures/plots_CR/chi/TT_Compare}
- \caption{ToDo}
+ \caption{Example $\chi^2$ fit in the $\ttbar(\PGg)$ CR in the $\ptmiss$ dsitribution (left) with the polinomial fit. All fit results compared with the SF obtained from the integral method in different binnings and variables (right.)}
  \label{fig:chiTT}
 \end{figure}
 
@@ -176,7 +176,7 @@ The Drell-Yan and dibosonic $\PZ\PGg$ background is admittedly small in the two 
 All in all the KS-values indicate a very good matching between predicted and observed shape, albeit the Kolmogorov-Smirnov test provides a very small KS value for the consistency between the $\ptmiss$ distributions. But, this is mainly due to the high statistics in data and therefore a higher absolute discrepancy, contradicting with the lower statistics in simulation, leading to larger fluctuations. These discrepancy is not visible in the ratio shown under the plot.\\
 \begin{table}[tbp]
  \centering
- \caption{My caption}
+ \caption{Yields in the DY/$\PZ(\PGg)$ CR for the pure simulation and measured data.}
  \label{tab:CRDY}
  \begin{tabular}{llll}
   
@@ -195,7 +195,7 @@ All in all the KS-values indicate a very good matching between predicted and obs
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_CR_dy/CRDY_LL_nom_met_log}
  \includegraphics[width=\pairwidth]{figures/plots_CR_dy/CRDY_LL_nom_mt2_log}
- \caption{ToDo}
+ \caption{Comparisons between data and rescaled simulation in the DY/$\PZ(\PGg)$ CR in the $\ptmiss$ and $\mtTwo$ distribution. Below each plot, a ratio between data and prediction is shown. The uncertainty bands correspond to the systematic (red) and total uncertainty (gray). In addition, in the ratio plot the relative compostion of the backgrounds is visualized. KS-values for the performed Kolmogorov-Smirvov test alre also quoted.}
  \label{fig:CRDY}
 \end{figure}
 The $\chi^2$-fit studies, shown in \refFig{fig:chiDY} together with an example fit in the $\ptmiss$ distribution, show excellent agreement over all variations. Hence, the background prediction seems to work fine also in the DY/$\PZ(\PGg)$ CR.
@@ -204,7 +204,7 @@ The $\chi^2$-fit studies, shown in \refFig{fig:chiDY} together with an example f
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_CR/chi/DY_LL_met}
  \includegraphics[width=\pairwidth]{figures/plots_CR/chi/DY_CompareLL}
- \caption{ToDo}
+ \caption{Example $\chi^2$ fit in the DY/$\PZ(\PGg)$ CR in the $\ptmiss$ dsitribution (left) with the polinomial fit. All fit results compared with the SF obtained from the integral method in different binnings and variables (right.)}
  \label{fig:chiDY}
 \end{figure}
 
@@ -212,7 +212,7 @@ The $\chi^2$-fit studies, shown in \refFig{fig:chiDY} together with an example f
 The diboson production of $\PW\PZ$ pairs is the second important background contribution for this analysis. It is also tuned to agree with the measurement in the $\PW\PZ$ CR, while the SF $\alpha_{\PW\PZ}$ is calculated with the integral method. The expected purity of selected $\PW\PZ$ events in this CR is about $84\%$, and the total event yields given in \refTab{tab:CRWZ} point out, that the number of events is sufficient to determine a SF with adequate precision.
 \begin{table}[tbp]
  \centering
- \caption{My caption}
+ \caption{Yields in the $\PW\PZ$ CR for the pure simulation and measured data.}
  \label{tab:CRWZ}
  \begin{tabular}{llll}
   process  & raw simulation & simulation & data                  \\\hline
@@ -230,7 +230,7 @@ which indicates that usage of NNLO cross sections for the $\PW\PZ$ samples is ne
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_CR_wz/CRWZ_LL_nom_met_log}
  \includegraphics[width=\pairwidth]{figures/plots_CR_wz/CRWZ_LL_nom_mt2_log}
- \caption{ToDo}
+ \caption{Comparisons between data and rescaled simulation in the $\PW\PZ$ CR in the $\ptmiss$ and $\mtTwo$ distribution. Below each plot, a ratio between data and prediction is shown. The uncertainty bands correspond to the systematic (rand) and total uncertainty (gray). In addition, in the ratio plot the relative compostion of the backgrounds is visualized. KS-values for the performed Kolmogorov-Smirvov test alre also quoted.}
  \label{fig:CRWZ}
 \end{figure}
 The $\chi^2$-fit studies lead to the same outcome, the uncertainties seem to be well estimated and of statistical origin, since no large shape deviation can be observed in the performed fits, as can be seen in \refFig{fig:chiWZ} right. Each individual $\chi^2$-fit seems to behave properly, see \refFig{fig:chiWZ} left for an example in the $\ptmiss$ distribution.
@@ -239,7 +239,7 @@ The $\chi^2$-fit studies lead to the same outcome, the uncertainties seem to be 
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_CR/chi/WZ_met}
  \includegraphics[width=\pairwidth]{figures/plots_CR/chi/WZ_Compare}
- \caption{ToDo}
+ \caption{Example $\chi^2$ fit in the $\PW\PZ$ CR in the $\ptmiss$ dsitribution (left) with the polinomial fit. All fit results compared with the SF obtained from the integral method in different binnings and variables (right.)}
  \label{fig:chiWZ}
 \end{figure}
 
@@ -248,7 +248,7 @@ The $\chi^2$-fit studies lead to the same outcome, the uncertainties seem to be 
 The last important and fourth biggest background contribution is $\PZ\PZ$ diboson production, where both Z bosons decay leptonically, one to charged leptons such as electrons or muons, and the other one to neutrinos. To simplify the construction of a dedicated CR, as explaneed in \refSec{sec:CR}, the assumption is made, that there is no difference for the generator to generate neutral or charged leptons. Only the detector response should differ. Therefore, $\PZ\PZ$ can be well estimated in a four lepton CR. A pure selection of $\PZ\PZ$ events can be established, although the statistics in data is quite low due to small cross section and the low branching fraction for the $\Z\to\ell\ell$ decay. Event counts are quoted in \refTab{tab:CRZZ}, with a selection purity of nearly $100\%$.
 \begin{table}[tbp]
  \centering
- \caption{My caption}
+ \caption{Yields in the $\PZ\PZ$ CR for the pure simulation and measured data.}
  \label{tab:CRZZ}
  \begin{tabular}{llll}
   
@@ -268,7 +268,7 @@ Post-fit distributions to show the good agreement in the $\ptmiss$ and $\mtTwo$ 
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_CR_zz/CRZZ_LL_nom_met_log}
  \includegraphics[width=\pairwidth]{figures/plots_CR_zz/CRZZ_LL_nom_mt2_log}
- \caption{ToDo}
+ \caption{Comparisons between data and rescaled simulation in the $\PZ\PZ$ CR in the $\ptmiss$ and $\mtTwo$ distribution. Below each plot, a ratio between data and prediction is shown. The uncertainty bands correspond to the systematic (red) and total uncertainty (gray). In addition, in the ratio plot the relative compostion of the backgrounds is visualized. KS-values for the performed Kolmogorov-Smirvov test alre also quoted.}
  \label{fig:CRZZ}
 \end{figure}
 The $\chi^2$-fit studies, see \refFig{fig:chiZZ}, are performed as for the other three background estimations discussed above, and yield the same conclusion, although some fluctuations in the choice of the variable or binning are present due to the lower total event count in the observed data. But, all in all also this background estimation method behaves properly.
@@ -276,7 +276,7 @@ The $\chi^2$-fit studies, see \refFig{fig:chiZZ}, are performed as for the other
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_CR/chi/ZZ_met}
  \includegraphics[width=\pairwidth]{figures/plots_CR/chi/ZZ_Compare}
- \caption{ToDo}
+ \caption{Example $\chi^2$ fit in the $\PZ\PZ$ CR in the $\ptmiss$ dsitribution (left) with the polinomial fit. All fit results compared with the SF obtained from the integral method in different binnings and variables (right.)}
  \label{fig:chiZZ}
 \end{figure}
 
@@ -287,15 +287,15 @@ Additional minor backgrounds, such as triboson processes as $\PW\PZ\PGg$, $\PW\P
 \subsection{Validation of the background estimation}\label{sec:Validation}
 After all main backgrounds are tuned in various corresponding CRs and SFs are determined, and the remainder is taken from pure simulation, the background prediction is validated in the VR defined in \refSec{sec:VR}. In phasescpace is very close to the SR where the background prediction shall work sufficiently well, and therefore the VR is ideal to study the obtained background prediction.\\
 Resulting comparisons between prediction and observed data in different distributions are shown in \refFig{fig:VR1} for the most important variables, such as $\ptmiss$ and $\mtTwo$, together with $\pt$ distributions of the leading and trailing lepton. Comparisons for the photon $\pt$ and the invariant dilepton mass $m_{\ell\ell}$ distributions are shown in \refFig{fig:VR2}.\\
-Overall, the agreement is very good in all distributions, although being limited by the lower statistics in some kinematic regions. The same Kolmogorov-Smirnov tests as for the different CRs are performed to gain more trust in the background prediction. As can be read from the resulting KS-values, each quoted on the corresponding plot, the shape agreement considering statistical uncertainties and systematic uncertainties originating from the statistical ones from the integral method, is very good. Therefore, the background prediction is assumed to work fine in the SR due to the similar kinematics in the VR based on the design as a kinematic sideband in $\ptmiss$ and $\mtTwo$.
-\todo{compare total numbers}
+Overall, the agreement is very good in all distributions, although being limited by the lower statistics in some kinematic regions. The same Kolmogorov-Smirnov tests as for the different CRs are performed to gain more trust in the background prediction. As can be read from the resulting KS-values, each quoted on the corresponding plot, the shape agreement considering statistical uncertainties and systematic uncertainties originating from the statistical ones from the integral method, is very good. With $97$ data events measured and $93.6$ predicted, the total agreement is very good.\\
+Therefore, the background prediction is assumed to work fine in the SR due to the similar kinematics in the VR based on the design as a kinematic sideband in $\ptmiss$ and $\mtTwo$.
 \begin{figure}[tbp]
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_VR/VR_LL_met_log}
  \includegraphics[width=\pairwidth]{figures/plots_VR/VR_LL_mt2_log}\\
  \includegraphics[width=\pairwidth]{figures/plots_VR/VR_LL_pt1_log}
  \includegraphics[width=\pairwidth]{figures/plots_VR/VR_LL_pt2_log}
- \caption{ToDo}
+ \caption{Comparisons between data and rescaled simulation in theVR in the $\ptmiss$, $\mtTwo$, and lepton $\pt$ distributions. Below each plot, a ratio between data and prediction is shown. The uncertainty bands correspond to the systematic (re) and total uncertainty (gray). In addition, in the ratio plot the relative compostion of the backgrounds is visualized. KS-values for the performed Kolmogorov-Smirvov test alre also quoted.}
  \label{fig:VR1}
 \end{figure}
 
@@ -304,7 +304,7 @@ Overall, the agreement is very good in all distributions, although being limited
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_VR/VR_LL_pt_g1_log}
  \includegraphics[width=\pairwidth]{figures/plots_VR/VR_LL_m_ll_log}
- \caption{ToDo}
+ \caption{Comparisons between data and rescaled simulation in the VR in the photon $\pt$ and invariant dilepton mass distribution. Below each plot, a ratio between data and prediction is shown. The uncertainty bands correspond to the systematic (red) and total uncertainty (gray). In addition, in the ratio plot the relative compostion of the backgrounds is visualized. KS-values for the performed Kolmogorov-Smirvov test alre also quoted.}
  \label{fig:VR2}
 \end{figure}
 
@@ -321,7 +321,7 @@ where $\#signal_{before}$ and $\#signal_{after}$ are the total number of signal 
 \begin{figure}
  \includegraphics[width=\pairwidth]{figures/contamination/tching_DY}
  \includegraphics[width=\pairwidth]{figures/contamination/gmsb_WZ}
- \caption{todo}
+ \caption{Signal fraction for different signal points of the \texttt{TChiZG} in the DY/$\PZ(\PGg)$ CR (left) and the GMSB model in the $\PW\PZ$ CR (right).}
  \label{fig:signalCont}
 \end{figure}
 in total, the influence of signal contamination to the final result is rather negligible, because for most of the signal points the contributions to all CRs are very low. In cases where they exceed the level of some percent, their influence will not matter in the final interpretation, since for those low SUSY mass signal points, the expectation for the signal yield in the SR is sufficiently high enough.
