@@ -28,7 +28,7 @@ For each particle, a corresponding antiparticle exists with same mass and invers
  \includegraphics[width=0.8\textwidth]{figures/general/SM}
  \caption{Complete particle content of the standard model. For each particle important properties such as mass, spin, and charges are given. The values are taken from~\cite{PDG}.}
  \label{fig:SM}
- 
+
 \end{figure}
 
 
@@ -48,7 +48,7 @@ These four bosons mix to the observed $\PWpm$ and $\PZ$ bosons and the photon $\
  =
  \left(\begin{matrix}
   \cos(\theta_W)  & \sin(\theta_W) \\
-  -\sin(\theta_W) & \cos(\theta_W) 
+  -\sin(\theta_W) & \cos(\theta_W)
  \end{matrix}\right)
  \cdot
  \left(
@@ -173,22 +173,22 @@ In all models considered throughout this thesis, the NLSP is assumed to be the l
 \subsection{Signal scenarios}\label{sec:SMS}
 The signal scenarios considered in this thesis are discussed in the following. In general, very different production channels for SUSY particles, such as electroweak and strong production, are possible. In case of the LHC proton-proton collisions, SUSY particles can be produced directly in the hard scattering processes of the protons partons, leading to cascade like decay structures down to the decays of the NLSP to the gravitino and a SM boson. The branching fractions of the lightest neutralino to different SM bosons depends on its mixing
 \begin{equation}
- \neutralinoOne = \sum_{i=1}^{N} N_{1} \widetilde{\psi}_i^0,
+ \neutralinoOne = \sum_{i=1}^{N} N_{1i} \widetilde{\psi}_i^0,
 \end{equation}
-where $\widetilde{\psi}_i^0=(\widetilde{B},\widetilde{W},\widetilde{H}_d^0,\widetilde{H}_u^0)$~\cite{NLSPDecay}. The mass eigenstate vectors $N_i$ are defined by four parameters, namely the bino mass $M_1$, the wino mass $M_2$ at the messenger scale, the supersymmetric mass term for Higgs $\mu$, and $\tan{\beta}$, the ratio between the two vacuum expectation values of the up- and down type Higgs bosons. In GGM, a neutralino NLSP has three possible decay branches, all involving the $\gravitino$~\cite{NLSPDecay}:
+where $\widetilde{\psi}_i^0=(\widetilde{B},\widetilde{W},\widetilde{H}_d^0,\widetilde{H}_u^0)$~\cite{NLSPDecay}. The mass eigenstate vectors $N_{1i}$ are defined by four parameters, namely the bino mass $M_1$ and the wino mass $M_2$ at the messenger scale, the supersymmetric Higss mass term $\mu$, and $\tan{\beta}$, the ratio of the two vacuum expectation values of the up- and down type Higgs bosons. In GGM, a neutralino NLSP has three possible decay branches, all involving the $\gravitino$~\cite{NLSPDecay}:
 % \begin{equation}
 \begin{align}
  \Gamma\left(\neutralinoOne\to\gravitino+\PGg\right) & = |N_{11}c_W+N_{12}s_W|^2 \mathcal{A}                                                                                                                       \\
  \Gamma\left(\neutralinoOne\to\gravitino+\PZ\right)  & = \left(|N_{12}c_W - N_{11}s_W|^2 +\frac{1}{2}|N_{13}c_{\beta}-N_{14}s_{\beta}|^2\right)\left(1-\frac{m_{\PZ}^2}{m_{\neutralinoOne}^2}\right)^4 \mathcal{A} \\
- \Gamma\left(\neutralinoOne\to\gravitino+h\right)    & = \frac{1}{2}|N_{13}c_{\beta}+N_{14}s_{\beta}|^2\left(1-\frac{m_h^2}{m_{\nneutralinoOne}^2}\right)^4 \mathcal{A}                                            
+ \Gamma\left(\neutralinoOne\to\gravitino+h\right)    & = \frac{1}{2}|N_{13}c_{\beta}+N_{14}s_{\beta}|^2\left(1-\frac{m_h^2}{m_{\nneutralinoOne}^2}\right)^4 \mathcal{A}
 \end{align}
 % \end{equation}
-Here, $c_W$, $s_W$, $c_\beta$, and $s_\beta$ are abbreviations for $\cos(\theta_{\text{Weinberg}})$, $\sin(\theta_{\text{Weinberg}})$, $\cos(\beta)$, and $\sin(\beta)$. The formulae hold in cases of on shell $\PZ$ and $h$ production. $\mathcal{A}$ is a parameter responsible for the NLSP lifetime~\cite{NLSP1,NLSP2}:
+Here, $c_W$, $s_W$, $c_\beta$, and $s_\beta$ are abbreviations for $\cos(\theta_{\text{Weinberg}})$, $\sin(\theta_{\text{Weinberg}})$, $\cos(\beta)$, and $\sin(\beta)$, respectively. The formulae hold in cases of on shell $\PZ$ and $h$ production. $\mathcal{A}$ is a parameter responsible for the NLSP lifetime~\cite{NLSP1,NLSP2}:
 \begin{equation}
  \mathcal{A} = \frac{m_{\neutralinoOne}^5}{16\pi F_{0}^{2}}\approx\left(\frac{m_{\neutralinoOne}}{100\GeV}\right)^5\left(\frac{100\TeV}{\sqrt{F_0}}\right)^4 \frac{1}{0.1\mm},
 \end{equation}
 where $F_0$ is the scale of SUSY breaking, its  range is given by $10\TeV\lesssim\sqrt{F_0}\lesssim10^6\TeV$, and it is related to the gravitino mass via $m_{\gravitino}=\frac{F_0}{\sqrt{3}M_{Planck}}$.\\
-Branching fractions for pure bino-, wino- and higgsino-like NLSPs are shown in \refFig{fig:BRNLSP}.
+Branching fractions for pure bino-, wino- or higgsino-like NLSPs are shown in \refFig{fig:BRNLSP}.
 \begin{figure}[htb]
  \centering
  \includegraphics[width=\pairwidth]{figures/signal/binoBranching}
@@ -199,35 +199,35 @@ Branching fractions for pure bino-, wino- and higgsino-like NLSPs are shown in \
  \label{fig:BRNLSP}
 \end{figure}
 Since the final state investigated in this analysis consists of a Z boson and a photon, the search is sensitive in particular to bino- and wino-like NLSP scenarios.\\
-One scenario used in the development of this search is a full GGM model, where the NLSP is the $\neutralinoOne$, and it is assumed to be $100\%$ bino like. The heavier neutralino $\neutralinoTwo$, and the lightest chargino $\charginoOne$, are assumed to be $100\%$ wino like. Therefore, the bino mass equals the mass of the lightest neutralino, while the $\PSGcpDo$ and the $\PSGczDt$ are mass degenerate and their mass equals the wino mass. For simplification reasons higgsinos are decoupled, \ie, set to very high masses. Squarks and gluinos are also decoupled in this scenario, allowing only electroweak production modes. For the most dominant process a diagram is shown in \refFig{fig:ewkSMS}. The signal cross section depends only on the wino mass, since $\PSGczDo\PSGcpDo$ and $\PSGcpDo\PSGcpDo$ pair production are by far the most dominant production scenarios. The branching fractions of the gauginos are given by the gaugino masses and their gauge eigenstates, and behave as shown in \refFig{fig:BRNLSP}. The mass of the neutralinos and the lightest chargino directly influence the transverse momenta in the final state. As can be seen in \refFig{fig:ewkSMS}, larger mass differences between the NLSP mass and the wino mass lead to higher momenta of the produced bosons in the cascades. The mass of the NLSP is directly responsible for the momenta of the final SM bosons and the gravitino, and therefore directly the missing transverse momentum in an event.
+One scenario used in the development of this search is a full GGM model, where the NLSP is the $\neutralinoOne$, and it is assumed to be $100\%$ bino like. The heavier neutralino $\neutralinoTwo$, and the lightest chargino $\charginoOne$, are assumed to be $100\%$ wino like. Therefore, the bino mass equals the mass of the lightest neutralino, while the $\PSGcpDo$ and the $\PSGczDt$ are mass degenerate and their mass equals the wino mass. For simplicity reasons higgsinos are decoupled, \ie, set to very high masses. Squarks and gluinos are also decoupled in this scenario, allowing only electroweak production modes. For the most dominant process a diagram is shown in \refFig{fig:ewkSMS}. The signal cross section depends only on the wino mass, since $\PSGczDo\PSGcpDo$ and $\PSGcpDo\PSGcpDo$ pair production are by far the most dominant production scenarios. The branching fractions of the gauginos are given by the gaugino masses and their gauge eigenstates, and behave as shown in \refFig{fig:BRNLSP}. The mass of the neutralinos and the lightest chargino directly influence the transverse momenta in the final state. As can be seen in \refFig{fig:ewkSMS}, larger mass differences between the NLSP mass and the wino mass will lead to higher momenta of the produced bosons in the cascades. The mass of the NLSP is directly responsible for the momenta of the final SM bosons and the gravitino, and therefore directly the missing transverse momentum in an event.
 \begin{figure}[tbp]
  \centering
  \includegraphics[width=0.49\textwidth]{figures/signal/TChiNG}
  \includegraphics[width=0.49\textwidth]{figures/signal/gmsb}
- \caption{Diagram of the TChiZG scenario with chargino pair production, where the charginos decay to neutralinos under soft emission of off shell W bosons, (left). Also, the chargino-neutralino production is possible. The most dominant production process with a wino-like $\PSGcpDo$ and $\PSGczDt$ and a bino-like $\PSGczDo$ of the full GMSB model, (right).}
+ \caption{Diagram of the \texttt{TChiZG} scenario with chargino pair production, where the charginos decay to neutralinos under soft emission of off shell W bosons, (left). Also, the chargino-neutralino production is possible. The most dominant production process with a wino-like $\PSGcpDo$ and $\PSGczDt$ and a bino-like $\PSGczDo$ of the full GMSB model, (right).}
  \label{fig:ewkSMS}
 \end{figure}
-A very different approach besides full theoretical models, are simplified models (SMS)\cite{SMS}. Here, only a limited particle content is assumed with simplified assumptions on the mixings and decay channels, providing a more model independent result by probing specifically distinct final states. These results can be reinterpreted in various different general models~\cite{SMSReInt}. In this thesis two simplified models are considered, one with electroweak production, and the other one with a strong production channel.\\
-The electroweak model is the TChiZG SMS, in which only neutralino-chargino associated and chargino-chargino pair production is assumed. The lightest chargino and lightest neutralino are set to have nearly the same mass, leading to soft emissions of off shell W bosons in the decays of the charginos to the NLSP. The branching fractions of the lightest neutralino to a gravitino and a photon or a Z boson are fixed to $50\%$ each ($\mathcal{BR}(\PSGczDo\to\gamma)=\mathcal{BR}(\PSGczDo\to\PZ)=0.5$). A diagram for the process can be found in~\refFig{fig:ewkSMS}. The squarks and gluinos are decoupled.\\
-The strong model considered here is the T5bbbbZG SMS. A diagram can be found in \refFig{fig:strongSMS}. In this model, gluino pairs are produced in the hard interaction, leading to decays to the NLSP under the emission of pairs of bottom quark pairs. The branching fractions for the $\PSGczDo$ to photons and Z bosons are again set to $50\%$ each.
+A very different approach besides full theoretical models are simplified models (SMS)\cite{SMS}. Here, only a limited particle content is assumed with simplified assumptions on the mixings and decay channels, providing a more model independent result by probing specifically distinct final states. These results can be reinterpreted in various general models~\cite{SMSReInt}. In this thesis two simplified models are considered, one with electroweak production, and the other one with a strong production channel.\\
+The electroweak model is the \texttt{TChiZG} SMS, in which only neutralino-chargino associated and chargino-chargino pair production is assumed. The lightest chargino and lightest neutralino are set to have nearly the same mass, leading to soft emissions of off shell W bosons in the decays of the charginos to the NLSP. The branching fractions of the lightest neutralino to a gravitino and a photon or a Z boson are fixed to $50\%$ each ($\mathcal{BR}(\PSGczDo\to\gamma\gravitino)=\mathcal{BR}(\PSGczDo\to\PZ\gravitino)=0.5$). A diagram for the process can be found in~\refFig{fig:ewkSMS}. The squarks and gluinos are decoupled.\\
+The strong model considered here is the \texttt{T5bbbbZG} SMS. A diagram is depicted in \refFig{fig:strongSMS}. In this model, gluino pairs are produced in the hard interaction, leading to decays to the NLSP under the emission of pairs of bottom quark pairs. The branching fractions for the $\PSGczDo$ to photons and Z bosons are again set to $50\%$ each.
 
 \begin{figure}[tbp]
  \centering
  \includegraphics[width=0.49\textwidth]{figures/signal/T5bbbbZG-crop}
- \caption{The Feynman diagram for the T5bbbbZG scenario with pair production of gluinos in the hard process, leading to decays to neutralinos under the emission of b quarks.}
+ \caption{The Feynman diagram for the \texttt{T5bbbbZG} scenario with pair production of gluinos in the hard process, leading to decays to neutralinos under the emission of b quarks.}
  \label{fig:strongSMS}
 \end{figure}
 
 
 \subsection{Status of SUSY searches at the Large Hadron Collider}
 Searches for SUSY have been performed  at the LEP experiment~\cite{LEP}, the Tevatron collider~\cite{TEVATRON}, and in the LHC RunI data~\cite{ChristianRunI}. Although some promising excesses have been observed for example in the opposite-sign dilepton channel~\cite{Edge}, no clear evidences for SUSY or other BSM theories have been affirmed. Currently SUSY is also constrained by precision measurements of the Higgs boson properties as mentioned above, and by measurements of rare decay processes, such as the $B_S^0\to\Pgmm\Pgmp$ decay observed by the CMS and LHCb collaborations~\cite{B0S}.\\
-Direct searches for SUSY in terms of SMS interpretations excluded gluino pair production up to gluino masses of $2\TeV$~\cite{GluinoCMS}, squark pair production up to squark masses of $1500\GeV$, and sbottom (stop) masses of $1500\GeV$~\cite{sbottom} ($1200\GeV$~\cite{stop}), respectively. The production of electroweakinos is excluded for chargino/neutralino masses up to $\approx 1.1\TeV$~\cite{EWKinos}.
-Regarding GMSB scenarios, the currently most stringent exclusion limits obtained by the CMS collaboration~\cite{CMS} are shown in \refFig{fig:GMSB_summary}.
+Direct searches for SUSY in terms of SMS interpretations excluded gluino pair production up to gluino masses of around $2\TeV$~\cite{GluinoCMS}, squark pair production up to squark masses of roughly $1500\GeV$, and sbottom (stop) masses of approximately $1500\GeV$~\cite{sbottom} ($1200\GeV$~\cite{stop}), respectively. The production of electroweakinos is excluded for chargino/neutralino masses up to around $1.1\TeV$~\cite{EWKinos}.
+Regarding GMSB scenarios, the currently most stringent exclusion limits obtained by the CMS collaboration~\cite{CMS} are shown in \refFig{fig:GMSB_summary}.\\
 \begin{figure}[tbp]
  \centering
  \includegraphics[width=0.99\textwidth]{figures/general/barplot_GMSB}
  \caption{Mass exclusion limits for simplified models in the context of GMSB~\cite{SUSSummaryPlot}.}
  \label{fig:GMSB_summary}
 \end{figure}
-The presented results are based on the proton-proton collision data recorded with the CMS detector in 2016, corresponding to an integrated luminosity of $36\fbinv$ with an center-of-mass energy of $\sqrt{s}=13\TeV$. Searches similar to the one presented in this thesis exclude electroweakino (electroweak gauge bosino) production scenarios up to $\approx900\GeV$, if final states tagged with a high-energy photon and large missing transverse momentum are analyzed~\cite{PhotonMet}. Searches targeting the single lepton plus photon final state~\cite{PhotonLepton} have set lower limits. Strong exclusions for gluino and squark pair production scenarios are set by searches targeting events with large hadronic activity and photons~\cite{PhotonHT} and searches investigating events with photons together with high b-jet multiplicity~\cite{PhotonBJet}. They set limits up to $\approx2.2\TeV.$ for gluino masses and $1.8\TeV$ for squark masses.\\
+The presented results are based on the proton-proton collision data recorded with the CMS detector in 2016, corresponding to an integrated luminosity of $36\fbinv$ with a center-of-mass energy of $\sqrt{s}=13\TeV$. Searches similar to the one presented in this thesis exclude electroweakino (electroweak gauge bosino) production scenarios up to roughly $900\GeV$, when final states tagged with a high-energy photon and large missing transverse momentum are analyzed~\cite{PhotonMet}. Searches targeting the single lepton plus photon final state~\cite{PhotonLepton} have set lower limits. Strong exclusions for gluino and squark pair production scenarios are set by searches targeting events with large hadronic activity and photons~\cite{PhotonHT} and searches investigating events with photons together with high b-jet multiplicity~\cite{PhotonBJet}. They set limits up to approximately $2.2\TeV$ for gluino masses and $1.8\TeV$ for squark masses.\\
 Despite the high exclusion limits set by CMS and ATLAS analyzes~\cite{AtlasGMSB1,AtlasGMSB2,AtlasGMSB3} in comparable ways, large regions of phase space remain unexplored. But since there are many different SUSY models, and the phenomenology of SUSY is very rich, including scenarios with R-parity violation, compressed mass spectra, long-lived particles, and displaced vertices, all described in different breaking scenarios, the search for SUSY stays interesting. Nevertheless, although the sparticle masses are not predicted by theory, natural SUSY scenarios without great fine tuning should lead to sparticle masses in the order of $\mathcal{O}(\TeV)$, which are accessible at the LHC~\cite{SUSYNaturalStatus}.
