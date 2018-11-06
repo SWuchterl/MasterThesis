@@ -1,6 +1,6 @@
-\chapter{Appendix}
-
-\begin{table}[htb]
+\chapter{Used simulated data sets}
+\section*{Simulated standard model data sets}
+\begin{table}[tb]
  \centering
  \caption{All SM MC samples used in the analysis with their cross section. In the case k-factors are applied, they are given separately. \texttt{\{..\}} stands for \texttt{RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6} in abbreviation. All samples are of the \texttt{MINIAODSIM} format.}
  \scriptsize
@@ -11,7 +11,7 @@
   \scriptsize{\textbf{ttbar}}                      &                         &                                           \\
   $\ttbar\to\ell^{+}\PGn\cPqb+\ell^{-}\PAGn\cPaqb$ & \verb|/TTTo2L2Nu_Tune*_ttHtranche3_13TeV-powheg-pythia8/{..}-v1|  & $87.31$                                   \\
   \scriptsize{\textbf{ttbarGamma}}                 &                         &                                           \\
-  $\ttbar\PGg$                                     & \verb|/TTGamma_Dilept_Tune*_13TeV-amcatnlo-pythia8/{..}-v2|  & \textcolor{red}{$1.679$}                  \\
+  $\ttbar\PGg$                                     & \verb|/TTGamma_Dilept_Tune*_13TeV-amcatnlo-pythia8/{..}-v2|  & $1.679$                                   \\
                                                    & \verb|/TTGamma_Hadronic_Tune*_13TeV-amcatnlo-pythia8/{..}-v2|  & $3.482$                                   \\
                                                    & \verb|/TTGamma_SingleLeptFromT_Tune*_13TeV-amcatnlo-pythia8/{..}-v2|  & $2.509$                                   \\
                                                    & \verb|/TTGamma_SingleLeptFromTbar_Tune*_13TeV-amcatnlo-pythia8/{..}-v2|  & $2.509$                                   \\
@@ -45,8 +45,11 @@
  \end{tabular}
 \end{table}
 
+\FloatBarrier
+\section*{Simulated SUSY data sets}
 
-\begin{table}[htb]
+
+\begin{table}[tb]
  \centering
  \caption{All SUSY MC samples used in the analysis. \texttt{\{..\}} stands for \texttt{80X\_mcRun2\_asymptotic\_2016} in abbreviation. All samples are of the \texttt{MINIAODSIM} format.}
  \scriptsize
@@ -63,14 +66,14 @@
  \end{tabular}
 \end{table}
 
-
+\chapter{Used trigger paths}
 
 \begin{table}[htb]
  % \begin{table*}[htb]
  \centering
- \caption{Trigger paths used in the analysis.}
+ \caption{Trigger paths used in the analysis for the signal event selection.}
  \normalsize
- \label{tab:app_trigger}
+ \label{tab:app_trigger1}
  \begin{tabular}[width=\textwidth]{l}
   \hline
   \normalsize{trigger path}                   \\\hline
@@ -100,27 +103,43 @@
   \verb|HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v*|                     \\
   \verb|HLT_Mu30_Ele30_CaloIdL_GsfTrkIdVL_v*|                     \\
   \verb|HLT_Mu33_Ele33_CaloIdL_GsfTrkIdVL_v*|                     \\
-  \normalsize{\textbf{HT trigger}}            \\
-  \verb|HLT_PFHT200_v*|                     \\
-  \verb|HLT_PFHT250_v*|                     \\
-  \verb|HLT_PFHT300_v*|                     \\
-  \verb|HLT_PFHT350_v*|                     \\
-  \verb|HLT_PFHT400_v*|                     \\
-  \verb|HLT_PFHT475_v*|                     \\
-  \verb|HLT_PFHT600_v*|                     \\
-  \verb|HLT_PFHT650_v*|                     \\
-  \verb|HLT_PFHT800_v*|                     \\
-  \normalsize{\textbf{MET trigger}}           \\
-  \verb|HLT_PFMET110_PFMHT110_IDTight_v*|                     \\
-  \verb|HLT_PFMET120_PFMHT120_IDTight_v*|                     \\
-  \verb|HLT_PFMET170_NoiseCleaned_v   *|                     \\
-  \verb|HLT_PFMET170_HBHECleaned_v*|                     \\
-  \verb|HLT_PFMET170_JetIdCleaned_v*|                     \\
-  \verb|HLT_PFMET170_NotCleaned_v*|                     \\
-  \verb|HLT_PFMET300_v*|                     \\
-  \verb|HLT_PFMET400_v*|                     \\
-  \verb|HLT_PFMET500_v*|                     \\
-  \verb|HLT_PFMET600_v*|                     \\
+  \hline
+ \end{tabular}
+\end{table}
+
+
+
+
+\begin{table}[htb]
+ % \begin{table*}[htb]
+ \centering
+ \caption{Trigger paths used in the analysis for the trigger efficiency measurements.}
+ \normalsize
+ \label{tab:app_trigger2}
+ \begin{tabular}[width=\textwidth]{l}
+  \hline
+  \normalsize{trigger path}         \\\hline
+  \normalsize{\textbf{HT trigger}}  \\
+  \verb|HLT_PFHT200_v*|           \\
+  \verb|HLT_PFHT250_v*|           \\
+  \verb|HLT_PFHT300_v*|           \\
+  \verb|HLT_PFHT350_v*|           \\
+  \verb|HLT_PFHT400_v*|           \\
+  \verb|HLT_PFHT475_v*|           \\
+  \verb|HLT_PFHT600_v*|           \\
+  \verb|HLT_PFHT650_v*|           \\
+  \verb|HLT_PFHT800_v*|           \\
+  \normalsize{\textbf{MET trigger}} \\
+  \verb|HLT_PFMET110_PFMHT110_IDTight_v*|           \\
+  \verb|HLT_PFMET120_PFMHT120_IDTight_v*|           \\
+  \verb|HLT_PFMET170_NoiseCleaned_v   *|           \\
+  \verb|HLT_PFMET170_HBHECleaned_v*|           \\
+  \verb|HLT_PFMET170_JetIdCleaned_v*|           \\
+  \verb|HLT_PFMET170_NotCleaned_v*|           \\
+  \verb|HLT_PFMET300_v*|           \\
+  \verb|HLT_PFMET400_v*|           \\
+  \verb|HLT_PFMET500_v*|           \\
+  \verb|HLT_PFMET600_v*|           \\
   \hline
  \end{tabular}
 \end{table}
