@@ -12,16 +12,16 @@ For simplicity, the unit system commonly used in particle physics is the natural
 \begin{equation}
  \hslash=c=1
 \end{equation}
-The observables used most frequently in particle physics are the energy, momentum, and mass. They are given in $\GeV$ in the natural unit system. For other variables, such as length and time, the metric unit system is used. Cross sections are given in barn $\left(1\barn=10^{-28}\m^2\right)$. Integrated luminosities are therefore given in $\binv$.
+The observables used most frequently in particle physics are the energy, momentum, and mass. They are given in magnitudes of $\eV$ in the natural unit system. For other variables, such as length and time, the metric unit system is used. Cross sections are given in barn $\left(1\barn=10^{-28}\m^2\right)$. Integrated luminosities are therefore given in $\binv$. Electric charges are given in dependence of the elementary charge $e$.
 
 \section{The standard model of particle physics}\label{sec:SM}
 
 The standard model of particle physics (SM) is a gauge theory describing three of the four fundamental forces, namely the electromagnetic, weak, and strong interactions~\cite{SM}. The gravitational force is described by general relativity~\cite{Einstein}, which is not described in a quantum field theory as the other three forces.\\
 All fundamental particles can be divided into two sub classes: Particles of integer spin, called bosons, and particles of half-integer spin, called fermions.\\\\
-The SM is based on the symmetry group $SU(3)\otimes SU(2)\otimes U(1)$. Interactions are described via the exchange of spin-1 gauge fields, namely vector bosons. In case of the strong force these are 8 massless gluons, which couple to the color charge. The mediator of the electromagnetic interaction is the massless photon, coupling to the electric charge of particles. In case of the weak interaction the mediator particles are the three massive bosons $\PWpm$ and $\PZ$, which couple to the weak charge.\\\\
-While the bosons mediate the fundamental forces, the matter content is given by the fermions. Fermions are divided into two subgroups, called quarks and leptons. Leptons take part only in electroweak interactions, while quarks carry also a color charge and therefore interact via the strong force. There are three generations of fermions, which include each two leptons and two quark flavors. The quark flavors are namely the down, up, strange, charm, bottom, and top quarks, while the lepton flavors are made up of three electrically charged particles, the electron ($\Pe$), the muon ($\PGm$), and the tau lepton ($\PGt$), and three electrically neutral leptons, called neutrinos ($\Pgne,\Pgngm,\Pgngt$). The latter are assigned the names of the charged leptons of the same generation. Of the quarks, there are up-type quarks carrying an electric charge of $+\frac{2}{3}e$, and down-type quarks carrying an electric charge of $-\frac{1}{3}e$.\\
+The matter content is given by the fermions. Fermions are divided into two subgroups, called quarks and leptons. Leptons take part only in electroweak interactions, while quarks carry also a color charge and therefore interact via the strong force. There are three generations of fermions, which include each two leptons and two quark flavors. The quark flavors are namely the down, up, strange, charm, bottom, and top quarks, while the lepton flavors are made up of three electrically charged particles, the electron ($\Pe$), the muon ($\PGm$), and the tau lepton ($\PGt$), as well as three electrically neutral leptons, called neutrinos ($\Pgne,\Pgngm,\Pgngt$). The latter are assigned the names of the charged leptons of the same generation. Of the quarks, there are up-type quarks carrying an electric charge of $+\frac{2}{3}e$, and down-type quarks carrying an electric charge of $-\frac{1}{3}e$.\\
+The SM is based on the symmetry group $SU(3)\otimes SU(2)\otimes U(1)$. Interactions are described via the exchange of spin-1 gauge bosons. In case of the strong force these are 8 massless gluons, which couple to the color charge. The mediator of the electromagnetic interaction is the massless photon, coupling to the electric charge of particles. For the weak interaction the responsible mediator particles are the three massive bosons $\PWpm$ and $\PZ$, which couple to the weak isospin.\\\\
 An illustration of the complete SM particle content with its properties is shown in \refFig{fig:SM}.
-For each particle, a corresponding anti-particle exists with same mass and inversed quantum numbers. Throughout this thesis particles and antiparticles are treated the same way, and both will be labeled with the name of the particle.\\
+For each particle, a corresponding antiparticle exists with same mass and inversed quantum numbers. Throughout this thesis particles and antiparticles are treated the same way, and both will be labeled with the name of the particle.\\
 
 \begin{figure}[tbp]
  \centering
@@ -32,11 +32,12 @@ For each particle, a corresponding anti-particle exists with same mass and inver
 \end{figure}
 
 
-The strong interaction between quarks and gluons is described by the quantum field theory of quantum chromodynamics (QCD). The corresponding mediators of the non-abelian gauge group $SU(2)_C$ are the eight gluons, which each carry the color-charge $C$ of an anti-color and a color, giving rise to the self coupling of gluons. Due to the confinement of quarks~\cite{Confinement}, quark-antiquark pairs will be produced out of the vacuum, if particles with color charge are being separated, since the potential energy density of the strong force includes constant terms, and the potential energy rises with increasing distance. This principle is responsible for the existence of only color-neutral bound states of two (mesons), or three (baryons) quarks, called hadrons.\\
+The strong interaction between color charged particles is described by the quantum field theory of quantum chromodynamics (QCD). The corresponding mediators of the non-abelian gauge group $SU(2)_C$ are the eight gluons, which each carry the color-charge $C$ of an anti-color and a color, giving rise to the self coupling of gluons. Due to the confinement of quarks~\cite{Confinement}, quark-antiquark pairs will be produced out of the vacuum, if particles with color charge are being separated, since the potential energy density of the strong force includes constant terms, and the potential energy rises with increasing distance. This principle is responsible for the existence of only color-neutral bound states of two (mesons), three (baryons) quarks, or five (pentaquarks~\cite{Pentaquarks}), called hadrons.\\
 Based on the same principle, color charged particles are not observed as single particles. In the hadronization process, gluons and quarks, which are not allowed to exist freely, lead to the generation of large aggregations of color charged particles while transversing the detector material. These clusters are called jets.
 \\\\
 The electromagnetic and weak forces can be unified in the electroweak theory to obtain the electroweak interaction~\cite{Weinberg,Weinberg2,Salam,Glashow}, represented by the gauge group $ SU(2)_L\otimes U(1)_Y$. The indices $L$ and $Y$ indicate, that the weak isospin $T$ couples only to left-handed $SU(2)_L$ doublets of fermions, while the right-handed $SU(2)_L$ singlets carry no isospin, and $Y$ is the hypercharge. The three mediators of the $SU(2)_L$ group are the $W^1,W^2$, and $W^3$ bosons, and the gauge boson of the $U(1)_Y$ group is the $B^0$ boson.
-Due to the spontaneous symmetry breaking in the electroweak unification, these four bosons mix to the observed $\PWpm$ and $\PZ$ bosons and the photon $\PGg$:
+% Due to the spontaneous symmetry breaking in the electroweak unification, these four bosons mix to the observed $\PWpm$ and $\PZ$ bosons and the photon $\PGg$:
+These four bosons mix to the observed $\PWpm$ and $\PZ$ bosons and the photon $\PGg$:
 \begin{equation}
  \left(
  \begin{matrix}
@@ -61,9 +62,9 @@ Due to the spontaneous symmetry breaking in the electroweak unification, these f
 \begin{equation}
  \PWpm = \frac{1}{\sqrt{2}}\left(W^1\mp i W^2\right),
 \end{equation}
-where $\theta_W=\theta_{Wweinberg}\approx0.231$~\cite{PDG} is the weak-mixing angle.
-The resulting weak interaction is parity violating. The $\PWpm$ bosons only couple to left-handed fermions, while the neutral Z boson couples to both left-handed and right-handed particles, but with different strength.\\
-\\Because in this theory the gauge bosons are not allowed to have dirac mass terms in the Lagrangian since it would break local gauge symmetries, but the $\PZ$ boson mass is measured to be $91.2\GeV$~\cite{PDG} and the $\PW$ boson mass to be $80.4\GeV$~\cite{PDG}, the Higgs mechanism is introduced~\cite{Higgs1,Higgs2,Higgs3}. In its simplest representation it predicts a complex scalar doublet Higgs potential, which is symmetric, but has a non zero vacuum expectation value and is therefore responsible for the spontaneous symmetry breaking of the $ SU(2)_L\otimes U(1)_Y$ gauge group. The Higgs field can be represented by the complex scalar $SU(2)$ doublet
+where $\theta_W=\theta_{\text{Weinberg}}\approx0.231$~\cite{PDG} is the weak-mixing angle.
+The resulting weak interaction is maximal parity violating~\cite{Wu,Goldhaber}. The $\PWpm$ bosons only couple to left-handed fermions, while the neutral Z boson couples to both left-handed and right-handed particles, but with different strength.\\
+\\In this theory the gauge bosons are not allowed to have dirac mass terms in the Lagrangian since it would break local gauge symmetries. However, since the $\PZ$ boson mass is measured to be $91.2\GeV$~\cite{PDG} and the $\PW$ boson mass to be $80.4\GeV$~\cite{PDG}, the Higgs mechanism is introduced~\cite{Higgs1,Higgs2,Higgs3}. In its simplest representation, it predicts a complex scalar Higgs doublet with a potential, that is symmetric, but has a non zero vacuum expectation value. Therefore it is responsible for the spontaneous symmetry breaking of the $ SU(2)_L\otimes U(1)_Y$ gauge group. The Higgs field can be represented by the complex scalar $SU(2)_L$ doublet
 \begin{equation}
  \Phi=
  \left(\begin{matrix}
@@ -83,11 +84,11 @@ with the potential
 \begin{equation}
  V(\Phi)=\mu^2 \Phi^{\dagger}\Phi+\lambda\left(\Phi^{\dagger}\Phi\right)^2.
 \end{equation}
-For $\mu<0$ it results in the non-zero vacuum expectation value of
+For $\mu^2<0$ it results in the non-zero vacuum expectation value of
 \begin{equation}
- v = \frac{|\mu|}{\sqrt{\lambda}}= 246\GeV.
+ v = \frac{|\mu|}{\sqrt{\lambda}}.
 \end{equation}
-The field can be rewritten without loss of generality as
+The field can be rewritten without loss of generality by expanding around the vaccum expectation value and moving to a unitary gauge as
 \begin{equation}
  \Phi = \frac{1}{\sqrt{2}}
  \left(\begin{matrix}
@@ -96,7 +97,7 @@ The field can be rewritten without loss of generality as
   \end{matrix}
  \right),
 \end{equation}
-where $h$ is a scalar field. Thus, three of the four degrees of freedom of the field are consumed to give mass terms to the $\PW$ and $\PZ$ boson. For the remaining one, a fourth spin-0 boson, the Higgs boson, is postulated. For consistency, leptons acquire also masses in the SM via Yukawa interactions with the Higgs field.
+where $h$ is a scalar field. Thereby, three of the four degrees of freedom of the field are consumed to give mass terms to the $\PW$ and $\PZ$ boson. For the remaining one, a fourth spin-0 boson, the Higgs boson, is postulated. For consistency, leptons acquire also masses in the SM via Yukawa interactions with the Higgs field.
 Such a spin-0 neutral boson has been observed in proton-proton collisions at the LHC in 2012~\cite{HiggsCMS,HiggsATLAS}, and its mass has been determined to be $125.09\pm0.24\GeV$. The Higgs theory is in good agreement with SM predictions~\cite{HiggsPrecise}, and recently also the couplings of Higgs bosons to the top quark~\cite{ttH}, and decays of Higgs bosons to bottom quarks and tau leptons have been observed~\cite{HiggsTauTau,HiggsBB}, strengthening the presumption, that the found Higgs boson is the postulated SM Higgs boson.
 
 
@@ -113,35 +114,35 @@ Although the SM describes all phenomena observed at high energy particle collide
 \begin{figure}
  \centering
  \includegraphics[width=\pairwidth]{figures/general/couplings}
- \caption{Running couplings for all three fundamental forces in case of the SM (dashed lines) and the MSSM for two different sparticle mass ranges ($750\GeV and 2.5\TeV$) (solid lines)~\cite{SUSYPrimer}.}
+ \caption{Running couplings for all three fundamental forces in case of the SM (dashed lines) and the MSSM for two different sparticle mass ranges ($750\GeV$ and $2.5\TeV$) (solid lines)~\cite{SUSYPrimer}.}
  \label{fig:couplings}
 \end{figure}
 
 
 
 \section{Supersymmetry}\label{sec:SUSY}
-Supersymmetry (SUSY)~\cite{SUSYOriginal,SUSYPrimer} is one of the most popular BSM models and was developed in the 1970s~\cite{SUSYTheorem,HAAG1975257}. It is well motivated within theory, because it is the only possible extension of space time symmetry. Since then, many different SUSY models have been established, all based on the same principle: SUSY connects fermions with bosons and the other way around by introducing supersymmetric partners for each SM particle. These superpartners differ only in spin by $\pm1/2$, all other quantum numbers are kept equal. With the help of generators $Q_\text{i}$, bosonic and fermionic states can be switched:
+Supersymmetry (SUSY)~\cite{SUSYOriginal,SUSYPrimer} is one of the most popular BSM models and was developed in the 1970s~\cite{SUSYTheorem,HAAG1975257}. It is well motivated within theory, because it is the only possible extension of space time symmetry. Since then, many different SUSY models have been established, all based on the same principle: SUSY connects fermions with bosons and the other way around by introducing supersymmetric partners for each SM particle. These superpartners differ only in spin by $\pm1/2$, all other quantum numbers are kept equal. With the help of generators $Q_\text{i}$, bosonic and fermionic states can be transformed into each other:
 \begin{equation}
- Q\,\ket{fermion}=\ket{boson},~~~~~~+ Q\,\ket{boson}=\ket{fermion}.
+ Q\,\ket{fermion}=\ket{boson},~~~~~~ Q\,\ket{boson}=\ket{fermion}.
 \end{equation}
 Some of the many advantages of SUSY are, that multiple models directly provide candidates for dark matter particles, and also solve the unification of forces and the Hierarchy Problem without any fine tuning of physical parameters to match the observation.\\
-The simplest model of SUSY is the minimal supersymmetric standard model (MSSM), where only exactly one pair of $Q,Q^{\dagger}$ exists. Within the MSSM, for each fermion in the SM exactly two supersymmetric scalar bosons, left and right-handed, are introduced. To differentiate between these two, the names of supersymmetric partners are those of the SM particles prepended with an "s-" (standing for scalar). Thus the partners of fermions are called sfermions, and \eg the partner of the electron is the selectron. The names of superpartners of bosons are constructed by appending the SM name with an "-ino", making them bosinos, so the gluons superpartner for example is called gluino. In general, superpartners are called sparticles, and are labeled the same as their SM counterparts, but with a tilde ($\mu \to \widetilde{\mu}$). Also, all couplings between all sparticles are the same as of their SM partners.\\
+The simplest model of SUSY is the minimal supersymmetric standard model (MSSM), where only exactly one $Q$ exists. Within the MSSM, for each fermion in the SM exactly two supersymmetric scalar bosons, left and right-handed, are introduced. To differentiate between SM and SUSY particles two, the names of supersymmetric partners are those of the SM particles prepended with an "s-" (standing for scalar). Thus the partners of fermions are called sfermions, and \eg the partner of the electron is the selectron. The names of superpartners of bosons are constructed by appending the SM name with an "-ino", making them bosinos, so the gluons superpartner for example is called gluino. In general, superpartners are called sparticles, and are labeled the same as their SM counterparts, but with a tilde ($\mu \to \widetilde{\mu}$). Also, all couplings between all sparticles are the same as of their SM partners.\\
 To give masses in the spontaneous symmetry breaking (SSB) to all particles, including both up- and down-type fermions, the SM higgs sector needs to be extended to two complex scalar doublets:
 \begin{equation}
- H_u=  \left[
-  \begin{matrix}
-   H_u^+ \\
-   H_u^0
-  \end{matrix}
-  \right],~~~~~
- H_d=  \left[
-  \begin{matrix}
-   H_d^0 \\
-   H_d^-
-  \end{matrix}
-  \right].
+ H_u=  \left(
+ \begin{matrix}
+  H_u^+ \\
+  H_u^0
+ \end{matrix}
+ \right),~~~~~
+ H_d=  \left(
+ \begin{matrix}
+  H_d^0 \\
+  H_d^-
+ \end{matrix}
+ \right).
 \end{equation}
-The $H_d$ gives masses to the down-type quarks and charged leptons, while the $H_u$ is responsible for the masses of up-type quarks. Consistently four higgsinos as superpartners are introduced in the MSSM. In the SSB, there are eight degrees of freedom in the Higgs sector instead of four, related to the two Doublets, and giving rise to an expanded Higgs sector consisting of five particles: the two neutral scalars $h^0$ and $H^0$, the two charged scalars $H^{\pm}$, and the neutral pseudoscalar $A^0$. The observed Higgs boson at the LHC can be identified as one of the two neutral scalars, where the lighter $h^0$ is chosen by convention.\\
+The $H_d$ gives masses to the down-type quarks and charged leptons, while the $H_u$ is responsible for the masses of up-type quarks. Consistently four higgsinos as superpartners are introduced in the MSSM. In the SSB, there are eight degrees of freedom in the Higgs sector instead of four, related to the two Doublets, and giving rise to an expanded Higgs sector consisting of five particles: the two neutral scalars $h^0$ and $H^0$, the two charged scalars $H^{\pm}$, and the neutral pseudoscalar $A^0$. The remaining three degrees of freedom are used to give masses to the gauge bosons as in the SM. The observed Higgs boson at the LHC can be identified as one of the two neutral scalars, where the lighter $h^0$ is chosen by convention.\\
 The gauginos and higgsinos mix, similar to the mixing in the electroweak sector, to eight mass eigenstates, which are the four neutral neutralinos $\neutralinoOne,~\neutralinoTwo,~\neutralinoThree$,~and $\neutralinoFour$, and the four charged charginos $\charginoOne$ and $\charginoTwo$.\\
 The total particle content of the MSSM is shown in \refFig{fig:mssm}. To include gravity, the SM is extended by the graviton $G$, and the SUSY sector is extended by its superpartner, the gravitino $\gravitino$.
 
@@ -152,18 +153,20 @@ The total particle content of the MSSM is shown in \refFig{fig:mssm}. To include
  \label{fig:mssm}
 \end{figure}
 
-Because in unbroken SUSY the particles and their corresponding sparticles should have the same masses, and those SUSY particles should have been found easily in the past (considering \eg an electron/selectron mass of $\approx511\keV$), SUSY must be a broken symmetry. There have been many different theories developed over time to explain different breaking scenarios. To name the most prominent ones, these are models where gravity is responsible for the SUSY breaking~\cite{SUSYPrimer}, anomaly breaking scenarios~\cite{AMSB}, and in particular gauge-mediated supersymmetry breaking, which will be discussed in the next section.\\
-SUSY can provide Dark Matter candidates, if the lightest supersymmetric particle (LSP), is stable, electrically neutral, and colorless. It is not fundamentally necessary, that the LSP is stable. In so-called R-Parity violating scenarios, decays of all SUSY particles into SM particles are allowed. Hence, the conservation of the Baryon number $B$, or the lepton number $L$ is violated. R-parity
+In unbroken SUSY the particles and their corresponding sparticles should have the same masses, and those SUSY particles should have been found easily in the past (considering \eg an electron/selectron mass of $\approx511\keV$). Therefore, SUSY must be a broken symmetry. There have been many different theories developed over time to explain different breaking scenarios. Attractive approaches are models where gravity is responsible for the SUSY breaking~\cite{SUSYPrimer}, anomaly breaking scenarios~\cite{AMSB}, and in particular gauge-mediated supersymmetry breaking, which will be discussed in the next section.\\
+SUSY can provide Dark Matter candidates, if the lightest supersymmetric particle (LSP), is stable, electrically neutral, and colorless.
+R-parity
 \begin{equation}
  R = (-1)^{3B+L+S}
 \end{equation}
-is therefore introduced as a new quantum number, where S is the spin. The R-parity is $-1$ for sparticles, and $+1$ for particles, respectively. R-parity conserving scenarios are motivated by many precision measurements, such as the life time measurement of protons~\cite{ProtonDecay}.
+is therefore introduced as a new conserved quantum number, where S is the spin, $B$ the Baryon number, and $L$ the lepton number. The R-parity is $-1$ for sparticles, and $+1$ for particles, respectively.\\
+It is not fundamentally necessary, that the LSP is stable. In R-Parity violating scenarios, decays of all SUSY particles into SM particles are allowed. Hence, the conservation of the Baryon number, or the lepton number is violated. R-parity conserving scenarios however are motivated by many precision measurements, such as the life time measurement of protons~\cite{ProtonDecay}.
 In this thesis, only R-parity conserving scenarios are considered. Therefore SUSY particles can only be produced in pairs, and the LSP needs to be stable.\\
 
 
 
 \subsection{General Gauge Mediation}\label{sec:GGM}
-The phenomenology of SUSY is very rich. While in most of the popular models gravity is responsible for SUSY breaking, a different model, motivating this search, is general gauge mediation (GGM). It is based on the assumption of gauge mediated supersymmetry breaking (GMSB)~\cite{GGM}, where an additional "hidden sector" is introduced, that is responsible for the breaking. This sector is mainly decoupled, and the possible interactions between the visible and the hidden sector are only achieved by messenger fields mediated by gauge interactions. In GMSB, the LSP is typically the gravitino $\gravitino$, and this particle is assumed here to be very light ($\ll1\GeV$). Therefore, the next-to-lightest supersymmetric particle (NLSP), which basically can be any sparticle, decays promptly. Since the gravitino is stable because of R-parity conservation, electrically and color neutral, it will leave any detector undetected, causing an imbalance in the measured total transverse momentum in proton-proton collisions of the LHC.\\
+The phenomenology of SUSY is very rich. While in many models gravity is responsible for SUSY breaking, a different approach, motivating this search, is general gauge mediation (GGM). It is based on the assumption of gauge mediated supersymmetry breaking (GMSB)~\cite{GGM}, where an additional "hidden sector" is introduced, that is responsible for the breaking. This sector is mainly decoupled, and the possible interactions between the visible and the hidden sector are only achieved by messenger fields mediated by gauge interactions. In many studied GMSB models, the LSP is the gravitino $\gravitino$. This particle is assumed here to be very light ($\ll1\GeV$). Therefore, the next-to-lightest supersymmetric particle (NLSP), which basically can be any sparticle, decays promptly. Since the gravitino is stable because of R-parity conservation, electrically and color neutral, it will leave any detector undetected, causing an imbalance in the measured total transverse momentum in proton-proton collisions at the LHC.\\
 In all models considered throughout this thesis, the NLSP is assumed to be the lightest neutralino ($\neutralinoOne$). The mixing of the NLSP can include bino, wino, and higgsino components, each enabling different decay channels.
 
 
