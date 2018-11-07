@@ -55,7 +55,7 @@ In order to obtain a high purity $\PW\PZ$ control region, the SFOC dilepton crit
  \item exactly one SFOC lepton pair ($\Pe\Pe$ or $\PGm\PGm$),
  \item exactly one additional third lepton ($\Pe$ or $\Pgm$),
  \item $\Delta R(\ell_1,\PGg)>0.3$ and $\Delta R(\ell_2,\PGg)>0.3$,
- \item $81\geV<m_{\ell\ell}<101\GeV$,
+ \item $81\GeV<m_{\ell\ell}<101\GeV$,
  \item $\ptmiss>70\GeV$,
  \item $m_{T}(\ptvecmiss,\mathrm{p_{\ell_3}})>50\GeV$.
 \end{itemize}
@@ -113,7 +113,7 @@ If the different background processes are compared, the diboson processes may ha
 The strategy to perform a sophisticated background prediction is based on MC simulation for all backgrounds. As mentioned in \refSec{sec:CR}, different CRs are developed, that are enriched with corresponding background events. In those CRs scale factors (SF) $\alpha_i$ are calculated by scaling the total simulation to the measured data yield. Contributions of other backgrounds in the CR are considered in the calculation by fixing their contribution, thus only one background is scaled. The SFs are calculated via the following formula:
 \begin{align}
  1                        & = \frac{\#Data}{\#FixedBackground+\alpha_i\cdot\#BackgroundToScale} \\
- \Longrightarrow \alpha_i & = \frac{\#Data-\#FixedBackground}{\#BackgroundToScale}.
+ \Longrightarrow \alpha_i & = \frac{\#Data-\#FixedBackground}{\#BackgroundToScale}.             
 \end{align}
 Due to the used method, which is performed similar in each CR, possible uncertainties in the normalization cancel, and only uncertainties in the shape need to be considered, see~\refSec{sec:Syst}. The uncertainty arising from the SF calculation is purely of statistical origin, and is calculated via error propagation
 \begin{equation}
@@ -131,12 +131,12 @@ As shown in \refFig{fig:PieCharts}, the main background contribution is $\ttbar(
  \caption{Yields in the $\ttbar(\PGg)$ CR for the pure simulation and measured data.}
  \label{tab:CRTT}
  \begin{tabular}{llll}
-
+  
   process      & raw simulation & simulation & data                  \\\hline
   $\ttbar$     & 12077          & 416.93     &                       \\
   $\ttbar\PGg$ & 128396         & 1420.19    &                       \\\hline\hline
   sum          & 140473         & 1837.12    & \multirow{2}{*}{1750} \\
-  other        & 14631          & 269.21     &
+  other        & 14631          & 269.21     &                       
  \end{tabular}
 \end{table}
 With the integral method applied, the SF given in \refEq{eq:AlphaTT} is obtained.
@@ -179,12 +179,12 @@ All in all the KS-values indicate a very good matching between predicted and obs
  \caption{Yields in the DY/$\PZ(\PGg)$ CR for the pure simulation and measured data.}
  \label{tab:CRDY}
  \begin{tabular}{llll}
-
+  
   process   & raw simulation & simulation & data                   \\\hline
   Drell-Yan & 11710          & 13008.83   &                        \\
   $\PZ\PGg$ & 170161         & 22692.88   &                        \\\hline\hline
   sum       & 181871         & 35701.41   & \multirow{2}{*}{38419} \\
-  other     & 87337          & 374.00     &
+  other     & 87337          & 374.00     &                        
  \end{tabular}
 \end{table}
 \begin{equation}\label{eq:AlphaDY}
@@ -218,7 +218,7 @@ The diboson production of $\PW\PZ$ pairs is the second important background cont
   process  & raw simulation & simulation & data                  \\\hline
   $\PW\PZ$ & 113744         & 895.74     &                       \\\hline\hline
   sum      & 113744         & 895.74     & \multirow{2}{*}{1193} \\
-  other    & 93914          & 186.94     &
+  other    & 93914          & 186.94     &                       
  \end{tabular}
 \end{table}
 The agreement beforehand is also very good, although this background is a higher order process and is therefore simulated at NLO, see \refSec{sec:Simulation}, which includes several complicated effects the event generator needs to handle properly. The SF $\alpha_{DY/\PZ(\PGg)}$ is determined to be
@@ -251,12 +251,12 @@ The last important and fourth biggest background contribution is $\PZ\PZ$ diboso
  \caption{Yields in the $\PZ\PZ$ CR for the pure simulation and measured data.}
  \label{tab:CRZZ}
  \begin{tabular}{llll}
-
+  
   process                 & raw simulation & simulation & data                 \\\hline
   $\PZ\PZ(\to2\ell2\Pgn)$ & 5              & 0.0005     &                      \\
   $\PZ\PZ(\to4\ell)$      & 459221         & 226.94     &                      \\\hline\hline
   sum                     & 459226         & 226.94     & \multirow{2}{*}{251} \\
-  other                   & 79             & 0.07       &
+  other                   & 79             & 0.07       &                      
  \end{tabular}
 \end{table}
 With the integral method applied, a SF $\alpha_{\PZ\PZ}$ stated in \refEq{eq:AlphaZZ} is determined, being relatively close to one.
