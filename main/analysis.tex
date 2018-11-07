@@ -110,7 +110,7 @@ If the different background processes are compared, the diboson processes may ha
  \caption{Relative amounts for all group of considered backgrounds for the two search bins in the SR.}
  \label{fig:PieCharts}
 \end{figure}
-The strategy to perform a sophisticated background prediction is based on MC simulation for all backgrounds. As mentioned in \refSec{sec:CR}, different CRs are developed, that are enriched with corresponding background events. In those CRs scale factors (SF) $\alpha_i$ are calculated by scaling the total simulation to the measured data yield. Contributions of other backgrounds in the CR are considered in the calculation by fixing their contribution, thus only one background is scaled. The SFs are calculated via the following formula:
+The strategy to perform a sophisticated background prediction is based on MC simulation for all backgrounds. As mentioned in \refSec{sec:CR}, different CRs are developed, that are enriched with corresponding background events. In those CRs, scale factors (SF) $\alpha_i$ are calculated by scaling the total simulation to the measured data yield. Contributions of other backgrounds in the CR are considered in the calculation by fixing their contribution, thus only one background is scaled. The SFs are calculated via the following formula:
 \begin{align}
  1                        & = \frac{\#Data}{\#FixedBackground+\alpha_i\cdot\#BackgroundToScale} \\
  \Longrightarrow \alpha_i & = \frac{\#Data-\#FixedBackground}{\#BackgroundToScale}.             
@@ -120,6 +120,7 @@ Due to the used method, which is performed similar in each CR, possible uncertai
  \sigma_{\alpha_i}^2 = \sigma_{D}^2 \cdot \left(\frac{D}{B}\right)^2 + \sigma_{F}^2 \cdot \left(\frac{F}{B}\right)^2 + \sigma_{B}^2 \cdot \left(\frac{D-F}{B^2}\right)^2,
 \end{equation}
 where $B=\#BackgroundToScale$, $F=\#FixedBackground$, $D=\#Data$, and $\sigma_i$ are the corresponding statistical uncertainties. These are assumed to be uncorrelated Poissonian uncertainties, and can be calculated via $\sigma_i=\sqrt{N_i}$, where $N$ is the associated total integral in the selection. In the case of MC simulation, for the calculation of the SF the normalized event yield is used, whereas in the error calculation the pure MC event count is considered to reflect the underlying precision of the simulation. These method is referred to as the "integral method" in the following.\\
+In each CR, all other backgrounds have of course an influence, since their contributions are not negligible. Therefore, the order of SF determination can introduce a bias. To minimize this effect, the SFs are calculated in descending order of the purity of the background sample. At first, the $\PZ\PZ$ SF is determined, followed by DY/$\PZ(\PGg)$, $\ttbar(\PGg)$, and $\PW\PZ$. However, the background estimations are discussed in a different order, starting with the most important background, $\ttbar(\PGg)$. The systematic uncertainty arising from the choice of order is discussed in \refSec{sec:Syst}.\\
 After determining all SFs, the background prediction will be tested in the VR. Therefore, the simulated backgrounds in the VR will be scaled accordingly, and the result will be investigated, see \refSec{sec:Validation}.
 
 
@@ -136,16 +137,16 @@ As shown in \refFig{fig:PieCharts}, the main background contribution is $\ttbar(
   $\ttbar$     & 12077          & 416.93     &                       \\
   $\ttbar\PGg$ & 128396         & 1420.19    &                       \\\hline\hline
   sum          & 140473         & 1837.12    & \multirow{2}{*}{1750} \\
-  other        & 14631          & 269.21     &                       
+  other        & 14631          & 275.25     &                       
  \end{tabular}
 \end{table}
 With the integral method applied, the SF given in \refEq{eq:AlphaTT} is obtained.
 \begin{equation}\label{eq:AlphaTT}
- \alpha_{\ttbar(\PGg)}=0.806 \pm 0.324 (stat.) [\hat{=}4.02\%].
+ \alpha_{\ttbar(\PGg)}=0.803 \pm 0.327 (stat.) [\hat{=}4.07\%].
 \end{equation}
 After application of $\alpha_{\ttbar(\PGg)}$, the number of events in data and total simulation match per definition.\\
 Since the analyzed final state in this CR is very sensitive to higher order effects such as jet and photon radiation, and complex matrix elements are needed to describe the hard interaction, and these are very hard to model in the simulation, a SF differing from unity is not unexpected. Because the generation of MC simulation in general is time and resource consuming, simplifications are made on \eg radiation effects, and not all aspects of a specific process are calculated and generated at NLO, although \MCATNLO was used for the generation of the $\ttbar\PGg$ sample. NNLO electroweak effects can cause negative corrections for example due to destructive terms in higher order corrections. The uncertainty of the order of $4\%$ indicates, that a sufficient amount of events is present in the corresponding CR.\\
-The resulting prediction shows a good agreement with data, as can be seen from the $\ptmiss$ and $\mtTwo$ distributions in the CR after rescaling in \refFig{fig:CRTT}. The uncertainty of the fit method is of statistical origin, and is treated as a systematic in the following. The agreement of additional important observables, such as the transverse momentum of the photon and both leptons, is also investigated, and the plots can be found in the appendix in \refFig{}\todo{ref}. To strengthen the confidence in the outcome, Kolmogorov-Smirnov~\cite{KS} tests are performed to study the shape agreement. No significant disagreement is found, and the KS-values from the tests results are quoted on the plots for each individual distribution. KS-values much larger than $0.1$ indicate agreement between the input distributions.
+The resulting prediction shows a good agreement with data, as can be seen from the $\ptmiss$ and $\mtTwo$ distributions in the CR after rescaling in \refFig{fig:CRTT}. The uncertainty of the fit method is of statistical origin, and is treated as a systematic in the following. The agreement of additional important observables, such as the transverse momentum of the photon and both leptons, is also investigated, and no systematic deviation was found. To strengthen the confidence in the outcome, Kolmogorov-Smirnov~\cite{KS} tests are performed to study the shape agreement, which are based on the largest deviation between the two compared distributions. No significant shape disagreement is found, and the KS-values from the tests results are quoted on the plots for each individual distribution. KS-values $\ll1$ indicate disagreement between the input distributions, otherwise the distributions are considered to match.
 \begin{figure}[tbp]
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_CR_tt/CRTT_EM_nom_met_log}
@@ -172,7 +173,9 @@ Since the $\ttbar(\PGg)$ background is the most dominating one, further studies 
 
 
 \subsection{Drell-Yan and $\PZ\PGg$ diboson production}
-Although the Drell-Yan and dibosonic $\PZ\PGg$ background is admittedly small in the two SR bins, its contribution is the fourth largest. Hence, it needs to be assured, that the background is modeled well. As in the case of the $\ttbar(\PGg)$ background, it is composited of two major parts, the Drell-Yan process, where quarks annihilate to off shellphotons or Z bosons and generate leptons in their decays, and the diboson production of $\PZ\PGg$ pairs. The integral method as explained above is used to determine the SF $\alpha_{DY/\PZ(\PGg)}$ in the dedicated CR defined in \refSec{sec:CR}. The relevant event yields are quoted in \refTab{tab:CRDY}, and the resulting SF is stated in \refEq{eq:AlphaDY}. With a purity of about $99\%$, and a total event count that large, a precise SF determination is feasible, as can be concluded also from the small statistical uncertainty of $\approx1\%$. The agreement between simulation and data is very good, even before application of $\alpha_{DY/\PZ(\PGg)}$, since it euquals nearly unity. The post-scaling distributions of $\ptmiss$ and $\mtTwo$ are shown in \refFig{fig:CRDY}. They show overall a good agreement, only in the high $\mtTwo$ region there are some fluctuations due to the limited statistics being present both in data and simulation. Further distributions are investigated, that can be found in the appendix in \refFig{fig_app}. The same cross checks as for the $\ttbar(\PGg)$ background are made, including the Kolmogorov-Smirnov tests, and the additional $\chi^2$-fits with variable bin size in different observables.
+Although the Drell-Yan and dibosonic $\PZ\PGg$ background is admittedly small in the two SR bins, its contribution is the fourth largest. Hence, it needs to be assured, that the background is modeled well. As in the case of the $\ttbar(\PGg)$ background, it is composited of two major parts, the Drell-Yan process, where quarks annihilate to off shellphotons or Z bosons and generate leptons in their decays, and the diboson production of $\PZ\PGg$ pairs. The integral method as explained above is used to determine the SF $\alpha_{DY/\PZ(\PGg)}$ in the dedicated CR defined in \refSec{sec:CR}. The relevant event yields are quoted in \refTab{tab:CRDY}, and the resulting SF is stated in \refEq{eq:AlphaDY}. With a purity of about $99\%$, and a total event count that large, a precise SF determination is feasible, as can be concluded also from the small statistical uncertainty of $\approx1\%$. The agreement between simulation and data is very good, even before application of $\alpha_{DY/\PZ(\PGg)}$, since it euquals nearly unity. The post-scaling distributions of $\ptmiss$ and $\mtTwo$ are shown in \refFig{fig:CRDY}. They show overall a good agreement, only in the high $\mtTwo$ region there are some fluctuations due to the limited statistics being present both in data and simulation.
+% Further distributions are investigated, that can be found in the appendix in \refFig{fig_app}.
+The same cross checks as for the $\ttbar(\PGg)$ background are made, including the Kolmogorov-Smirnov tests, and the additional $\chi^2$-fits with variable bin size in different observables.
 All in all the KS-values indicate a very good matching between predicted and observed shape, albeit the Kolmogorov-Smirnov test provides a very small KS value for the consistency between the $\ptmiss$ distributions. But, this is mainly due to the high statistics in data and therefore a higher absolute discrepancy, contradicting with the lower statistics in simulation, leading to larger fluctuations. These discrepancy is not visible in the ratio shown under the plot.\\
 \begin{table}[tbp]
  \centering
@@ -181,10 +184,10 @@ All in all the KS-values indicate a very good matching between predicted and obs
  \begin{tabular}{llll}
   
   process   & raw simulation & simulation & data                   \\\hline
-  Drell-Yan & 11710          & 13008.83   &                        \\
+  Drell-Yan & 11710          & 13008.53   &                        \\
   $\PZ\PGg$ & 170161         & 22692.88   &                        \\\hline\hline
   sum       & 181871         & 35701.41   & \multirow{2}{*}{38419} \\
-  other     & 87337          & 374.00     &                        
+  other     & 87337          & 377.02     &                        
  \end{tabular}
 \end{table}
 \begin{equation}\label{eq:AlphaDY}
@@ -218,14 +221,15 @@ The diboson production of $\PW\PZ$ pairs is the second important background cont
   process  & raw simulation & simulation & data                  \\\hline
   $\PW\PZ$ & 113744         & 895.74     &                       \\\hline\hline
   sum      & 113744         & 895.74     & \multirow{2}{*}{1193} \\
-  other    & 93914          & 186.94     &                       
+  other    & 93914          & 173.47     &                       
  \end{tabular}
 \end{table}
 The agreement beforehand is also very good, although this background is a higher order process and is therefore simulated at NLO, see \refSec{sec:Simulation}, which includes several complicated effects the event generator needs to handle properly. The SF $\alpha_{DY/\PZ(\PGg)}$ is determined to be
 \begin{equation}\label{eq:AlphaWZ}
- \alpha_{\PW\PZ}=1.123 \pm 0.037 (stat.) [\hat{=}3.29\%],
+ \alpha_{\PW\PZ}=1.138 \pm 0.037 (stat.) [\hat{=}3.23\%],
 \end{equation}
-which indicates that usage of NNLO cross sections for the $\PW\PZ$ samples is nearly sufficient enough to describe the background. Of course higher order effects can lead to higher cross sections, thus it is not unexpected to obtain a SF varying $\approx12\%$ from unity. Resulting distributions of the description of the $\ptmiss$ and $\mtTwo$ variables are shown in \refFig{fig:CRWZ}. As can be seen, the predicted shape is in consistency over the whole range with the observed data, also in the very high $\ptmiss$ and $\mtTwo$ regime. This is further confirmed by the additional cross checks, that are also realized in the other two CRs described above. The KS-values close to one strengthen the trust in the background estimation method. The comparison plots for other distributions can be found in the appendix in \refFig{fig:app_}.
+which indicates that usage of NNLO cross sections for the $\PW\PZ$ samples is nearly sufficient enough to describe the background. Of course higher order effects can lead to higher cross sections, thus it is not unexpected to obtain a SF varying $\approx12\%$ from unity. Resulting distributions of the description of the $\ptmiss$ and $\mtTwo$ variables are shown in \refFig{fig:CRWZ}. As can be seen, the predicted shape is in consistency over the whole range with the observed data, also in the very high $\ptmiss$ and $\mtTwo$ regime. This is further confirmed by the additional cross checks, that are also realized in the other two CRs described above. The KS-values close to one strengthen the trust in the background estimation method.
+% The comparison plots for other distributions can be found in the appendix in \refFig{fig:app_}.
 \begin{figure}[tbp]
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_CR_wz/CRWZ_LL_nom_met_log}
@@ -256,19 +260,19 @@ The last important and fourth biggest background contribution is $\PZ\PZ$ diboso
   $\PZ\PZ(\to2\ell2\Pgn)$ & 5              & 0.0005     &                      \\
   $\PZ\PZ(\to4\ell)$      & 459221         & 226.94     &                      \\\hline\hline
   sum                     & 459226         & 226.94     & \multirow{2}{*}{251} \\
-  other                   & 79             & 0.07       &                      
+  other                   & 74             & 1.48       &                      
  \end{tabular}
 \end{table}
 With the integral method applied, a SF $\alpha_{\PZ\PZ}$ stated in \refEq{eq:AlphaZZ} is determined, being relatively close to one.
 \begin{equation}\label{eq:AlphaZZ}
  \alpha_{\PZ\PZ}=1.109 \pm 0.064 (stat.) [\hat{=}5.74\%].
 \end{equation}
-Post-fit distributions to show the good agreement in the $\ptmiss$ and $\mtTwo$ distribution can be found in \refFig{fig:CRZZ}. As mentioned, the precision is limited by the low statistics of the selected sample, but nevertheless is sufficient enough to establish a working background prediction. The shapes agree very well, as it is additionally indicated by the KS-values printed on the plots, also in the high $\mtTwo$ region. The properties of the $\PZ\PZ\to4\ell$ processes does not allow to study the prediction in the high $\ptmiss$ regime, since only nongenuine $\ptmiss$ is produced, but agreement of the $\pt$ distributions of the leptons, that are listed in \refFig{fig:app_} in the appendix, can be translated into the agreement of the $\ptmiss$ in the $\PZ\PZ\to2\ell2\PGn$ background, that is generated with the same event generator.
+Post-fit distributions to show the good agreement in the $\ptmiss$ distribution and invariant dilepton mass distribution of the second Z boson can be found in \refFig{fig:CRZZ}. As mentioned, the precision is limited by the low statistics of the selected sample, but nevertheless is sufficient enough to establish a working background prediction. The shapes agree very well, as it is additionally indicated by the KS-values printed on the plots. The properties of the $\PZ\PZ\to4\ell$ processes does not allow to study the prediction in the high $\ptmiss$ regime, since only nongenuine $\ptmiss$ is produced. However, the agreement of distributions of the third and fourth leptons, such as $m_{\ell_3\ell_4}$, can be translated into the agreement of the $\ptmiss$ in the $\PZ\PZ\to2\ell2\PGn$ background, that is generated with the same event generator. There, also no
 \begin{figure}[tbp]
  \centering
  \includegraphics[width=\pairwidth]{figures/plots_CR_zz/CRZZ_LL_nom_met_log}
- \includegraphics[width=\pairwidth]{figures/plots_CR_zz/CRZZ_LL_nom_mt2_log}
- \caption{Comparisons between data and rescaled simulation in the $\PZ\PZ$ CR in the $\ptmiss$ and $\mtTwo$ distribution. Below each plot, a ratio between data and prediction is shown. The uncertainty bands correspond to the systematic (red) and total uncertainty (gray). In addition, in the ratio plot the relative compostion of the backgrounds is visualized. KS-values for the performed Kolmogorov-Smirvov test alre also quoted.}
+ \includegraphics[width=\pairwidth]{figures/plots_CR_zz/CRZZ_LL_nom_m_ll2_log}
+ \caption{Comparisons between data and rescaled simulation in the $\PZ\PZ$ CR in the $\ptmiss$ and $m_{\ell_3\ell_4}$ distribution. Below each plot, a ratio between data and prediction is shown. The uncertainty bands correspond to the systematic (red) and total uncertainty (gray). In addition, in the ratio plot the relative compostion of the backgrounds is visualized. KS-values for the performed Kolmogorov-Smirvov test alre also quoted.}
  \label{fig:CRZZ}
 \end{figure}
 The $\chi^2$-fit studies, see \refFig{fig:chiZZ}, are performed as for the other three background estimations discussed above, and yield the same conclusion, although some fluctuations in the choice of the variable or binning are present due to the lower total event count in the observed data. But, all in all also this background estimation method behaves properly.
@@ -332,12 +336,13 @@ In addition to the statistical uncertainties coming from the background predicti
 
 \subsection{Background uncertainties}
 Sources of systematic uncertainties arise from the measured pileup distribution,  which is needed to rescale the simulated samples as explained in \refSec{sec:Simulation}, the measurement of the total integrated luminosity, the measurement of the jet energy scale (JES) and the jet energy resolution (JER), that are important for the $\ptmiss$ description, the measured trigger efficiencies as discussed in \refSec{sec:triggEff}, corrections for a different photon and lepton reconstruction in simulation and data, the PDF used in the MC simulation process, and the factorization scale and renormalization scale.\\
-These measurements and underlying effects all provide systematic uncertainties on the final background prediction. Cross section uncertainties cancel for the four main background contributions due to the applied method, but are relevant for the other minor contributions as a relative uncertainty. They are assumed to be $50\%$ to account for the biggest differences between the measurement and theoretical prediction, and consider the circumstance, that only a special phase space is used in the analysis.\\
+These measurements and underlying effects all provide systematic uncertainties on the final background prediction. Cross section, trigger, and luminosity uncertainties cancel for the four main background contributions due to the applied method, but are relevant for the other minor contributions as a relative uncertainty. They are assumed to be $50\%$ to account for the biggest differences between the measurement and theoretical prediction, and consider the circumstance, that only a special phase space is used in the analysis.\\
 The uncertainty on the luminosity measurement with $2.5\%$~\cite{LumiUncert} and the uncertainty on the trigger efficiency, that is estimated to be $3\%$ (see \refSec{sec:triggEff}), propagate directly as relative uncertainties to the final prediction.\\
 All other uncertainties are uncertainties in the shape, and need to be determined another way. In order to estimate the impact of the JEC and JER, the pileup reweighting, and the lepton and photon identification and reconstruction corrections, the whole background prediction is performed again with the underlying quantities shifted one standard deviation up and down. Hence, two additional predictions for each SR bin are obtained, and half of the difference between those, relative to the nominal prediction, is taken as the systematic uncertainty.\\
 To estimate the effect on the choice of the renormalization scale $\mu_R$ and factorization scale $\mu_F$, these two are varied in combinations of the factors $0.5$, $1$, and $2$, and nine new background predictions are obtained. The half of the difference between the two outliers, relative to the nominal prediction, is treated as the systematic uncertainty.\\
 To determine the systematic uncertainty arising from the used PDFs, one hundred different PDF variations are studied, and for each the background prediction method is performed again, thus one hundred different predictions for the SR are obtained. From this distribution of predicted yields, the standard deviation and the mean can be calculated. The standard deviation normalized to the mean is considered as the systematic uncertainty.\\
-\refTab{tab:systuncBKG} lists ranges for all systematic uncertainties for all backgrounds individually.
+The uncertainty arising from the choice of order regarding the four SFs determined in the CRs, is estimated by testing all $4!=24$ possibilities, and calculating the largest deviation from the nominal SFs. This envelope is considered as a systematic uncertainty on the SFs on top of the statisical uncertainty. Both uncertainties are added quadratically, such that one final uncertainty for each SF is obtained.
+\refTab{tab:systuncBKG} lists ranges for all final systematic uncertainties for all backgrounds individually.
 \begin{table}[tbp]
  \centering
  \caption{Systematic uncertainty ranges for all background predictions in the signal region.}
@@ -346,7 +351,7 @@ To determine the systematic uncertainty arising from the used PDFs, one hundred 
  \begin{tabular}[width=\textwidth]{llllll}
                                & $tt(\PGg)$  & DY/Z$(\PGg)$  & $\PW\PZ$    & $\PZ\PZ$    & Other       \\\hline
   PDF                          & $0.8-1.5\%$ & $2.6-3.3\%$   & $0.5-0.7\%$ & $2.2-2.4\%$ & $1.1-1.2\%$ \\
-  Renorm. and fact. scale      & $3.4-7.1\%$ & $18.2-22.5\%$ & $4-6\%$     & $3.7-4.1\%$ & $2.1-9.3\%$ \\
+  Renorm. and fact. scale      & $3.3-7.1\%$ & $18.2-22.5\%$ & $4-6\%$     & $3.7-4.1\%$ & $2.1-9.3\%$ \\
   JES                          & $4.6-6.5\%$ & $4.4-5\%$     & $2.8-4.8\%$ & $1-1.9\%$   & $0-50.7\%$  \\
   JER                          & $1.6-3.1\%$ & $0.7-16.1\%$  & $1-1.8\%$   & $0.2-1.4\%$ & $0-50.7\%$  \\
   Lepton ID and reconstruction & $2.8-2.9\%$ & $2.2-3.4\%$   & $3.3\%$     & $1.8\%$     & $4.2\%$     \\
@@ -354,7 +359,7 @@ To determine the systematic uncertainty arising from the used PDFs, one hundred 
   Luminosity                   & -           & -             & -           & -           & $2.5\%$     \\
   Pileup                       & $1.2-2\%$   & $1-5\%$       & $0.2-2.5\%$ & $1.5-1.7\%$ & $0.1-10\%$  \\
   Trigger efficiency           & -           & -             & -           & -           & $3\%$       \\
-  Scale factor $\alpha_{i}$    & $4\%$       & $0.9\%$       & $3.3\%$     & $5.7\%$     & -           \\
+  Scale factor $\alpha_{i}$    & $4.1\%$     & $0.9\%$       & $3.9\%$     & $5.7\%$     & -           \\
   Cross section                & -           & -             & -           & -           & $50\%$      \\
   \hline
  \end{tabular}
