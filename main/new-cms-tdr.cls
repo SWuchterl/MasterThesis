@@ -51,6 +51,8 @@
 %  General style files
 %  -------------------
 %
+\usepackage[left=3cm,right=2cm,top=3cm,bottom=3cm]{geometry}%includehead
+
 \usepackage{fancybox}%         e.g. for calling out requirements, etc.
 \usepackage{multicol}%         multiple columns (e.g. glossary)
 %\usepackage{lineno}%           Does line numbers in margins (see \linenumbers command)

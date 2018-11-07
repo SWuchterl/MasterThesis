@@ -8,7 +8,9 @@
 \documentclass[11pt,twoside, openright, a4paper, pdftex, tdr,chapterprefix=false]{new-cms-tdr}
 %\usepackage[left=29mm,right=25mm,top=25mm,bottom=14mm,includeheadfoot]{geometry}%includehead
 % \usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm,includeheadfoot]{geometry}%includehead
-\usepackage[left=3cm,right=2cm,top=3cm,bottom=3cm,includeheadfoot]{geometry}%includehead
+% \usepackage[left=3cm,right=2cm,top=3cm,bottom=3cm,includeheadfoot]{geometry}%includehead
+% \usepackage[left=3cm,right=2cm,top=3cm,bottom=3cm,includehead]{geometry}%includehead
+% \usepackage[left=3cm,right=2cm,top=3cm,bottom=3cm]{geometry}%includehead
 
 %\usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
 %\geometry{a4paper} % or letter or a5paper or ... etc
@@ -21,7 +23,7 @@
 
 %%MEINE INCLUDES
 \usepackage{subfigure}
-\usepackage{amsmath}
+% \usepackage{amsmath}
 \usepackage{graphics}
 \usepackage{graphicx}
 %\usepackage{caption}
@@ -59,7 +61,7 @@
 %\usepackage[mathlines]{lineno} % add option pagewise for new line number per page
 %\linenumbers
 
-\usepackage{ifthen}
+% \usepackage{ifthen}
 \newboolean{bdraft}
 \setboolean{bdraft}{true} %%set comments and lipsums on and off
 \usepackage{mathtools}
@@ -76,13 +78,14 @@
 
 \usepackage{placeins}
 
-\usepackage[Glenn]{fncychap}
+\usepackage[Glenn]{fncychap}%this
 % \usepackage[Lenny]{fncychap}
 
 \usepackage{minitoc}
 \dominitoc[n]
 \setcounter{minitocdepth}{1}
-
+\mtcsetfeature{minitoc}{before}{\vspace{-2.5cm}}
+\mtcsetfeature{minitoc}{after}{\vspace{.5cm}}
 
 
 % lorem ipsum blind text
@@ -113,7 +116,8 @@
 \DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
 
 % format captions
-\usepackage[margin=10pt,skip=8pt, format=plain]{caption}
+% \usepackage[margin=10pt,skip=8pt, format=plain]{caption}
+\usepackage[margin=10pt,skip=8pt, format=hang]{caption}
 \KOMAoption{captions}{tableheading, bottombeside}
 
 % configure default position of figures and tables
@@ -131,6 +135,7 @@
 
 % bibliography support
 \usepackage[numbers,sort&compress]{natbib}
+\usepackage{amsmath}
 
 %%Feynman graphs
 %\usepackage[compat=1.1.0]{tikz-feynman}

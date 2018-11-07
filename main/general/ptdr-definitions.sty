@@ -180,7 +180,8 @@
 
 
 
-\ifthenelse{\boolean{cms@italic}}{\newcommand{\cmsSymbolFace}[1]{#1}}{\newcommand{\cmsSymbolFace}[1]{\mathrm{#1}}}
+% \ifthenelse{\boolean{cms@italic}}{\newcommand{\cmsSymbolFace}[1]{#1}}{\newcommand{\cmsSymbolFace}[1]{\mathrm{#1}}}
+\newcommand{\cmsSymbolFace}[1]{\mathrm{#1}}
 
 % Particle names which track the italic/non-italic face convention
 \newcommand{\zp}{\ensuremath{{\cmsSymbolFace{Z}^\prime}}\xspace} % plain Z'
@@ -323,11 +324,11 @@
 \providecommand{\PGmpm}{\ensuremath{\mu^\pm}\xspace}
 \providecommand{\PGmmp}{\ensuremath{\mu^\mp}\xspace} % not available in pennames2, AFAIK
 % for APS style tables
-\ifthenelse{\boolean{cms@external}}{%
- \newenvironment{scotch}[1]{\protect\centering\ruledtabular\tabular{#1}}{\endtabular\endruledtabular}
-}{
- \newenvironment{scotch}[1]{\protect\centering\tabular{#1}\hline\hline}{\hline\endtabular}
-}
+% \ifthenelse{\boolean{cms@external}}{%
+%  \newenvironment{scotch}[1]{\protect\centering\ruledtabular\tabular{#1}}{\endtabular\endruledtabular}
+% }{
+%  \newenvironment{scotch}[1]{\protect\centering\tabular{#1}\hline\hline}{\hline\endtabular}
+% }
 % Other
 \newcommand{\MD}{\ensuremath{{M_\mathrm{D}}}\xspace}% ED mass
 \newcommand{\Mpl}{\ensuremath{{M_\mathrm{Pl}}}\xspace}% Planck mass
