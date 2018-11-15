@@ -1,6 +1,6 @@
 \chapter{Results and interpretation}\label{chap:results}
 \minitoc
-Now that all backgrounds are well estimated, the background prediction works fine in the validation region, and all uncertainties are determined, the background prediction can be applied to the SR, $\ptmiss>150\GeV$ and $\mtTwo>100\GeV$, and predicted and observed event counts can be compared. An excess or other significant deviations from the prediction would be indicators for BSM physics.
+Now that all backgrounds are well estimated, the background prediction is reliable in the validation region, and all uncertainties are determined, the background prediction can be applied to the SR, $\ptmiss>150\GeV$ and $\mtTwo>100\GeV$, and predicted and observed event counts can be compared. An excess or other significant deviations from the prediction would be indicators for BSM physics.
 \section{Results}\label{sec:results}
 \subsection*{Signal region binning}
 In order to perform the counting experiment, a distinct binning in one or multiple variables needs to be applied to the SR. This binning can be optimized considering different criteria, \eg, observation and exclusion power. Since the most sensitive variables are $\ptmiss$ and $\mtTwo$, different one dimensional and two dimensional binnings are trialed. For individual benchmark points of all three signal models, simplified significances $\frac{s}{\sqt{s+b}}$, where s is the number of signal events and b the number of background events per bin, the binnings are varied. Because the total predicted event count in the SR is of the order of $13$ events, special care has to be taken regarding this issue. Albeit many sensitive bins with lower SM prediction and high signal expectation would push expected exclusion limits, this would make reinterpretations and observations difficult due to the high statistical uncertainties of the measured data.\\
@@ -19,15 +19,15 @@ Hence, the subtraction of this region from the VR, and the addition to the SR as
 \subsection{Event yields}
 The final background prediction together with the observed event yield is shown in \refFig{fig:result}.
 The total background uncertainties are obtained by adding the individual uncertainties quadratically. The statistical uncertainties on the measurement are calculated using $68\%$ confidence intervals of the Poisson distribution with the mean set to the observed yield.
-To show the effect of a possible signal in the counting experiment, contributions of two example signal points are drawn for comparison. The measured data yields are in good agreement with the predicted background events, thus no evidence for BSM physics is found. The measured excess corresponds to a significance of $1.7\sigma$ calculated with the Asimov significance\todo{explain}.
-
+To show the effect of a possible signal in the counting experiment, contributions of two example signal points are drawn for comparison. The measured data yields are in good agreement with the predicted background events, thus no evidence for BSM physics is found. The measured excess corresponds to a significance of $1.3\sigma$ calculated with the discovery significance based on a profile-likelihood ratio test and Asimov approximation~\cite{Significance2}
 \begin{equation}
- Z_A = \left[ 2\left( (s+b)\ln{\left[\frac{(s+b)(b+\sigma_{b}^2)}{b^2+(s+b)\sigma_{b}^2}\right]} -\frac{b^2}{\sigma_{b}^2} \ln \left[1+\frac{\sigma_b ^2 s}{b(b+\sigma_b ^2)} \right]  \right)    \right]^{1/2}
+ Z_A = \left[ 2\left( n\ln{\left[\frac{n(b+\sigma_{b}^2)}{b^2+n\sigma_{b}^2}\right]} -\frac{b^2}{\sigma_{b}^2} \ln \left[1+\frac{\sigma_b ^2 (n-b)}{b(b+\sigma_b ^2)} \right]  \right)    \right]^{1/2},
 \end{equation}
-
+where $n$ is the observed yield, $b$ the predicted background, and $\sigma_{b}$ the total uncertainty on the prediction, including the statistical and systematic uncertainty on the background prediction.\\
+Albeit more classical approaches to calculate the observed significance, like $\frac{n-b}{\sqrt{b}}$ and $\frac{n-b}{\sqrt{b+\sigma_b^2}}$, overestimate the significance for small $b$, the Asismov significance yields a more confident estimate of the true significance of the observation~\cite{Significance}.
 \begin{figure}[tbp]
  \centering
- \includegraphics[width=\pairwidth]{figures/UnblindingPlots/final_MC_log}
+ \includegraphics[width=\pairwidth]{figures/EndorsementPlots/final_MC_log}
  \caption{Comparison between final prediction and observation with statistical and systematic uncertainties in the signal region. Two signal expectations for the \texttt{TChiZG} model with $m(\text{NLSP})=600\GeV$ and the GMSB model with $m(\tilde{W})=290\GeV$ and $m(\tilde{B})=205\GeV$ are also shown.}
  \label{fig:result}
 \end{figure}
@@ -38,15 +38,15 @@ The number of background and observed events together with their total uncertain
  \normalsize
  \label{tab:results}
  \begin{tabular}{lllllll}
-  $\ptmiss$      & \multicolumn{3}{l}{$150-200\GeV$} & \multicolumn{3}{l}{$200\GeV-\infty$}                                                                  \\\hline
-                 & yield                             & $\sigma_{stat}$                      & $\sigma_{syst}$ & yield & $\sigma_{stat}$    & $\sigma_{syst}$ \\\hline
-  $\ttbar(\PGg)$ & 7.162                             & 0.316                                & 0.598           & 3.306 & 0.228              & 0.372           \\
-  DY/$\PZ(\PGg)$ & 0.152                             & 0.060                                & 0.038           & 0.042 & 0.024              & 0.010           \\
-  $\PW\PZ$       & 0.693                             & 0.082                                & 0.059           & 0.587 & 0.077              & 0.051           \\
-  $\PZ\PZ$       & 0.601                             & 0.019                                & 0.046           & 0.667 & 0.020              & 0.055           \\
-  Other          & 0.215                             & 0.215                                & 0.191           & 0.214 & 0.214              & 0.108           \\\hline
-  Total          & 8.823                             & 0.395                                & 0.633           & 4.816 & 0.324              & 0.395           \\\hline
-  Data           & 9                                 & $^{+4.11}_{-2.94}$                   & /               & 8     & $^{+3.95}_{-2.76}$ & /               \\\hline
+  $\ptmiss$      & \multicolumn{3}{l}{$150-200\GeV$} & \multicolumn{3}{l}{$200\GeV-\infty$}                                                               \\\hline
+                 & yield                             & $\sigma_{stat}$                      & $\sigma_{syst}$ & yield & $\sigma_{stat}$ & $\sigma_{syst}$ \\\hline
+  $\ttbar(\PGg)$ & 7.16                              & 0.32                                 & 0.60            & 3.31  & 0.23            & 0.37            \\
+  DY/$\PZ(\PGg)$ & 0.15                              & 0.06                                 & 0.04            & 0.04  & 0.02            & 0.01            \\
+  $\PW\PZ$       & 0.69                              & 0.08                                 & 0.06            & 0.59  & 0.08            & 0.05            \\
+  $\PZ\PZ$       & 0.60                              & 0.02                                 & 0.05            & 0.67  & 0.02            & 0.06            \\
+  Other          & 0.22                              & 0.22                                 & 0.19            & 0.21  & 0.21            & 0.11            \\\hline
+  Total          & 8.82                              & 0.40                                 & 0.63            & 4.82  & 0.32            & 0.40            \\\hline
+  Data           & 9                                 &                                      &                 & 8     &                 &                 \\\hline
  \end{tabular}
 \end{table}
 
@@ -88,8 +88,8 @@ The error band of the expected limit reflects all uncertainties of the analysis.
 This analysis is capable of excluding NLSP masses below $600\GeV$ in this scenario. Due to the excess of data in the second SR bin, which is the most sensitive one for all signal points of this parameter scan, the observed limit is approximately one standard deviation weaker than the expected limit of $675\GeV$.\\
 \begin{figure}[tbp]
  \centering
- \includegraphics[width=\pairwidth]{figures/UnblindingPlots/TChiNG_limit2}
- \includegraphics[width=\pairwidth]{figures/UnblindingPlots/GMSB_limits_XSEC2}
+ \includegraphics[width=\pairwidth]{figures/EndorsementPlots/TChiNG_limit2}
+ \includegraphics[width=\pairwidth]{figures/EndorsementPlots/GMSB_limits_XSEC2}
  \caption{Expected and observed upper limits for the \texttt{TChiZG} electroweak SMS (left) and the full GMSB model (right).}
  \label{fig:limitEWK}
 \end{figure}
@@ -103,7 +103,7 @@ The analysis can exclude gluino masses up to $1.4\TeV$, depending on the mass of
 
 \begin{figure}[tbp]
  \centering
- \includegraphics[width=\pairwidth]{figures/UnblindingPlots/T5bbbbZg_limits_XSEC2}
+ \includegraphics[width=\pairwidth]{figures/EndorsementPlots/T5bbbbZg_limits_XSEC2}
  \caption{Expected and observed upper limits for the \texttt{T5bbbbZG} SMS with strong production.}
  \label{fig:limitStrong}
 \end{figure}

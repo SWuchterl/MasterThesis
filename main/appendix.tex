@@ -1,5 +1,5 @@
 \chapter{Used data sets}
-
+In \refTab{tab:app_datasets} the DBS paths for all used data sets in the analysis are given. The data sets are divided into several primary datasets (PD), where the same-flavor datasets are used for the signal selection, the different-flavor data sets is used for the background prediction, and the $\ptmiss$ and $\HT$ data sets are used for the trigger efficiency measurement. Each group of data sets is subdivided into several run eras (B-H), and the 2017 version of reconstruction is used.
 
 \begin{table}[htb]
  \centering
@@ -12,8 +12,12 @@
                              & MuonEG                 \\
                              & HT                     \\
                              & MET                    \\\hline\hline
-  \multirow{ 4}{*}{DBS path} & \verb|/PD/Run2016B-03Feb2017_ver2-v2/MINIAOD| \\
-                             & \verb|/PD/Run2016(C-G)-03Feb2017-v1/MINIAOD| \\
+  \multirow{ 9}{*}{DBS path} & \verb|/PD/Run2016B-03Feb2017_ver2-v2/MINIAOD| \\
+                             & \verb|/PD/Run2016C-03Feb2017-v1/MINIAOD| \\
+                             & \verb|/PD/Run2016D-03Feb2017-v1/MINIAOD| \\
+                             & \verb|/PD/Run2016E-03Feb2017-v1/MINIAOD| \\
+                             & \verb|/PD/Run2016F-03Feb2017-v1/MINIAOD| \\
+                             & \verb|/PD/Run2016G-03Feb2017-v1/MINIAOD| \\
                              & \verb|/PD/Run2016H-03Feb2017_ver2-v1/MINIAOD| \\
                              & \verb|/PD/Run2016H-03Feb2017_ver3-v1/MINIAOD| \\
   \hline
@@ -22,6 +26,9 @@
 
 \chapter{Used simulated data sets}
 \section*{Simulated standard model data sets}
+
+In \refTab{tab:app_MCsets} DBS paths of the used SM simulated data sets are given tgether with their cross sections used for the normalization of the processes. In cases where NLO to NNLO k-factors are used, this is also stated in the table.
+
 \begin{table}[tb]
  \centering
  \caption{All SM MC samples used in the analysis with their cross section. In the case k-factors are applied, they are given separately. \texttt{\{..\}} stands for \texttt{RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6} in abbreviation. All samples are of the \texttt{MINIAODSIM} format.}
@@ -33,10 +40,10 @@
   \scriptsize{\textbf{ttbar}}                      &                         &                                           \\
   $\ttbar\to\ell^{+}\PGn\cPqb+\ell^{-}\PAGn\cPaqb$ & \verb|/TTTo2L2Nu_Tune*_ttHtranche3_13TeV-powheg-pythia8/{..}-v1|  & $87.31$                                   \\
   \scriptsize{\textbf{ttbarGamma}}                 &                         &                                           \\
-  $\ttbar\PGg$                                     & \verb|/TTGamma_Dilept_Tune*_13TeV-amcatnlo-pythia8/{..}-v2|  & $1.679$                                   \\
-                                                   & \verb|/TTGamma_Hadronic_Tune*_13TeV-amcatnlo-pythia8/{..}-v2|  & $3.482$                                   \\
-                                                   & \verb|/TTGamma_SingleLeptFromT_Tune*_13TeV-amcatnlo-pythia8/{..}-v2|  & $2.509$                                   \\
-                                                   & \verb|/TTGamma_SingleLeptFromTbar_Tune*_13TeV-amcatnlo-pythia8/{..}-v2|  & $2.509$                                   \\
+  $\ttbar\PGg$                                     & \verb|/TTGamma_Dilept_Tune*_13TeV-amcatnlo-pythia8/{..}-v2| & $1.679$                                   \\
+                                                   & \verb|/TTGamma_Hadronic_Tune*_13TeV-amcatnlo-pythia8/{..}-v2| & $3.482$                                   \\
+                                                   & \verb|/TTGamma_SingleLeptFromT_Tune*_13TeV-amcatnlo-pythia8/{..}-v2| & $2.509$                                   \\
+                                                   & \verb|/TTGamma_SingleLeptFromTbar_Tune*_13TeV-amcatnlo-pythia8/{..}-v2| & $2.509$                                   \\
   \scriptsize{\textbf{DrellYan}}                   &                         &                                           \\
   $\PZ/\PGg^{*}\to2\ell$                           & \verb|/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/{..}_ext2-v1| & $5765.4$                                  \\
   \scriptsize{\textbf{diboson}}                    &                         &                                           \\
@@ -69,7 +76,7 @@
 
 \FloatBarrier
 \section*{Simulated SUSY data sets}
-
+In \refTab{tab:app_signalsets} the DBS paths for the used signal simulated data sets are given. Because for in each signal data set very different paramater masses are used in the generation, many cross sections are used for the rescaling of the simulation, and are not quoted in the table.
 
 \begin{table}[tb]
  \centering
@@ -89,6 +96,8 @@
 \end{table}
 
 \chapter{Used trigger paths}
+
+In \refTab{tab:app_trigger1} and \refTab{tab:app_trigger2} all HLT trigger paths used in the analysis are quoted. The trigger paths in the first table are relevant for the signal event selection and the background prediction, while the HLT paths stated in the second table are only needed for the trigger efficiency measurement.
 
 \begin{table}[htb]
  % \begin{table*}[htb]
