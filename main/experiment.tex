@@ -36,7 +36,7 @@ In 2016, the LHC provided a total integrated luminosity of $40.8\fbinv$, while t
 % \section{The Compact Muon Solenoid detector}\label{sec:CMS}
 \section{The Compact Muon Solenoid}\label{sec:CMS}
 The data used in this thesis were recorded by the CMS detector~\cite{CMS,CMSTDR} in 2016. The CMS detector is a multi-purpose detector housing different subdetectors. From inside to outside these are the tracker system including a pixel and the silicon strip detector, the electromagnetic calorimeter, the hadronic calorimeter, followed by the solenoid magnet and the muon system. A sketch of the CMS detector is shown in~\refFig{fig:CMS}. In the following, at first the used coordinate system to describe the detector will be introduced and afterwards each subdetector and the trigger system will be briefly explained.
-\begin{figure}[tbp]
+\begin{figure}[bp]
  \centering
  \includegraphics[width=0.99\textwidth]{figures/general/cms}
  % \includegraphics[width=0.49\textwidth]{figures/general/CMS_eta.png}
@@ -72,13 +72,7 @@ The inner tracker in total covers a range of $|\eta|<2.5$ and the sensoring syst
 \subsection{The electromagnetic calorimeter}
 Built around the tracker, the second subdetector of CMS is the electromagnetic calorimeter (ECAL). Its main purpose is to measure the energy of electrons and photons, which produce similar electromagnetic showers in the calorimeter. Only with the combined measurements of the tracker, a differentiation between electrons and photons can be performed. The ECAL is made up homogeneously of lead-tungstate ($\mathrm{PbWO_4}$) crystals and their light emission is proportional to the deposited energy of traversing particles in an electromagnetic shower. The emitted light in the visible spectrum is measured by photodiodes and phototriodes. The material of lead-tungstate was chosen due to its high density, short Moli\`{e}re radius of $2.2\cm$ characterizing the shower width, and short radiation length of $0.89\cm$. Another big advantage of $PbWO_4$ is the short scintillation time. In a time window of $25\ns$ most of the visible light ( approximately $80\%$) is emitted, which agrees with the bunch spacing of $25\ns$. The ECAL is divided into a barrel (EB: $|\eta|<1.479$) and an endcap part (EE: $1.479<|\eta|<3.0$), as can be seen in \refFig{fig:etaPlaneCMS}. The $61200$ crystals mounted in the barrel have a length of $23\cm$, corresponding to $25.8$ radiation lengths, and a cross section of $22\times22\mm^2$ matching the Moli\`{e}re radius of $PbWO_4$. In each ECAL endcap, $3662$ crystals are placed, having a larger cross section of $ 28.6\times28.6\mm^2$ and a length of $22\cm$.
 To prevent particle trajectories from aligning with the orientation of ECAL crystal borders, the crystals (in EB) are tilted in an angle of $3$ degree with respect to their orientation toward the interaction point. In the EE, the tilting varies between $2-8$ degree in dependence of $\eta$. So both a compact format and a high granularity is maintained.
-\begin{figure}[bp]
- \centering
- \includegraphics[width=0.49\textwidth]{figures/general/ecal}
- \includegraphics[width=0.49\textwidth]{figures/general/hcal}
- \caption{A sketch of one quadrant of the CMS detector for the ECAL (left)~\cite{ECALPicture}, and the whole detector(right)~\cite{CMS}. The subparts of the HCAL, the HE HB HO, and HF are indicated seperately.}
- \label{fig:etaPlaneCMS}
-\end{figure}
+
 The energy resolution of the ECAL is determined to be
 \begin{equation}
  \left(\frac{\sigma_E}{E}\right)^2=\left(\frac{2.8\%}{\sqrt{E[\GeV]}}\right)^2 + \left(\frac{12\%}{E[GeV]}\right)^2 + (0.3\%)^2,
@@ -90,23 +84,31 @@ An additional preshower detector is installed in front of the ECAL endcap, to id
 The hadron calorimeter (HCAL), which is designed for the energy measurement of hadrons, consists also of a barrel (HB) and endcap parts (HE). It is placed between the ECAL at a radius of $1.77\m$ and the magnet coil at a radius of $2.95\m$. An additional outer barrel part with lower granularity (HO) extends the HCAL outside of the solenoid magnet, making use of its stopping power, while the hadron forward (HF) is installed to cover high pseudorapidity ranges. The barrel part covers pseudorapidities in the range of $|\eta|<1.4$, while the HCAL endcap together with the outer HCAL covers the range of $1.3<|\eta|<3$.\\
 In contrast to the homogeneous ECAL, the HCAL barrel is a so-called sampling calorimeter, consisting of alternating layers of brass absorbers and plastic scintillator material. The front and backplates are made of steel. Hence, the brass plates stop incoming particles, and their energy deposition is measured in the form of hadronic showers creating scintillation light in the plastic layers, which is measured afterwards by hybrid photodiodes The outer HCAL makes use of the same principle, but uses in addition the stopping power of the solenoid. The hadron forward, covering pseudorapidity ranges of $3<|\eta|<5.2$, needs to be more radiation hard in comparison to the rest of the HCAL, since the energy deposit in the forward region is much higher. It is therefore constructed as a Cherenkov detector made of quartz fibres. A total sketch of the HCAL can be seen in \refFig{fig:etaPlaneCMS}.
 
+\begin{figure}[tbp]
+ \centering
+ \includegraphics[width=0.49\textwidth]{figures/general/ecal}
+ \includegraphics[width=0.49\textwidth]{figures/general/hcal}
+ \caption{A sketch of one quadrant of the CMS detector for the ECAL (left)~\cite{ECALPicture}, and the whole detector(right)~\cite{CMS}. The subparts of the HCAL, the HE HB HO, and HF are indicated seperately.}
+ \label{fig:etaPlaneCMS}
+\end{figure}
+
 \subsection{The solenoid magnet}
 To measure the momentum of charged particles properly, it is crucial to have bent trajectories. The resolution of momentum measurements at very high energies is directly proportional to the particle momenta and inverse proportional to the magnetic field strength. Thus, for a precise measurement of the curvature of the trajectory, a strong magnetic field is needed. In case of the CMS detector, this is provided by a superconducting NbTi magnet, cooled to $4.8\K$, inducing a magnetic field of $3.8\T$ inside the solenoid. Outside, in the muon chambers discussed in the next section, the magnetic field is weaker (approximately $2\T$). By choosing a solenoid with a length of $12.5\m$ and a diameter of $6.3\m$, the solenoid defines the CMS detector design, especially with regard to the limited space for the tracking system, the ECAL, and HCAL.
 % \todo{Erganzen!}
 
-\begin{figure}[tbp]
- \centering
- \includegraphics[width=0.65\textwidth]{figures/general/muonChamber}
- \caption{A sketch of one quadrant of the CMS detector with the main detector components~\cite{CMSTDR}, especially the different muon detectors, is shown.}
- \label{fig:etaPlaneCMSTotal}
-\end{figure}
+
 
 \subsection{The muon system}
 The outermost part of the CMS detector is the muon system. Because all other charged particles beside muons should be stopped in the inner layers, muons are the only particles entering the muon system and leaving a signature there. Three different types of detectors are used to measure and identify muons. The barrel part ($|\eta|<1.2$) is covered by four stations of drift tubes (DT). Cathode strip chambers (CSC) are covering the endcap at pseudorapidity $0.9<|\eta|<2.4$, because in this region a higher muon rate is expected, and CSCs in contrast to DTs have a faster response time and are more radiation hard.
 % In most parts the muon reconstruction efficiency is above $95\%$, with a misidentification rate of less than $1\%$.
 The muon momentum resolution, dependent on the $\eta$ region, varies between $10\%$ in the barrel region to around $20\%$ in the endcap region for muons reconstructed standalone by the muon system with a transverse momentum above $15\GeV$. In a combined reconstruction with the tracker information, the resolution is of the order of $1-6\%$ for muons with momenta lower than $100\GeV$ and $10\%$ for $\TeV$ muons~\cite{MuonPerformance}. Again, the energy resolution was designed to be at its maximum at around $50\GeV$, where muons from the diboson Z decays of the Higgs boson were expected.\\
 Additional detector components, namely six layers of resistive plate chambers (RPC), are installed in the pseudorapidity range of $|\eta|<1.8$. Because they show both good time resolution and fast response time, they are mainly used for triggering purposes. The structure of the muon system can be seen in \refFig{fig:etaPlaneCMSTotal}.
-
+\begin{figure}[tbp]
+ \centering
+ \includegraphics[width=0.65\textwidth]{figures/general/muonChamber}
+ \caption{A sketch of one quadrant of the CMS detector with the main detector components~\cite{CMSTDR}, especially the different muon detectors, is shown.}
+ \label{fig:etaPlaneCMSTotal}
+\end{figure}
 \subsection{The trigger system}
 As bunch crossings take place every $25\ns$, and therefore at a rate of $40\MHz$, it is not achievable to read out and store all events. To keep only physically interesting events and reduce the rate of events to be saved, a trigger system consisting of two stages is implemented~\cite{TriggerSystem}. It is composed of the hardware based level 1 (L1) triggers, and the software based high level triggers (HLT). Since the L1 trigger system needs to deliver decisions in a very short time window, it uses only information provided by the calorimeters and the muon chambers. Usually first requirements on the event, such as a minimal deposited transverse energy, and  the presence of first estimates for electron and muon candidates, are imposed. The L1 trigger reduces the event rate to a rate of approximately $100\kHz$.\\
 More complex decisions are made by the HLT trigger system. It has full access to the complete readout of all subdetectors, and therefore performs selections close to the offline analysis. It reduces the event rate to $\mathcal{O}(1\kHz)$~\cite{TriggerRate}.\\
