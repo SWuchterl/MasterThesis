@@ -51,7 +51,8 @@
 %  General style files
 %  -------------------
 %
-\usepackage[left=3cm,right=2cm,top=3cm,bottom=3cm]{geometry}%includehead
+% \usepackage[left=3cm,right=2cm,top=3cm,bottom=3cm]{geometry}%includehead
+\usepackage[a4paper]{geometry}%includehead
 
 \usepackage{fancybox}%         e.g. for calling out requirements, etc.
 \usepackage{multicol}%         multiple columns (e.g. glossary)
@@ -197,7 +198,8 @@
 % Define page layout
 % ------------------
 %
-\setlength{\textwidth}{156mm}
+% \setlength{\textwidth}{156mm}
+\setlength{\textwidth}{160mm}
 \setlength{\textheight}{230mm}
 \setlength{\columnsep}{10mm}
 \setlength{\columnseprule}{0.3pt}% if zero then there is no rule between 2 columns
