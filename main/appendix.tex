@@ -1,9 +1,9 @@
 \chapter{Data sets}
-In \refTab{tab:app_datasets} the DBS paths for all used data sets in the analysis are given. The data sets are divided into several primary datasets (PD), where the same-flavor datasets are used for the signal selection, the different-flavor data sets is used for the background prediction, and the $\ptmiss$ and $\HT$ data sets are used for the trigger efficiency measurement. Each group of data sets is subdivided into several run eras (B-H), and the 2017 version of reconstruction is used.
+In \refTab{tab:app_datasets} the DBS paths for all used data sets in the analysis are given. The data sets are divided into several primary data sets (PD), where the same-flavor data sets are used for the signal selection, the different-flavor data sets is used for the background prediction, and the $\ptmiss$ and $\HT$ data sets are used for the trigger efficiency measurement. Each group of data sets is subdivided into several run eras (B-H), and the 2017 version of reconstruction is used.
 
 \begin{table}[htb]
  \centering
- \caption{DBS paths for the datasets used in the analysis. Their paths are similar, only the \texttt{PD} names vary. The dilepton data sets are used for the key analysis, whereas the $\HT$ and $\ptmiss$ datasets are used for the trigger efficiency measurement, see \refSec{sec:triggEff}.}
+ \caption{DBS paths for the data sets used in the analysis. Their paths are similar, only the \texttt{PD} names vary. The dilepton data sets are used for the key analysis, whereas the $\HT$ and $\ptmiss$ data sets are used for the trigger efficiency measurement, see \refSec{sec:triggEff}.}
  \label{tab:app_datasets}
  \begin{tabular}{l|l}
   \hline
@@ -27,38 +27,38 @@ In \refTab{tab:app_datasets} the DBS paths for all used data sets in the analysi
 \chapter{Simulated data sets}
 \section*{Simulated standard model data sets}
 
-In \refTab{tab:app_MCsets} DBS paths of the used SM simulated data sets are given tgether with their cross sections used for the normalization of the processes. In cases where NLO to NNLO k-factors are used, this is also stated in the table.
+In \refTab{tab:app_MCsets} DBS paths of the used SM simulated data sets are given together with their cross sections used for the normalization of the processes. In cases where NLO to NNLO k-factors are used, this is also stated in the table.
 
 \begin{table}[tb]
  \centering
- \caption{All SM MC samples used in the analysis with their cross section. In the case k-factors are applied, they are given separately. \texttt{\{..\}} stands for \texttt{RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6} in abbreviation. All samples are of the \texttt{MINIAODSIM} format.}
+ \caption{All SM MC samples used in the analysis with their cross section. In the case k-factors are applied, they are given separately. The abbreviation \texttt{\{..\}} stands for \texttt{RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6}. All samples are of the \texttt{MINIAODSIM} format. Additional k-factors to obtain NNLO cross sections for the $\PZ\PZ$ samples are applied per event in dependence of the $\pt$ of the diboson system.}
  \scriptsize
  \label{tab:app_MCsets}
  \begin{tabular}[width=\textwidth]{lll}
   \hline
   \normalsize{process}                             & \normalsize{data set}   & \normalsize{$\sigma\cdot k[\mathrm{pb}]$} \\\hline
-  \scriptsize{\textbf{ttbar}}                      &                         &                                           \\
+  $\boldsymbol{\ttbar}$                            &                         &                                           \\
   $\ttbar\to\ell^{+}\PGn\cPqb+\ell^{-}\PAGn\cPaqb$ & \verb|/TTTo2L2Nu_Tune*_ttHtranche3_13TeV-powheg-pythia8/{..}-v1|  & $87.31$                                   \\
-  \scriptsize{\textbf{ttbarGamma}}                 &                         &                                           \\
+  $\boldsymbol{\ttbar\PGg}$                        &                         &                                           \\
   $\ttbar\PGg$                                     & \verb|/TTGamma_Dilept_Tune*_13TeV-amcatnlo-pythia8/{..}-v2| & $1.679$                                   \\
                                                    & \verb|/TTGamma_Hadronic_Tune*_13TeV-amcatnlo-pythia8/{..}-v2| & $3.482$                                   \\
                                                    & \verb|/TTGamma_SingleLeptFromT_Tune*_13TeV-amcatnlo-pythia8/{..}-v2| & $2.509$                                   \\
                                                    & \verb|/TTGamma_SingleLeptFromTbar_Tune*_13TeV-amcatnlo-pythia8/{..}-v2| & $2.509$                                   \\
-  \scriptsize{\textbf{DrellYan}}                   &                         &                                           \\
+  \textbf{Drell-Yan}                               &                         &                                           \\
   $\PZ/\PGg^{*}\to2\ell$                           & \verb|/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/{..}_ext2-v1| & $5765.4$                                  \\
-  \scriptsize{\textbf{diboson}}                    &                         &                                           \\
+  \textbf{diboson}                                 &                         &                                           \\
   $\PZ\PGg\to2\ell\PGg$                            & \verb|/ZGTo2LG_Tune*_13TeV-amcatnloFXFX-pythia8/{..}_ext1-v1| & $117.864\cdot1.06$                        \\
                                                    & \verb|/ZGTo2LG_Tune*_13TeV-amcatnloFXFX-pythia8/{..}-v1| & $117.864\cdot1.06$                        \\
                                                    & \verb|/ZGTo2LG_PtG-130_Tune*_13TeV-amcatnloFXFX-pythia8/{..}-v1| & $0.1404\cdot1.06$                         \\
   $\PW\PZ$                                         & \verb|/WZTo3LNu_Tune*_13TeV-powheg-pythia8/{..}-v1| & $4.42965\cdot1.109$                       \\
                                                    & \verb|/WZTo3LNu_Tune*_13TeV-powheg-pythia8/{..}_ext1-v3| & $4.42965\cdot1.109$                       \\
-  $\PZ\PZ\to2\ell2\PGn$                            & \verb|/ZZTo2L2Nu_13TeV_powheg_pythia8_ext1/{..}-v1| & $0.5644\cdot k$                           \\
-                                                   & \verb|/ZZTo2L2Nu_13TeV_powheg_pythia8/{..}-v1| & $0.5644\cdot k$                           \\
-  $\PZ\PZ\to4\ell$                                 & \verb|/ZZTo4L_13TeV_powheg_pythia8/{..}-v1| & $1.212\cdot k$                            \\
-                                                   & \verb|/ZZTo4L_13TeV_powheg_pythia8_ext1/{..}-v1| & $1.212\cdot k$                            \\
+  $\PZ\PZ\to2\ell2\PGn$                            & \verb|/ZZTo2L2Nu_13TeV_powheg_pythia8_ext1/{..}-v1| & $0.5644\cdot k(\pt^{ZZ})$                 \\
+                                                   & \verb|/ZZTo2L2Nu_13TeV_powheg_pythia8/{..}-v1| & $0.5644\cdot k(\pt^{ZZ})$                 \\
+  $\PZ\PZ\to4\ell$                                 & \verb|/ZZTo4L_13TeV_powheg_pythia8/{..}-v1| & $1.212\cdot k(\pt^{ZZ})$                  \\
+                                                   & \verb|/ZZTo4L_13TeV_powheg_pythia8_ext1/{..}-v1| & $1.212\cdot k(\pt^{ZZ})$                  \\
   $\PW\PW\to2\ell2\PGn$                            & \verb|/WWTo2L2Nu_13TeV-powheg/{..}-v1| & $12.178$                                  \\
   $\PW\Pg\to\ell\PGn\Pg$                           & \verb|/WGToLNuG_Tune*_13TeV-amcatnloFXFX-pythia8/{..}_ext3-v1| & $489$                                     \\
-  \textbf{W jets}                                  &                         &                                           \\
+  \textbf{W+jets}                                  &                         &                                           \\
   $\PW+jets$                                       & \verb|/WJetsToLNu_Tune*_13TeV-amcatnloFXFX-pythia8/{..}_ext2-v2| & $61526.7$                                 \\
                                                    & \verb|/WJetsToLNu_Tune*_13TeV-amcatnloFXFX-pythia8/{..}-v1| & $61526.7$                                 \\
   \textbf{triboson}                                &                         &                                           \\
@@ -76,38 +76,37 @@ In \refTab{tab:app_MCsets} DBS paths of the used SM simulated data sets are give
 
 \FloatBarrier
 \section*{Simulated SUSY data sets}
-In \refTab{tab:app_signalsets} the DBS paths for the used signal simulated data sets are given. Because for in each signal data set very different paramater masses are used in the generation, many cross sections are used for the rescaling of the simulation, and are not quoted in the table.
+In \refTab{tab:app_signalsets} the DBS paths for the used signal simulated data sets are given. Because in each signal data set very different paramater masses are used in the generation, many cross sections are used for the rescaling of the simulation, and are not quoted in the table.
 
 \begin{table}[tb]
  \centering
- \caption{All SUSY MC samples used in the analysis. \texttt{\{..\}} stands for \texttt{80X\_mcRun2\_asymptotic\_2016} in abbreviation. All samples are of the \texttt{MINIAODSIM} format.}
+ \caption{All SUSY MC samples used in the analysis. The abbreviation \texttt{\{..\}} stands for \texttt{80X\_mcRun2\_asymptotic\_2016}. All samples are of the \texttt{MINIAODSIM} format.}
  \scriptsize
  \label{tab:app_signalsets}
  \begin{tabular}[width=\textwidth]{ll}
   \hline
-  \normalsize{signal}                     & \normalsize{data set}   \\\hline
-  \scriptsize{\textbf{electroweak}}       &                         \\
-  TChiNG                                  & \verb|/SMS-TChiNG_BF50N50G_*/RunIISpring16MiniAODv2-PUSpring16Fast_{..}_miniAODv2_v0-v1| \\
-  GMSB model                              & \verb|/GMSB_GravitinoLSP_N1decays_*/RunIISummer16MiniAODv2-PUSummer16Fast_{..}_TrancheIV_v6-v1| \\
-  \scriptsize{\textbf{strong production}} &                         \\
-  T5bbbbZG                                & \verb|/SMS-T5bbbbZg_*/RunIISummer16MiniAODv2-PUSummer16Fast_{..}_TrancheIV_v6-v2| \\
+  \normalsize{signal}             & \normalsize{data set}   \\\hline
+  \textbf{electroweak production} &                         \\
+  TChiNG                          & \verb|/SMS-TChiNG_BF50N50G_*/RunIISpring16MiniAODv2-PUSpring16Fast_{..}_miniAODv2_v0-v1| \\
+  GMSB                            & \verb|/GMSB_GravitinoLSP_N1decays_*/RunIISummer16MiniAODv2-PUSummer16Fast_{..}_TrancheIV_v6-v1| \\
+  \textbf{strong production}      &                         \\
+  T5bbbbZG                        & \verb|/SMS-T5bbbbZg_*/RunIISummer16MiniAODv2-PUSummer16Fast_{..}_TrancheIV_v6-v2| \\
   \hline
  \end{tabular}
 \end{table}
 
 \chapter{Trigger paths}
 
-In \refTab{tab:app_trigger1} and \refTab{tab:app_trigger2} all HLT trigger paths used in the analysis are quoted. The trigger paths in the first table are relevant for the signal event selection and the background prediction, while the HLT paths stated in the second table are only needed for the trigger efficiency measurement.
+In Tables \oldref*{tab:app_trigger1} and \oldref*{tab:app_trigger2} all HLT trigger paths used in the analysis are quoted. The trigger paths in the first table are relevant for the signal event selection and the background prediction, while the HLT paths stated in the second table are needed for the trigger efficiency measurement.
 
 \begin{table}[htb]
  % \begin{table*}[htb]
  \centering
- \caption{Trigger paths used in the analysis for the signal event selection.}
+ \caption{Trigger paths used for the signal and control region event selection.}
  \normalsize
  \label{tab:app_trigger1}
  \begin{tabular}[width=\textwidth]{l}
   \hline
-  \normalsize{trigger path}                   \\\hline
   \normalsize{\textbf{dielectron trigger}}    \\
   \verb|HLT_Ele17_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|                     \\
   \verb|HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|                     \\
@@ -144,12 +143,11 @@ In \refTab{tab:app_trigger1} and \refTab{tab:app_trigger2} all HLT trigger paths
 \begin{table}[htb]
  % \begin{table*}[htb]
  \centering
- \caption{Trigger paths used in the analysis for the trigger efficiency measurements.}
+ \caption{Trigger paths used for the trigger efficiency measurements.}
  \normalsize
  \label{tab:app_trigger2}
  \begin{tabular}[width=\textwidth]{l}
   \hline
-  \normalsize{trigger path}         \\\hline
   \normalsize{\textbf{HT trigger}}  \\
   \verb|HLT_PFHT200_v*|           \\
   \verb|HLT_PFHT250_v*|           \\
