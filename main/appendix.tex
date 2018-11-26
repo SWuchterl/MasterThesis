@@ -95,6 +95,32 @@ In \refTab{tab:app_signalsets} the DBS paths for the used signal simulated data 
  \end{tabular}
 \end{table}
 
+\FloatBarrier
+
+\chapter{Signal properties}\label{sec:app_signal}
+In this chapter, properties of the three signal models considered in the interpretation of this analysis are given.
+\section*{Signal cross section}
+The production cross sections for the two simplified models and the GMSB model are shown in \refFig{fig:app_xsec} in the corresponding parameter mass planes. For the GMSB model, the production cross section depends only on the wino mass, since $\PSGczDo\PSGcpmDo$ and $\PSGcmpDo\PSGcpmDo$ are by the far the most dominant production channels and both the chargino and the neutralino are wino-like, see \refSec{sec:SMS}. Since in the \texttt{T5bbbbZG} SMS only gluino production is considered, the gluino mass determines the cross section. In the \texttt{TChiZG} SMS, only neutralino-chargino and chargino-chargino production is assumed.
+\begin{figure}
+ \includegraphics[width=\pairwidth]{figures/acceptance/GMSB_xsec_log}
+ \includegraphics[width=\pairwidth]{figures/acceptance/T5bbbbZg_xsec_log}
+ \includegraphics[width=\pairwidth]{figures/acceptance/TChiNG_XSECGRAPH}
+ \caption{In the upper row, production cross sections for the GMSB model (left) and \texttt{T5bbbbZG} SMS are given in the $m(\widetilde{B})$ - $m(\widetilde{W})$ and $m(\mathrm{NLSP})$ - $m(\tilde{g})$ mass plane, respectively. The considered production cross section for the \texttt{TChiZG} model is given in the lower row.}
+ \label{fig:app_xsec}
+\end{figure}
+\FloatBarrier
+
+\section*{Event selection acceptance}
+The total event selection acceptances, see \refSec{chap:results} for the definition, are shown in \refFig{fig:app_acceptance} for all three signal models. They are in the order of $\mathcal{O}(1\%)$, slighlty depending on the sparticle masses. In general, for higher sparticle masses the acceptance increases, since the final tate particles carry much more energy and the probability to be selected in the SR is larger. For low NLSP masses in case of the \texttt{T5bbbbZG} SMS, the acceptance decreases due to the $\mtTwo$ requirement of $100\GeV$. The acceptance is enhanced for the GMSB model, if the mass difference between the wino and bino is approximately $90\GeV$, because additional $\PZ$ bosons are produced in decays of sparticles in th cascades.
+\begin{figure}
+ \includegraphics[width=\pairwidth]{figures/acceptance/gmsb}
+ \includegraphics[width=\pairwidth]{figures/acceptance/t5zg}
+ \includegraphics[width=\pairwidth]{figures/acceptance/tching}
+ \caption{In the upper row, the event selection acceptance for the GMSB model (left) and \texttt{T5bbbbZG} SMS is shown in the $m(\widetilde{B})$ - $m(\widetilde{W})$ and $m(\mathrm{NLSP})$ - $m(\tilde{g})$ mass plane, respectively. The acceptance for the \texttt{TChiZG} model is given in the lower row.}
+ \label{fig:app_acceptance}
+\end{figure}
+\FloatBarrier
+
 \chapter{Trigger paths}
 
 In Tables \oldref*{tab:app_trigger1} and \oldref*{tab:app_trigger2} all HLT trigger paths used in the analysis are quoted. The trigger paths in the first table are relevant for the signal event selection and the background prediction, while the HLT paths stated in the second table are needed for the trigger efficiency measurement.
@@ -172,3 +198,33 @@ In Tables \oldref*{tab:app_trigger1} and \oldref*{tab:app_trigger2} all HLT trig
   \hline
  \end{tabular}
 \end{table}
+
+\subsection*{Trigger efficiency measurement}\label{sec:app_trigger}
+In \refFig{fig:app_triggEff}, the trigger efficiency measurement for the leading lepton leg of the dilepton triggers is shown. As can be seen, the triggers are efficient for $\pt>25\GeV$ for the leading leptons.\\
+Additional distributions for the efficiency in the $\ptmiss$ and $\HT$ distribution are shown in \refFig{fig:app_triggEff2} and \refFig{fig:app_triggEff3}, after applying both lepton $\pt$ requirements ($25\GeV$ for the leading, and $20\GeV$ for the trailing lepton). No inefficiencies are observed.
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=\pairwidth]{figures/triggerStudies/efficiency_dataHT_trigDilep_EE_pt1}
+ \includegraphics[width=\pairwidth]{figures/triggerStudies/efficiency_dataHT_trigDilep_EM_pt1}
+ \includegraphics[width=\pairwidth]{figures/triggerStudies/efficiency_dataHT_trigDilep_MM_pt1}
+ \caption{Measurement of the combined efficiency in the $\pt$ distribution of the leading lepton for all dilepton trigger combinations on data (black) and simulation (red) for the $\Pe\Pe$ (top left), $\Pe\PGm$ (top right), and $\PGm\PGm$ (bottom) channels. The measurement is performed using various $\HT$ baseline triggers, while the selection consists of the lepton pair preselection, and a $\HT>200\GeV$ requirement. The mean of the data efficiency with its statistical uncertainty (gray band), and the $3\%$ systematic uncertainty on the measurement (red band) are also shown. In the bottom panel of each plot, the ratio between the efficiency measured on data and the simulation scaled with the reweighting factor $\varepsilon'$ is shown.}
+ \label{fig:app_triggEff}
+\end{figure}
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=\pairwidth]{figures/triggerStudies/efficiency_dataHT_trigDilep_ptcuts_EE_met}
+ \includegraphics[width=\pairwidth]{figures/triggerStudies/efficiency_dataHT_trigDilep_ptcuts_EM_met}
+ \includegraphics[width=\pairwidth]{figures/triggerStudies/efficiency_dataHT_trigDilep_ptcuts_MM_met}
+ \caption{Measurement of the combined efficiency in the $\ptmiss$ distribution for all dilepton trigger combinations on data (black) and simulation (red) for the $\Pe\Pe$ (top left), $\Pe\PGm$ (top right), and $\PGm\PGm$ (bottom) channels. The measurement is performed using various $\HT$ baseline triggers, while the selection consists of the lepton pair preselection, and a $\HT>200\GeV$ requirement. The mean of the data efficiency with its statistical uncertainty (gray band), and the $3\%$ systematic uncertainty on the measurement (red band) are also shown. In the bottom panel of each plot, the ratio between the efficiency measured on data and the simulation scaled with the reweighting factor $\varepsilon'$ is shown.}
+ \label{fig:app_triggEff2}
+\end{figure}
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=\pairwidth]{figures/triggerStudies/efficiency_dataHT_trigDilep_ptcuts_EE_ht}
+ \includegraphics[width=\pairwidth]{figures/triggerStudies/efficiency_dataHT_trigDilep_ptcuts_EM_ht}
+ \includegraphics[width=\pairwidth]{figures/triggerStudies/efficiency_dataHT_trigDilep_ptcuts_MM_ht}
+ \caption{Measurement of the combined efficiency in the $\HT$ distribution for all dilepton trigger combinations on data (black) and simulation (red) for the $\Pe\Pe$ (top left), $\Pe\PGm$ (top right), and $\PGm\PGm$ (bottom) channels. The measurement is performed using various $\HT$ baseline triggers, while the selection consists of the lepton pair preselection, and a $\HT>200\GeV$ requirement. The mean of the data efficiency with its statistical uncertainty (gray band), and the $3\%$ systematic uncertainty on the measurement (red band) are also shown. In the bottom panel of each plot, the ratio between the efficiency measured on data and the simulation scaled with the reweighting factor $\varepsilon'$ is shown.}
+ \label{fig:app_triggEff3}
+\end{figure}

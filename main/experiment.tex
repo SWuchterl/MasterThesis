@@ -50,14 +50,14 @@ The coordinate system used to describe the detector has its origin located at th
 The advantage in using $\eta$ instead of $\theta$ is, that differences in $\eta$ are invariant under Lorentz-boosts along the beam axis, and in the limit of massles particles the pseudorapidity equals the rapidity.\\
 Another important quantity is the geometric distance between two objects in the detector
 \begin{equation}
-  \Delta R = \sqrt{(\Delta\phi)^2 + (\Delta\eta)^2}
+ \Delta R = \sqrt{(\Delta\phi)^2 + (\Delta\eta)^2}
 \end{equation}
 In proton proton collisions, the initial total momentum of the colliding partons is unknown, since they carry only a fraction of the proton energy. In contrast, the transverse momentum in the initial state is negligible, and therefore, the transverse momentum
 \begin{equation}
  \pt=|\ptvec|=|\vec{p}\cdot\sin(\theta)|
 \end{equation}
 is a widely used quantity.
-Most of the subdetectors are divided into a low $\eta$ part (barrel), and two high $\eta$ parts (endcaps). Each of the subdetectors is designed to measure  certain properties of different particle types, to ensure both a good particle distinction and identification, and precise measurements of energy, momenta, and trajectories.
+Most of the subdetectors are divided into a low $\eta$ part (barrel), and two high $\eta$ parts (endcaps). Each of the subdetectors is designed to measure certain properties of different particle types, to ensure both a good particle distinction and identification, and precise measurements of energy, momenta, and trajectories.
 
 
 
@@ -66,7 +66,7 @@ The innermost part of the CMS detector is the inner tracker, which consists of t
 The silicon strip detector consists of four strip layers in the inner (TIB), and six layers in the outer part (TOB). In the direction of the endcaps, it is built of three inner disk layers (TID), and nine layers in the outer part (TEC).\\
 The inner tracker in total covers a range of $|\eta|<2.5$ and the sensoring system has a surface area of around $200\m^2$. The performance of the tracker yields a momentum resolution for muons with a transverse momentum of around $100\GeV$ of $1-3\%$ in the pseudorapidity range of $|\eta|<1.6$. At higher pseudorapidities and momenta the momentum resolution decreases.
 
-\begin{figure}[bp]
+\begin{figure}[hbp]
  \centering
  \includegraphics[width=0.79\textwidth]{figures/general/tracker.pdf}
  \caption{A sketch of one quadrant of the CMS tracker~\cite{TrackerPDFPic}. It is composed of the inner pixel detector (red) and of the strip detector. The silicon strip detector is divided into the TIB, TOB, TID, and TEC.}
@@ -98,14 +98,15 @@ In contrast to the homogeneous ECAL, the HCAL barrel is a so-called sampling cal
 
 \subsection{The solenoid magnet}
 To measure the momentum of charged particles properly, it is crucial to have bent trajectories. The resolution of momentum measurements at very high energies is directly proportional to the particle momenta and inverse proportional to the magnetic field strength. Thus, for a precise measurement of the curvature of the trajectory, a strong magnetic field is needed. In case of the CMS detector, this is provided by a superconducting NbTi magnet, cooled to $4.8\K$, inducing a magnetic field of $3.8\T$ inside the solenoid. Outside, in the muon chambers discussed in the next section, the magnetic field is weaker (approximately $2\T$). By choosing a solenoid with a length of $12.5\m$ and a diameter of $6.3\m$, the solenoid defines the CMS detector design, especially with regard to the limited space for the tracking system, the ECAL, and HCAL.
-% \todo{Erganzen!}
 
 
 
 \subsection{The muon system}
 The outermost part of the CMS detector is the muon system. Because all other charged particles beside muons should be stopped in the inner layers, muons are the only particles entering the muon system and leaving a signature there. Three different types of detectors are used to measure and identify muons. The barrel part ($|\eta|<1.2$) is covered by four stations of drift tubes (DT). Cathode strip chambers (CSC) are covering the endcap at pseudorapidity $0.9<|\eta|<2.4$, because in this region a higher muon rate is expected, and CSCs in contrast to DTs have a faster response time and are more radiation hard.
 % In most parts the muon reconstruction efficiency is above $95\%$, with a misidentification rate of less than $1\%$.
-The muon momentum resolution, dependent on the $\eta$ region, varies between $10\%$ in the barrel region to around $20\%$ in the endcap region for muons reconstructed standalone by the muon system with a transverse momentum above $15\GeV$. In a combined reconstruction with the tracker information, the resolution is of the order of $1-6\%$ for muons with momenta lower than $100\GeV$ and $10\%$ for $\TeV$ muons~\cite{MuonPerformance}. Again, the energy resolution was designed to be at its maximum at around $50\GeV$, where muons from the diboson Z decays of the Higgs boson were expected.\\
+The muon momentum resolution, dependent on the $\eta$ region, varies between $10\%$ in the barrel region to around $20\%$ in the endcap region for muons reconstructed standalone by the muon system with a transverse momentum above $15\GeV$.
+In a combined reconstruction using also the tracker information, the resolution is of the order of $1-6\%$ for muons with momenta lower than $100\GeV$ and $10\%$ for $\TeV$ muons~\cite{MuonPerformance}.
+Again, the energy resolution was designed to be at its maximum at around $50\GeV$, where muons from the diboson Z decays of the Higgs boson were expected.\\
 Additional detector components, namely six layers of resistive plate chambers (RPC), are installed in the pseudorapidity range of $|\eta|<1.8$. Because they show both good time resolution and fast response time, they are mainly used for triggering purposes. The structure of the muon system can be seen in \refFig{fig:etaPlaneCMSTotal}.
 \begin{figure}[tbp]
  \centering
@@ -114,6 +115,6 @@ Additional detector components, namely six layers of resistive plate chambers (R
  \label{fig:etaPlaneCMSTotal}
 \end{figure}
 \subsection{The trigger system}
-As bunch crossings take place every $25\ns$, and therefore at a rate of $40\MHz$, it is not achievable to read out and store all events. To keep only physically interesting events and reduce the rate of events to be saved, a trigger system consisting of two stages is implemented~\cite{TriggerSystem}. It is composed of the hardware based level 1 (L1) triggers, and the software based high level triggers (HLT). Since the L1 trigger system needs to deliver decisions in a very short time window, it uses only information provided by the calorimeters and the muon chambers. Usually first requirements on the event, such as a minimal deposited transverse energy, and  the presence of first estimates for electron and muon candidates, are imposed. The L1 trigger reduces the event rate to a rate of approximately $100\kHz$.\\
+As bunch crossings take place every $25\ns$, and therefore at a rate of $40\MHz$, it is not achievable to read out and store all events. To keep only physically interesting events and reduce the rate of events to be saved, a trigger system consisting of two stages is implemented~\cite{TriggerSystem}. It is composed of the hardware based level 1 (L1) triggers, and the software based high level triggers (HLT). Since the L1 trigger system needs to deliver decisions in a very short time window, it uses only information provided by the calorimeters and the muon chambers. Usually first requirements on the event, such as a minimal deposited transverse energy, and the presence of first estimates for electron and muon candidates, are imposed. The L1 trigger reduces the event rate to a rate of approximately $100\kHz$.\\
 More complex decisions are made by the HLT trigger system. It has full access to the complete readout of all subdetectors, and therefore performs selections close to the offline analysis. It reduces the event rate to $\mathcal{O}(1\kHz)$~\cite{TriggerRate}.\\
 Using the decisions of the HLT, events are categorized into different subsets, based on event kinematics and the trigger objects, called primary data sets (PD).

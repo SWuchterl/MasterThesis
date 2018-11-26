@@ -3,18 +3,45 @@
 Now that all backgrounds are well estimated, the background prediction is reliable in the validation region, and all uncertainties are determined, the background prediction methods can be applied to the SR, $\ptmiss>150\GeV$ and $\mtTwo>100\GeV$, and predicted and observed event counts can be compared. An excess of events or other significant deviations from the prediction could be indicators for BSM physics.
 \section{Results}\label{sec:results}
 \subsection*{Signal region binning}
-In order to perform the counting experiment, a distinct binning in one or multiple variables needs to be applied to the SR. This binning can be optimized considering different criteria, \eg, observation and exclusion power. Since the most sensitive variables are $\ptmiss$ and $\mtTwo$, different one dimensional and two dimensional binnings are investigated. For signal benchmark points of all three signal models, simplified significances $\frac{s}{\sqrt{s+b}}$, where s is the number of signal events and b the number of background events per bin, the binnings are varied. Because the total predicted event count in the SR is approximately $13$ events, special care has to be taken regarding this issue. Albeit many sensitive bins with lower SM prediction and high signal expectation would push expected exclusion limits, this would make reinterpretations and observations difficult due to the high statistical uncertainties of the measured data.\\
-To take into consideration all those aspects, a binning consisting of two bins in the $\ptmiss$ distribution is chosen, as already introduced in \refSec{sec:SRSelection}. The first bin starts at $150\GeV$ and ends at $200\GeV$, while the second one gaterhs all events with $\ptmiss>200\GeV$ in the SR. This binning yields good exclusion power, because the $\ptmiss$ distribution is observed to be more sensitive than the $\mtTwo$ distribution, and includes an amount of events large enough in each bin, so that the reinterpretation is not restricted by statistical uncertainties. For the same reasons, higher dimensional binnings are discarded.
+In order to perform the counting experiment, a distinct binning in one or multiple variables needs to be applied to the SR. This binning can be optimized considering different criteria, \eg, observation and exclusion power. Since the most sensitive variables are $\ptmiss$ and $\mtTwo$, different one dimensional and two dimensional binnings are possible.
+% For signal benchmark points of all three signal models, simplified significances $\frac{s}{\sqrt{s+b}}$, where s is the number of signal events and b the number of background events per bin, the binnings are varied.
+Because the total predicted event count in the SR is approximately $13$ events, special care has to be taken regarding this low data yield. Albeit many sensitive bins with lower SM prediction and high signal expectation would push expected exclusion limits, this would make reinterpretations and observations difficult due to the high statistical uncertainties of the measured data. Considering that the $\ptmiss$ and $\mtTwo$ distributions are exponentially decreasing for the predicted backgrounds, the maximum number of bins is limited. Therefore, a binning consisting of two bins is chosen. It consists of two bins in the $\ptmiss$ distribution, as already introduced in \refSec{sec:SRSelection}. The first bin starts at $150\GeV$ and ends at $200\GeV$, while the second one gathers all events with $\ptmiss>200\GeV$ in the SR. This choice yields good exclusion power while containing a sufficient number of events in each bin, so that the reinterpretation is not restricted by statistical uncertainties. For the same reasons, higher dimensional binnings are discarded. Due to the same reasons, higher dimensional binnings are discarded, too. The $\ptmiss$ distribution is preferred over the $\mtTwo$ distribution, because it is more model independent given the many decay possibilities in full theoretical models. In the calculation of $\mtTwo$, both bosons are assumed to be generated in an NLSP decay together with an gravitino, but the investigated final state particles ($\PZ$ and $\PGg$) can be produced in several decay branches of different particles considering those models. In contrast, the $\ptmiss$ is a general measure of the energy carried by the gravitinos, thus being more independent and universal.
+% This binning yields good exclusion power, because the $\ptmiss$ distribution is observed to be more sensitive than the $\mtTwo$ distribution, and includes an amount of events large enough in each bin, so that the reinterpretation is not restricted by statistical uncertainties. For the same reasons, higher dimensional binnings are discarded.
 \subsubsection*{Possible influence of signal to the validation region}
-The SR and the VR are very close to each other in phase space due to the chosen sideband structure of the VR. Thus, some signal events, especially for low SUSY masses, are expected to populate also the VR. The distribution most sensitive to this effect is the $\pt^{\PGg}$ distribution of the selected photon, as shown in \refFig{fig:signalContVR}.
+The SR and the VR are very close to each other in phase space due to the chosen sideband structure of the VR. Thus, some signal events, especially for low SUSY masses, are expected to populate also the VR. The distribution most sensitive to this effect is the $\pt^{\PGg}$ distribution of the selected photon, as shown in \refFig{fig:signalContVR}, where the $\pt^{\PGg}$ and $\ptmiss$ distributions are compared.
 \begin{figure}[tbp]
  \centering
+ \includegraphics[width=\pairwidth]{figures/VR_signal_study/VR_LL_met_log}
  \includegraphics[width=\pairwidth]{figures/VR_signal_study/VR_LL_pt_g1_log}
- \caption{The transverse momentum distribution of the photon in the VR. Signal benchmark points are also added to show the possible sensitivity in the high $\pt^{\PGg}$ regime.}
+ \caption{The $\ptmiss$ (left) and transverse momentum distribution of the photon in the VR (right). Signal benchmark points are also added to show the possible sensitivity in the high $\pt^{\PGg}$ regime.}
  \label{fig:signalContVR}
 \end{figure}
 For $\pt^{\PGg} >80\GeV$, a considerable amount of signal events is measurable in the VR, because in the considered SUSY processes the photons produced in the NLSP decay gain high momenta due to the high NLSP masses. Since the predicted background and observed data are already compared in the VR, and no background prediction is performed here, there is no need to account for this effect like in the other CR in terms of signal contamination.\\
-Hence, the subtraction of this region from the VR, and the addition to the SR as a third search bin would increase the total sensitivity. But, because the number of expected signal events in the two SR bins is already high enough for the relevant signal points to be excluded with a high significance, this strategy does not show any improvement in the overall sensitivity, that is large enough to justify the deterioration in the simplicity of the analysis.
+Hence, the subtraction of this region from the VR, and the addition to the SR as a third search bin would increase the total sensitivity. The number of expected signal events in the two SR bins is already high enough for the relevant signal points to be excluded with a high significance. Thus, this strategy does not show any improvement in the overall sensitivity, that is large enough to justify the deterioration in the simplicity of the analysis.
+
+
+\subsection*{Signal acceptances}
+The acceptance of the event selection is defined as the fration of events being selected in the SR to all events in a distinct SUSY signal scenario to all signal events being produced before passing the reconstruction, identification, and selection. Because several effects are considered in the definition, such as detector acceptance and trigger efficiencies, it is often referred to as acceptance times efficiency. In \refTab{tab:cutflow}, examplary the events yields for three different signal points after several analysis steps are given. In addition, the relevance of each SR bin with regard to the final sensitivity is indicated by comparing the expected number of signal events in each bin.\\
+For all three considered signal scenarios, the acceptance after the preselection is alredy of the order of $\mathcal{O}(1\%)$. Due to the low branching fraction ($\approx3.36\%$) of the $\PZ$ boson decaying to either electron or muon pairs each, such low acceptances are expected, considering all inefficiencies of reconstruction, the trigger, and the particle identification. In addition, the probability for the NLSP to decay to a Z boson is only $50\%$ in the SMS, and even lower for the GMSB model, see \refSec{sec:SMS}. Therefore, the total acceptance is futher decreased. The SR selection requirements, namely the $\ptmiss$ and $\mtTwo$ requirement, reduce the signal yield only insignificantly, while reducing the background contributions. Final signal acceptances for all signal points are given in \refSec{sec:app_signal} in the appendix. Comparing the acceptances for all those points, they all are in the same order, slightly depending on the sparticle masses.
+
+\begin{table}[h!]
+ \centering
+ \caption{Number of events for three signal points after several selection steps. The signal points correspond to the \texttt{TChiZG} model with $m(\mathrm{NLSP})=600\GeV$, the GMSB model with $m(\widetilde{W})=415\GeV$ $m(\widetilde{B})=355\GeV$ , and the \texttt{T5bbbbZG} model with $m(\tilde{g})=1500\GeV$ $m(\mathrm{NLSP})=1400\GeV$.}
+ \normalsize
+ \label{tab:cutflow}
+ \begin{tabular}{lllllll}
+                            & \multicolumn{6}{c}{Number of Events (Rel. fraction)}                                                                                                      \\\hline
+  Selection                 & \multicolumn{2}{c}{\texttt{TChiZG}}                  & \multicolumn{2}{c}{GMSB} & \multicolumn{2}{c}{\texttt{T5bbbbZG}}                                   \\\hline
+  Before Selection          & $1063$                                               & ($100\%$)                & $5285$                                & ($100\%$)  & $509$ & ($100\%$)  \\
+  Preselection              & $11.3$                                               & ($1.06\% $)              & $21.5$                                & ($0.40\%$) & $5.1$ & ($1.00\%$) \\
+  $\mtTwo>100\GeV$          & $10.8$                                               & ($1.02\%$)               & $18.5$                                & ($0.35\%$) & $5.0$ & ($0.99\%$) \\
+  $\ptmiss>150\GeV$         & $9.8$                                                & ($0.92\%$)               & $14.2$                                & ($0.27\%$) & $4.9$ & ($0.96\%$) \\\hline
+  $150\GeV<\ptmiss<200\GeV$ & $0.7$                                                & ($0.06\%$)               & $3.2$                                 & ($0.06\%$) & $0.1$ & ($0.02\%$) \\
+  $\ptmiss>200\GeV$         & $9.1$                                                & ($0.86\%$)               & $11.0$                                & ($0.21\%$) & $4.8$ & ($0.94\%$) 
+ \end{tabular}
+ \vspace{\baselineskip}
+\end{table}
+
 
 \subsection*{Event yields}
 The final background prediction together with the observed event yield is shown in \refFig{fig:result}.
@@ -27,7 +54,7 @@ where $n$ is the observed yield, $b$ the predicted background, and $\sigma_{b}$ 
 Albeit other approaches to calculate the observed significance, like $\frac{n-b}{\sqrt{b}}$ and $\frac{n-b}{\sqrt{b+\sigma_b^2}}$, overestimate the significance for small $b$, the Asimov significance yields a more confident estimate of the true significance of the observation~\cite{Significance}.
 \begin{figure}[bpt]
  \centering
- \includegraphics[width=\pairwidth]{figures/EndorsementPlots/final_MC_log2}
+ \includegraphics[width=\pairwidth]{figures/EndorsementPlots/final_MC_log}
  \caption{Comparison between final prediction and observation with statistical and systematic uncertainties in the signal region. Two signal expectations for the \texttt{TChiZG} model with $m(\text{NLSP})=600\GeV$ and the GMSB model with $m(\tilde{W})=290\GeV$ and $m(\tilde{B})=205\GeV$ are also shown.}
  \label{fig:result}
 \end{figure}
@@ -48,6 +75,7 @@ The number of background and observed events together with their total uncertain
   Total          & 8.82                              & 0.40                                 & 0.63            & 4.82  & 0.32            & 0.40            \\\hline
   Data           & 9                                 &                                      &                 & 8     &                 &                 \\\hline
  \end{tabular}
+ \vspace{\baselineskip}
 \end{table}
 
 
