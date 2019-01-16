@@ -85,9 +85,9 @@ No evidence for BSM physics is found, but the results can be interpreted in vari
 Upper cross section limits are calculated for signal points in the parameter space of simplified models with both electroweak and strong production, and for a consistent GMSB model, as introduced in \refSec{sec:SMS}. All limits are calculated using the modified frequentist $CL_s$ approach~\cite{CLS1,CLS2,CLS3} with likelihood test statistics and asymptotic formulae~\cite{AsymptoticFormulae,AsymptoticFormulae2} at a confidence level (CL) of $95\%$. The compatibility of the background only ($b$) and signal plus background ($s+b$) hypotheses with the results is tested. Therefore, the signal strength modifier $\mu$ is introduced, in order to express both hypotheses in a uniform way $\mu s+b$, where $\mu=0$ yields the background only hypotheses, and $\mu>0$ corresponds to a $s+b$ hypothesis.\\
 To account for systematic uncertainties, for each signal or background uncertainty a nuisance parameter $\theta$ is introduced, and signal and background yields are rewritten as functions of $\theta$: $s(\theta)$ and $b(\theta)$. Different probability density functions (pdf) $p(\tilde{\theta}|\theta)$ are also implemented in the likelihood, to reflect the degree of belief in the true value of the nuisance parameter $\theta$, where $\tilde{\theta}$ is the default value of the nuisance parameter. Different pdfs are used to describe the uncertainties, such as the log-normal or log-uniform distributions. The total likelihood function $\mathcal{L}(data|\mu,\theta)$ reads
 \begin{equation}
- \mathcal{L}(data|\mu,\theta)= Poisson(data|\mu\cdot(\theta+b(\theta))\cdot p(\tilde{\theta}|\theta)).
+ \mathcal{L}(data|\mu,\theta)= Poisson(data|\mu\cdot s(\theta)+b(\theta))\cdot p(\tilde{\theta}|\theta).
 \end{equation}
-Here, $data$ represents the actual experimental observation, and $Poisson(data|\mu\cdot(\theta+b(\theta))$ stands for the probability to observe $n_i$ events in bin $i$:
+Here, $data$ represents the actual experimental observation, and $Poisson(data|\mu\cdot s(\theta)+b(\theta))$ stands for the probability to observe $n_i$ events in bin $i$:
 \begin{equation}
  \mathrm{Poisson}(data|\mu s+b)=\prod_i \frac{(\mu s_i+b_i)^{n_i}}{n_i!}e^{-\mu s_i - b_i}.
 \end{equation}
@@ -96,14 +96,14 @@ A test statistic $\tilde{q}_\mu$ is introduced as a likelihood ratio, because ac
  \tilde{q}_{\mu}= -2 \ln \frac{\mathcal{L}(data|\mu,\hat{\theta}_{\mu})}{\mathcal{L}(data|\hat{\mu},\hat{\theta})}, \,\mathrm{with}\,0\leq\hat{\mu}\leq\mu.
 \end{equation}
 Here, $\hat{\theta}_{\mu}$ refers to the conditional maximum likelihood estimators of $\theta$, given the signal strength $\mu$ and the data observation. The parameters $\hat{\theta}$ and $\hat{\mu}$ correspond to the global maximum of the likelihood. The constraints on $\hat{\mu}$ ensure, that only positive signal rates are considered, and a one sided confidence interval is guaranteed.\\
-The probability to obtain values of $\hat{\theta}_{\mu}$ larger than observed in data ($\hat{\theta}_{\mu}^{obs}$) is given by $CL_b$ for the background only hypothesis and $CL_{s+b}$ for the signal plus background hypothesis. Now, the ratio $CL_s$ can be calculated by
+The probability to obtain values of $\tilde{q}_{\mu}$ larger than observed in data ($\tilde{q}_{\mu}^{obs}$) is given by $CL_b$ for the background only hypothesis and $CL_{s+b}$ for the signal plus background hypothesis. Now, the ratio $CL_s$ can be calculated by
 \begin{equation}
  CL_s=\frac{CL_{s+b}}{CL_b}.
 \end{equation}
 The $(1-\alpha)=95\%$ CL upper limit is found by varying $\mu$ until $CL_s = \alpha=0.05$ is reached.\\
 The limits on $\mu$ can be translated into signal cross section upper limits by multiplying it with the cross section that was used to determine the expected signal yield.\\
-The calculation is performed using the Higgs Combine tool~\cite{CLS3}, while all systematic uncertainties are treated as fully correlated over all bins and background, except for the statistical uncertainties.
-Additional expected upper limits are calculated using pseudo-data, that are useful to show the expected sensitivity of the analysis, since statistical fluctuations are not considered.
+The calculation is performed using the Higgs Combine tool~\cite{CLS3}, while all systematic uncertainties are treated as fully correlated over all bins and backgrounds.
+Using pseudo-data additional expected upper limits are calculated, that are useful to show the expected sensitivity of the analysis, since statistical fluctuations are not considered.
 
 \newpage
 \subsection{Exclusion limits}
