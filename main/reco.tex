@@ -139,7 +139,7 @@ Also, several event quality filters developed by CMS~\cite{MetFilter} are applie
 %  \item \texttt{bad muon filter},
 %  \item \texttt{beam halo filter}.
 % \end{itemize}
-The rejected events consist mainly of events with faulty detector signals caused by noise or anomalies, spurious energy deposits in ECAL endcap crystals, cosmic muons, muons being misidentified as charged hadrons, or muons produced in scattering processes with the beam halo.
+The rejected events consist mainly of events with faulty detector signals caused by noise or anomalies, spurious energy deposits in ECAL endcap crystals, cosmic muons, muons being misidentified as charged hadrons, or muons produced in scattering processes of the beam halo.
 
 
 \subsection{Muons}
@@ -198,7 +198,7 @@ All identification criteria can be found in \refTab{tab:muonID}.
 
 
 \subsection{Electrons}
-The requirements imposed on the electron selection is driven by a symmetric approach between the two lepton selections. The same conditions on the distance to the primary vertex, ($d_{xy}<0.05\cm$, $d_z<0.1\cm$), pseudorapidity ($|\eta|<2.4$), and transverse momentum ($\pt>15\GeV$) need to be fulfilled. The mini isolation criterion is tightened to $10\%$, since the probability to misidentify a jet as an electron is higher than for muons.\\
+The requirements imposed on the electron selection are driven by a symmetric approach between the two lepton selections. The same conditions on the distance to the primary vertex, ($d_{xy}<0.05\cm$, $d_z<0.1\cm$), pseudorapidity ($|\eta|<2.4$), and transverse momentum ($\pt>15\GeV$) need to be fulfilled. The mini isolation criterion is tightened to $10\%$, since the probability to misidentify a jet as an electron is higher than for muons.\\
 The identification requirements determined by the CMS Collaboration~\cite{ElectronID} separately for electrons reconstructed in the ECAL barrel (EB: $|\eta_{Supercluster}|<1.479$) and endcap (EE: $|\eta_{Supercluster}|>1.479$) region are listed in \refTab{tab:eleID}.
 \begin{table}[bp]
  \centering
@@ -227,7 +227,7 @@ Here, $\sigma_{i\eta i\eta}$ is a quantity characterizing the width of the elect
 \
 
 \subsection{Photons}
-Photons are required to have a transverse momentum larger than $20\GeV$. Because in the considered SUSY signal scenarios the sparticles typically have high masses, central collisions are needed to produce these in the pp interactions. Therefore, the sparticles decay mainly in rest, and the photons originating from the decays are produced more centrally in comparison to SM processes. Hence, only photons reconstructed in the ECAL barrel are considered ($|\eta<1.4442$). Additional identification criteria determined by the CMS Collaboration~\cite{photonID} are listed in \refTab{tab:photonID}.
+Photons are required to have a transverse momentum larger than $20\GeV$. Because in the considered SUSY signal scenarios the sparticles typically have high masses, central collisions are needed to produce these in the pp interactions. Therefore, the sparticles decay mainly at rest, and the photons originating from the decays are produced more centrally in comparison to SM processes. Hence, only photons reconstructed in the ECAL barrel are considered ($|\eta<1.4442$). Additional identification criteria determined by the CMS Collaboration~\cite{photonID} are listed in \refTab{tab:photonID}.
 Similarly to the requirements on $\sigma_{i\eta i\eta}$ and $H/E$ for the electron selection, these conditions in the photon identification ensure the suppression of selecting hadrons faking the photon signature. Additional different isolation criteria lower the amount of selected photons originating from neutral and charged hadrons, and photons created from meson decays.\\
 Requirements on the minimum distance in the $\eta-\phi$ plane between the photon and selected lepton candidates ($\Delta R(\PGg,\ell)>0.3$) significantly reduce contributions from final state radiation (FSR) photons. By requiring that no pixel seed can be assigned to a trajectory between the ECAL supercluster and the interaction point, a clear differentiation between electrons and photons is achieved.
 \begin{table}[b]
@@ -262,7 +262,7 @@ Before a collision the transverse momentum of the colliding protons is nearly ne
  \ptmiss= |\ptvecmiss| = |-\sum_{i}^{N_{PF obj.}}\ptvec_{,i}|.
 \end{equation}
 Jet energy corrections are propagated to the missing transverse momentum vector to avoid a bias in events with large hadronic activity.\\
-Missing transverse momentum $\ptmiss$ is one of the most important observables in searches for BSM physics. In typical SUSY models, see \refSec{sec:SUSY}, significant $\ptmiss$ is expected in the events due to the LSP leaving the detector undetected. In SM processes only neutrinos and mismeasurements of, \eg, the jet energies lead to missing transverse momentum. In such SUSY events, the LSP gains a lot of energy through the decays of sparticles with higher masses. Hence, much more $\ptmiss$ is expected to be produced in SUSY events as in SM processes, also due to the production of two LSPs in the final state because of R-parity conservation.
+Missing transverse momentum $\ptmiss$ is one of the most important observables in searches for BSM physics. In typical SUSY models, see \refSec{sec:SUSY}, significant $\ptmiss$ is expected in the events due to the LSP leaving the detector undetected. In SM processes only neutrinos and mismeasurements of, \eg, the jet energies lead to missing transverse momentum. In SUSY events, the LSP gains a lot of energy through the decays of sparticles with higher masses. Hence, much more $\ptmiss$ is expected to be produced in SUSY events as in SM processes, also due to the production of two LSPs in the final state because of R-parity conservation.
 
 \subsection*{Total hadronic activity $\HT$}
 The hadronic activity $\HT$ is defined as the scalar sum of the transverse momenta of all jets, that are clustered with the procedure above, and fulfill $|\eta|<3$ and $\pt>30\GeV$:
